@@ -90,7 +90,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Action-Adventure",
-                "Image": "/imgs/split_fiction-2.jpg"
+                "Image": "/imgs/split_fiction_2.jpg"
             }
         ]
     },
@@ -384,7 +384,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Action-Adventure",
-                "Image": "/imgs/split_fiction-2.jpg"
+                "Image": "/imgs/split_fiction_2.jpg"
             }
         ]
     },
@@ -507,7 +507,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Adventure",
-                "Image": "/imgs/split_fiction-2.jpg"
+                "Image": "/imgs/split_fiction_2.jpg"
             }
         ]
     },
@@ -630,7 +630,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Co-op",
-                "Image": "/imgs/split_fiction-2.jpg"
+                "Image": "/imgs/split_fiction_2.jpg"
             }
         ]
     },
@@ -795,6 +795,423 @@
                 "Winner": false,
                 "Genre": "Adventure",
                 "Image": "/imgs/the_midnight_walk.jpg"
+            }
+        ]
+    },
+    "Best Ongoing Game": {
+        "weight": 5,
+        "description": "Awarded to a game for outstanding development of ongoing content that evolves the player experience over time.",
+        "nominees": [
+            {
+                "Nominee": "Final Fantasy XIV",
+                "Publisher": "Square Enix",
+                "Winner": false,
+                "Genre": "MMORPG",
+                "Image": "/imgs/final_fantasy_xiv.jpg"
+            },
+            {
+                "Nominee": "Fortnite",
+                "Publisher": "Epic Games",
+                "Winner": false,
+                "Genre": "Battle Royale",
+                "Image": "/imgs/fortnite.jpg"
+            },
+            {
+                "Nominee": "Helldivers 2",
+                "Publisher": "Arrowhead",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/helldivers_2.jpg"
+            },
+            {
+                "Nominee": "Marvel Rivals",
+                "Publisher": "NetEase Games",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/marvel_rivals.jpg"
+            },
+            {
+                "Nominee": "No Man's Sky",
+                "Publisher": "Hello Games",
+                "Winner": false,
+                "Genre": "Survival",
+                "Image": "/imgs/nomanssky.jpg"
+            }
+        ]
+    },
+    "Best Community Support": {
+        "weight": 4,
+        "description": "Recognizing a game for outstanding community support, transparency and responsiveness.",
+        "nominees": [
+            {
+                "Nominee": "Baldur's Gate 3",
+                "Publisher": "Larian Studios",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/baldurs_gate_3.jpg"
+            },
+            {
+                "Nominee": "Final Fantasy XIV",
+                "Publisher": "Square Enix",
+                "Winner": false,
+                "Genre": "MMORPG",
+                "Image": "/imgs/final_fantasy_xiv.jpg"
+            },
+            {
+                "Nominee": "Fortnite",
+                "Publisher": "Epic Games",
+                "Winner": false,
+                "Genre": "Battle Royale",
+                "Image": "/imgs/fortnite.jpg"
+            },
+            {
+                "Nominee": "Helldivers 2",
+                "Publisher": "Arrowhead",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/helldivers_2.jpg"
+            },
+            {
+                "Nominee": "No Man's Sky",
+                "Publisher": "Hello Games",
+                "Winner": false,
+                "Genre": "Survival",
+                "Image": "/imgs/nomanssky.jpg"
+            }
+        ]
+    },
+    "Innovation in Accessibility": {
+        "weight": 4,
+        "description": "Recognizing software and/or hardware that is pushing the medium forward by adding features, technology and content to help games be played and enjoyed by an even wider audience.",
+        "nominees": [
+            {
+                "Nominee": "Assassin's Creed Shadows",
+                "Publisher": "Ubisoft",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/assassins_creed_shadows.jpg"
+            },
+            {
+                "Nominee": "Atomfall",
+                "Publisher": "Rebellion",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/atomfall.jpg"
+            },
+            {
+                "Nominee": "Doom: The Dark Ages",
+                "Publisher": "id Software",
+                "Winner": false,
+                "Genre": "FPS",
+                "Image": "/imgs/doom_dark_ages.jpg"
+            },
+            {
+                "Nominee": "EA Sports FC 26",
+                "Publisher": "EA Sports",
+                "Winner": false,
+                "Genre": "Sports",
+                "Image": "/imgs/eafc_26.jpg"
+            },
+            {
+                "Nominee": "South of Midnight",
+                "Publisher": "Compulsion Games",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/south_of_midnight.jpg"
+            }
+        ]
+    },
+    "Games for Impact": {
+        "weight": 4,
+        "description": "For a thought-provoking game with a pro-social meaning or message.",
+        "nominees": [
+            {
+                "Nominee": "Consume Me",
+                "Publisher": "Unknown",
+                "Winner": false,
+                "Genre": "Indie",
+                "Image": "/imgs/consume_me.jpg"
+            },
+            {
+                "Nominee": "Despelote",
+                "Publisher": "Panic",
+                "Winner": false,
+                "Genre": "Indie",
+                "Image": "/imgs/despelote.jpg"
+            },
+            {
+                "Nominee": "Lost Records: Bloom & Rage",
+                "Publisher": "Don't Nod",
+                "Winner": false,
+                "Genre": "Narrative",
+                "Image": "/imgs/lost_records_bloom_rage.jpg"
+            },
+            {
+                "Nominee": "South of Midnight",
+                "Publisher": "Compulsion Games",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/south_of_midnight.jpg"
+            },
+            {
+                "Nominee": "Wanderstop",
+                "Publisher": "Annapurna Interactive",
+                "Winner": false,
+                "Genre": "Sim",
+                "Image": "/imgs/wanderstop.jpg"
+            }
+        ]
+    },
+    "Best Adaptation": {
+        "weight": 3,
+        "description": "Recognizing creative work that faithfully and authentically adapts a video game intellectual property to another entertainment medium.",
+        "nominees": [
+            {
+                "Nominee": "A Minecraft Movie",
+                "Publisher": "Warner Bros.",
+                "Winner": false,
+                "Genre": "Film",
+                "Image": "/imgs/a_minecraft_movie.jpg"
+            },
+            {
+                "Nominee": "Devil May Cry",
+                "Publisher": "Netflix",
+                "Winner": false,
+                "Genre": "Anime",
+                "Image": "/imgs/devil_may_cry_anime.jpg"
+            },
+            {
+                "Nominee": "Splinter Cell: Deathwatch",
+                "Publisher": "Netflix",
+                "Winner": false,
+                "Genre": "Anime",
+                "Image": "/imgs/splinter_cell_deathwatch.jpg"
+            },
+            {
+                "Nominee": "The Last of Us Season 2",
+                "Publisher": "HBO",
+                "Winner": false,
+                "Genre": "Series",
+                "Image": "/imgs/tlou_season_2.jpg"
+            },
+            {
+                "Nominee": "Until Dawn",
+                "Publisher": "PlayStation Productions",
+                "Winner": false,
+                "Genre": "Film",
+                "Image": "/imgs/until_dawn_movie.jpg"
+            }
+        ]
+    },
+    "Most Anticipated Game": {
+        "weight": 3,
+        "description": "Recognizing an announced game that has demonstrably illustrated potential to push the gaming medium forward.",
+        "nominees": [
+            {
+                "Nominee": "007 First Light",
+                "Publisher": "IO Interactive",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/007_first_light.jpg"
+            },
+            {
+                "Nominee": "Grand Theft Auto VI",
+                "Publisher": "Rockstar Games",
+                "Winner": false,
+                "Genre": "Open World",
+                "Image": "/imgs/gta6.jpg"
+            },
+            {
+                "Nominee": "Marvel's Wolverine",
+                "Publisher": "Insomniac Games",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/marvels_wolverine.jpg"
+            },
+            {
+                "Nominee": "Resident Evil Requiem",
+                "Publisher": "Capcom",
+                "Winner": false,
+                "Genre": "Horror",
+                "Image": "/imgs/resident_evil_requiem.jpg"
+            },
+            {
+                "Nominee": "The Witcher IV",
+                "Publisher": "CD Projekt Red",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/the_witcher_4.jpg"
+            }
+        ]
+    },
+    "Content Creator of the Year": {
+        "weight": 2,
+        "description": "For a streamer or content creator who has made an important and positive impact on the community.",
+        "nominees": [
+            {
+                "Nominee": "Caedrel",
+                "Publisher": "Twitch",
+                "Winner": false,
+                "Genre": "Creator",
+                "Image": "/imgs/caedrel.jpg"
+            },
+            {
+                "Nominee": "Kai Cenat",
+                "Publisher": "Twitch",
+                "Winner": false,
+                "Genre": "Creator",
+                "Image": "/imgs/kai_cenat.jpg"
+            },
+            {
+                "Nominee": "MoistCr1TiKaL",
+                "Publisher": "YouTube",
+                "Winner": false,
+                "Genre": "Creator",
+                "Image": "/imgs/moistcr1tikal.jpg"
+            },
+            {
+                "Nominee": "Sakura Miko",
+                "Publisher": "YouTube",
+                "Winner": false,
+                "Genre": "VTuber",
+                "Image": "/imgs/sakura_miko.jpg"
+            },
+            {
+                "Nominee": "The Burnt Peanut",
+                "Publisher": "Unknown",
+                "Winner": false,
+                "Genre": "Creator",
+                "Image": "/imgs/the_burnt_peanut.jpg"
+            }
+        ]
+    },
+    "Best Esports Game": {
+        "weight": 2,
+        "description": "For the game that has delivered the best overall esports experience to players.",
+        "nominees": [
+            {
+                "Nominee": "Counter-Strike 2",
+                "Publisher": "Valve",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/counter_strike_2.jpg"
+            },
+            {
+                "Nominee": "Dota 2",
+                "Publisher": "Valve",
+                "Winner": false,
+                "Genre": "MOBA",
+                "Image": "/imgs/dota_2.jpg"
+            },
+            {
+                "Nominee": "League of Legends",
+                "Publisher": "Riot Games",
+                "Winner": false,
+                "Genre": "MOBA",
+                "Image": "/imgs/league_of_legends.jpg"
+            },
+            {
+                "Nominee": "Mobile Legends: Bang Bang",
+                "Publisher": "Moonton",
+                "Winner": false,
+                "Genre": "MOBA",
+                "Image": "/imgs/mobile_legends_bang_bang.jpg"
+            },
+            {
+                "Nominee": "Valorant",
+                "Publisher": "Riot Games",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/valorant.jpg"
+            }
+        ]
+    },
+    "Best Esports Athlete": {
+        "weight": 2,
+        "description": "The esports athlete judged to be the most outstanding for performance and conduct.",
+        "nominees": [
+            {
+                "Nominee": "Brawk",
+                "Publisher": "NRG",
+                "Winner": false,
+                "Genre": "Valorant",
+                "Image": "/imgs/brawk.jpg"
+            },
+            {
+                "Nominee": "Chovy",
+                "Publisher": "Gen.G",
+                "Winner": false,
+                "Genre": "LoL",
+                "Image": "/imgs/chovy.jpg"
+            },
+            {
+                "Nominee": "F0rsakeN",
+                "Publisher": "Paper Rex",
+                "Winner": false,
+                "Genre": "Valorant",
+                "Image": "/imgs/f0rsaken.jpg"
+            },
+            {
+                "Nominee": "Kakeru",
+                "Publisher": "Various",
+                "Winner": false,
+                "Genre": "Street Fighter",
+                "Image": "/imgs/kakeru.jpg"
+            },
+            {
+                "Nominee": "MenaRD",
+                "Publisher": "Various",
+                "Winner": false,
+                "Genre": "Street Fighter",
+                "Image": "/imgs/menard.jpg"
+            },
+            {
+                "Nominee": "Zyw0o",
+                "Publisher": "Team Vitality",
+                "Winner": false,
+                "Genre": "CS2",
+                "Image": "/imgs/zywoo.jpg"
+            }
+        ]
+    },
+    "Best Esports Team": {
+        "weight": 2,
+        "description": "Recognizing a specific esports team for performance and conduct.",
+        "nominees": [
+            {
+                "Nominee": "Gen.G",
+                "Publisher": "League of Legends",
+                "Winner": false,
+                "Genre": "Team",
+                "Image": "/imgs/geng.jpg"
+            },
+            {
+                "Nominee": "NRG",
+                "Publisher": "Valorant",
+                "Winner": false,
+                "Genre": "Team",
+                "Image": "/imgs/nrg.jpg"
+            },
+            {
+                "Nominee": "Team Falcons",
+                "Publisher": "Dota 2",
+                "Winner": false,
+                "Genre": "Team",
+                "Image": "/imgs/team_falcons.jpg"
+            },
+            {
+                "Nominee": "Team Liquid PH",
+                "Publisher": "Mobile Legends",
+                "Winner": false,
+                "Genre": "Team",
+                "Image": "/imgs/team_liquid_ph.jpg"
+            },
+            {
+                "Nominee": "Team Vitality",
+                "Publisher": "Counter-Strike 2",
+                "Winner": false,
+                "Genre": "Team",
+                "Image": "/imgs/team_vitality.jpg"
             }
         ]
     }
