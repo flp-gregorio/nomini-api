@@ -1,6 +1,26 @@
-# Game Awards Sweepstake - Backend 🚀
+# CritPick API 🚀
 
-This is the backend API for the Game Awards Sweepstake application. It handles user authentication, vote storage, and serving category data.
+This is the backend API for the CritPick application. It handles user authentication, vote storage, and serving category data.
+
+## Project Structure
+
+```
+goty-api/
+├── prisma/
+│   ├── schema.prisma
+│   └── prisma.config.ts
+├── src/
+│   ├── generated/
+│   ├── middleware/
+│   ├── routes/
+│   ├── data.json
+│   ├── index.js
+│   └── prismaClient.js
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+```
 
 ## Tech Stack
 - **Runtime**: Node.js
