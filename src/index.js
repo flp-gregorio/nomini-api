@@ -23,9 +23,9 @@ app.use('/votes', authMiddleware, votesRoutes);
 app.use('/leaderboard', authMiddleware, leaderboardRoutes);
 app.use('/categories', categoriesRoutes);
 
-app.get(/(.*)/, (req, res) => {
-   res.sendFile(path.join(__dirname, "../../goty-bet/dist", "index.html"));
-}) 
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+}); 
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
