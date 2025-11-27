@@ -1,0 +1,99 @@
+@baseUrl = http://localhost:5000
+@contentType = application/json
+
+# ------------------------------------------------------------
+# 1. Health Check
+# ------------------------------------------------------------
+GET {{baseUrl}}
+
+###
+
+# ------------------------------------------------------------
+# 2. Register User
+# ------------------------------------------------------------
+POST {{baseUrl}}/auth/register
+Content-Type: {{contentType}}
+
+{
+    "username": "Gilgamesh",
+    "email": "gilgamesh@gmail.com",
+    "password": "123123123"
+}
+
+###
+
+# ------------------------------------------------------------
+# 3. Login User
+# We use # @name login to capture the response token in VS Code
+# ------------------------------------------------------------
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: {{contentType}}
+
+{
+    "username": "Gilgamesh",
+    "password": "123123123"
+}
+
+###
+
+# ------------------------------------------------------------
+# 4. Cast a Vote (Game of the Year)
+# Uses the token from the login request above
+# ------------------------------------------------------------
+POST {{baseUrl}}/votes
+Content-Type: {{contentType}}
+Authorization: {{login.response.body.token}}
+
+{
+    "category": "Game of the Year",
+    "nominee": "Clair Obscur: Expedition 33"
+}
+
+###
+
+# ------------------------------------------------------------
+# 5. Cast a Vote (Best Narrative)
+# ------------------------------------------------------------
+POST {{baseUrl}}/votes
+Content-Type: {{contentType}}
+Authorization: {{login.response.body.token}}
+
+{
+    "category": "Best Narrative",
+    "nominee": "Silent Hill f"
+}
+
+###
+
+# ------------------------------------------------------------
+# 6. Get Vote Stats (Winners)
+# This aggregates all votes and counts them
+# ------------------------------------------------------------
+GET {{baseUrl}}/votes/stats
+Content-Type: {{contentType}}
+Authorization: {{login.response.body.token}}
+
+
+###
+
+# ------------------------------------------------------------
+# 7. Update a Vote
+# REPLACE '1' with an actual ID returned from step 4 or 5
+# ------------------------------------------------------------
+PUT {{baseUrl}}/votes/1
+Content-Type: {{contentType}}
+Authorization: {{login.response.body.token}}
+
+{
+    "nominee": "Hades II"
+}
+
+### 
+
+DELETE {{baseUrl}}/votes/1
+Content-Type: {{contentType}}
+Authorization: {{login.response.body.token}}
+
+###
+

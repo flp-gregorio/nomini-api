@@ -1,0 +1,801 @@
+{
+    "Game of the Year": {
+        "weight": 10,
+        "description": "Recognizing a game that delivers the absolute best experience across all creative and technical fields.",
+        "nominees": [
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Description": "A groundbreaking turn-based RPG with real-time mechanics and stunning visuals.",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Kojima Productions",
+                "Winner": false,
+                "Genre": "Action",
+                "Description": "Hideo Kojima's sequel to the genre-defying strand game, continuing Sam Bridges' journey.",
+                "Image": "/imgs/death_stranding_2.jpg"
+            },
+            {
+                "Nominee": "Donkey Kong Bananza",
+                "Publisher": "Nintendo",
+                "Winner": false,
+                "Genre": "Platformer",
+                "Description": "A new 3D platformer for the Switch 2 featuring fully destructible environments.",
+                "Image": "/imgs/donkey_kong_banaza.jpg"
+            },
+            {
+                "Nominee": "Hades II",
+                "Publisher": "Supergiant Games",
+                "Winner": false,
+                "Genre": "Roguelike",
+                "Description": "The sequel to the award-winning dungeon crawler, featuring Melinoë in a battle against Chronos.",
+                "Image": "/imgs/hades_2.jpg"
+            },
+            {
+                "Nominee": "Hollow Knight: Silksong",
+                "Publisher": "Team Cherry",
+                "Winner": false,
+                "Genre": "Metroidvania",
+                "Description": "The highly anticipated sequel to Hollow Knight, starring Hornet in a new kingdom.",
+                "Image": "/imgs/hollow_knight_silksong.jpg"
+            },
+            {
+                "Nominee": "Kingdom Come: Deliverance II",
+                "Publisher": "Warhorse Studios",
+                "Winner": false,
+                "Genre": "RPG",
+                "Description": "A realistic medieval RPG set in 15th-century Bohemia, following Henry's story.",
+                "Image": "/imgs/kcd2.jpg"
+            }
+        ]
+    },
+    "Best Game Direction": {
+        "weight": 8,
+        "description": "Awarded for outstanding creative vision and innovation in game direction and design.",
+        "nominees": [
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Kojima Productions",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/death_stranding_2.jpg"
+            },
+            {
+                "Nominee": "Ghost of Yōtei",
+                "Publisher": "Sucker Punch Productions",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/ghost_yotei.jpg"
+            },
+            {
+                "Nominee": "Hades II",
+                "Publisher": "Supergiant Games",
+                "Winner": false,
+                "Genre": "Roguelike",
+                "Image": "/imgs/hades_2.jpg"
+            },
+            {
+                "Nominee": "Split Fiction",
+                "Publisher": "Hazelight Studios",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/split_fiction-2.jpg"
+            }
+        ]
+    },
+    "Best Narrative": {
+        "weight": 8,
+        "description": "For outstanding storytelling and narrative development in a game.",
+        "nominees": [
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Kojima Productions",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/death_stranding_2.jpg"
+            },
+            {
+                "Nominee": "Ghost of Yōtei",
+                "Publisher": "Sucker Punch Productions",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/ghost_yotei.jpg"
+            },
+            {
+                "Nominee": "Kingdom Come: Deliverance II",
+                "Publisher": "Warhorse Studios",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/kcd2.jpg"
+            },
+            {
+                "Nominee": "Silent Hill f",
+                "Publisher": "Konami",
+                "Winner": false,
+                "Genre": "Horror",
+                "Image": "/imgs/silent_hill_f.jpg"
+            }
+        ]
+    },
+    "Best Art Direction": {
+        "weight": 8,
+        "description": "For outstanding creative and/or technical achievement in artistic design and animation.",
+        "nominees": [
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Kojima Productions",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/death_stranding_2.jpg"
+            },
+            {
+                "Nominee": "Ghost of Yōtei",
+                "Publisher": "Sucker Punch Productions",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/ghost_yotei.jpg"
+            },
+            {
+                "Nominee": "Hades II",
+                "Publisher": "Supergiant Games",
+                "Winner": false,
+                "Genre": "Roguelike",
+                "Image": "/imgs/hades_2.jpg"
+            },
+            {
+                "Nominee": "Hollow Knight: Silksong",
+                "Publisher": "Team Cherry",
+                "Winner": false,
+                "Genre": "Metroidvania",
+                "Image": "/imgs/hollow_knight_silksong.jpg"
+            }
+        ]
+    },
+    "Best Score and Music": {
+        "weight": 8,
+        "description": "For outstanding music, inclusive of score, original song and/or licensed soundtrack.",
+        "nominees": [
+            {
+                "Nominee": "Hollow Knight: Silksong",
+                "Publisher": "Christopher Larkin",
+                "Winner": false,
+                "Genre": "Metroidvania",
+                "Image": "/imgs/hollow_knight_silksong.jpg"
+            },
+            {
+                "Nominee": "Hades II",
+                "Publisher": "Darren Korb",
+                "Winner": false,
+                "Genre": "Roguelike",
+                "Image": "/imgs/hades_2.jpg"
+            },
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Lorien Testard",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Ghost of Yōtei",
+                "Publisher": "Toma Otowa",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/ghost_yotei.jpg"
+            },
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Woodkid & Ludvig Forssell",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/death_stranding_2.jpg"
+            }
+        ]
+    },
+    "Best Audio Design": {
+        "weight": 8,
+        "description": "Recognizing the best in-game audio, comprising sound effects, sound mixing, location sound and spatial audio.",
+        "nominees": [
+            {
+                "Nominee": "Battlefield 6",
+                "Publisher": "EA / DICE",
+                "Winner": false,
+                "Genre": "FPS",
+                "Image": "/imgs/battlefield6.jpg"
+            },
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Kojima Productions",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/death_stranding_2.jpg"
+            },
+            {
+                "Nominee": "Ghost of Yōtei",
+                "Publisher": "Sucker Punch Productions",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/ghost_yotei.jpg"
+            },
+            {
+                "Nominee": "Silent Hill f",
+                "Publisher": "Konami",
+                "Winner": false,
+                "Genre": "Horror",
+                "Image": "/imgs/silent_hill_f.jpg"
+            }
+        ]
+    },
+    "Best Performance": {
+        "weight": 8,
+        "description": "Awarded to an individual for voice-over acting, motion, and/or performance capture.",
+        "nominees": [
+            {
+                "Nominee": "Ben Starr",
+                "Publisher": "Clair Obscur: Expedition 33",
+                "Winner": false,
+                "Genre": "Role: Verso",
+                "Image": "/imgs/tga25_benstarr.png"
+            },
+            {
+                "Nominee": "Charlie Cox",
+                "Publisher": "Clair Obscur: Expedition 33",
+                "Winner": false,
+                "Genre": "Role: Gustave",
+                "Image": "/imgs/tga25_charliecox.png"
+            },
+            {
+                "Nominee": "Erika Ishii",
+                "Publisher": "Ghost of Yōtei",
+                "Winner": false,
+                "Genre": "Role: Atsu",
+                "Image": "/imgs/erika_ishii.jpg"
+            },
+            {
+                "Nominee": "Jennifer English",
+                "Publisher": "Clair Obscur: Expedition 33",
+                "Winner": false,
+                "Genre": "Role: Maelle",
+                "Image": "/imgs/tga25_jenniferenglish.png"
+            },
+            {
+                "Nominee": "Konatsu Kato",
+                "Publisher": "Silent Hill f",
+                "Winner": false,
+                "Genre": "Role: Hinako Shimizu",
+                "Image": "/imgs/konatsu_kato.jpg"
+            },
+            {
+                "Nominee": "Troy Baker",
+                "Publisher": "Indiana Jones and the Great Circle",
+                "Winner": false,
+                "Genre": "Role: Indiana Jones",
+                "Image": "/imgs/troy_baker.jpg"
+            }
+        ]
+    },
+    "Best Action Game": {
+        "weight": 5,
+        "description": "For the best game in the action genre focused primarily on combat.",
+        "nominees": [
+            {
+                "Nominee": "Battlefield 6",
+                "Publisher": "EA / DICE",
+                "Winner": false,
+                "Genre": "FPS",
+                "Image": "/imgs/battlefield6.jpg"
+            },
+            {
+                "Nominee": "Doom: The Dark Ages",
+                "Publisher": "id Software",
+                "Winner": false,
+                "Genre": "FPS",
+                "Image": "/imgs/doom_dark_ages.jpg"
+            },
+            {
+                "Nominee": "Hades II",
+                "Publisher": "Supergiant Games",
+                "Winner": false,
+                "Genre": "Roguelike",
+                "Image": "/imgs/hades_2.jpg"
+            },
+            {
+                "Nominee": "Ninja Gaiden 4",
+                "Publisher": "Team Ninja",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/ninja_gaiden_4.jpg"
+            },
+            {
+                "Nominee": "Shinobi: Art of Vengeance",
+                "Publisher": "Lizardcube / Sega",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/shinobi.jpg"
+            }
+        ]
+    },
+    "Best Action/Adventure": {
+        "weight": 5,
+        "description": "For the best action/adventure game, combining combat with traversal and puzzle solving.",
+        "nominees": [
+            {
+                "Nominee": "Death Stranding 2: On the Beach",
+                "Publisher": "Kojima Productions",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/death_stranding_2.jpg"
+            },
+            {
+                "Nominee": "Ghost of Yōtei",
+                "Publisher": "Sucker Punch Productions",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/ghost_yotei.jpg"
+            },
+            {
+                "Nominee": "Hollow Knight: Silksong",
+                "Publisher": "Team Cherry",
+                "Winner": false,
+                "Genre": "Metroidvania",
+                "Image": "/imgs/hollow_knight_silksong.jpg"
+            },
+            {
+                "Nominee": "Indiana Jones and the Great Circle",
+                "Publisher": "MachineGames",
+                "Winner": false,
+                "Genre": "Adventure",
+                "Image": "/imgs/indiana_jones.jpg"
+            },
+            {
+                "Nominee": "Split Fiction",
+                "Publisher": "Hazelight Studios",
+                "Winner": false,
+                "Genre": "Action-Adventure",
+                "Image": "/imgs/split_fiction-2.jpg"
+            }
+        ]
+    },
+    "Best RPG": {
+        "weight": 5,
+        "description": "For the best game designed with rich player character customization and progression.",
+        "nominees": [
+            {
+                "Nominee": "Avowed",
+                "Publisher": "Obsidian Entertainment",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/avowed.jpg"
+            },
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Kingdom Come: Deliverance II",
+                "Publisher": "Warhorse Studios",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/kcd2.jpg"
+            },
+            {
+                "Nominee": "Monster Hunter Wilds",
+                "Publisher": "Capcom",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/monster_hunter_wilds.jpg"
+            },
+            {
+                "Nominee": "The Outer Worlds 2",
+                "Publisher": "Obsidian Entertainment",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/outer_worlds_2.jpg"
+            }
+        ]
+    },
+    "Best Fighting Game": {
+        "weight": 5,
+        "description": "For the best game designed primarily around head-to-head combat.",
+        "nominees": [
+            {
+                "Nominee": "2XKO",
+                "Publisher": "Riot Games",
+                "Winner": false,
+                "Genre": "Fighting",
+                "Image": "/imgs/2xko.jpg"
+            },
+            {
+                "Nominee": "Capcom Fighting Collection 2",
+                "Publisher": "Capcom",
+                "Winner": false,
+                "Genre": "Fighting",
+                "Image": "/imgs/capcom_fighting.jpg"
+            },
+            {
+                "Nominee": "Fatal Fury: City of the Wolves",
+                "Publisher": "SNK",
+                "Winner": false,
+                "Genre": "Fighting",
+                "Image": "/imgs/fatal_fury.jpg"
+            },
+            {
+                "Nominee": "Mortal Kombat: Legacy Kollection",
+                "Publisher": "NetherRealm",
+                "Winner": false,
+                "Genre": "Fighting",
+                "Image": "/imgs/mortal_kombat_legacy.jpg"
+            },
+            {
+                "Nominee": "Virtua Fighter 5 R.E.V.O.",
+                "Publisher": "Sega",
+                "Winner": false,
+                "Genre": "Fighting",
+                "Image": "/imgs/virtua_fighter_5.jpg"
+            }
+        ]
+    },
+    "Best Family Game": {
+        "weight": 4,
+        "description": "For the best game appropriate for family play, irrespective of genre or platform.",
+        "nominees": [
+            {
+                "Nominee": "Donkey Kong Bananza",
+                "Publisher": "Nintendo",
+                "Winner": false,
+                "Genre": "Platformer",
+                "Image": "/imgs/donkey_kong_banaza.jpg"
+            },
+            {
+                "Nominee": "LEGO Party!",
+                "Publisher": "SMG Studio",
+                "Winner": false,
+                "Genre": "Party",
+                "Image": "/imgs/lego_party.jpg"
+            },
+            {
+                "Nominee": "LEGO Voyagers",
+                "Publisher": "Light Brick Studios",
+                "Winner": false,
+                "Genre": "Adventure",
+                "Image": "/imgs/lego_voyagers.jpg"
+            },
+            {
+                "Nominee": "Mario Kart World",
+                "Publisher": "Nintendo",
+                "Winner": false,
+                "Genre": "Racing",
+                "Image": "/imgs/mario_kart_world.jpg"
+            },
+            {
+                "Nominee": "Split Fiction 2",
+                "Publisher": "Hazelight Studios",
+                "Winner": false,
+                "Genre": "Adventure",
+                "Image": "/imgs/split_fiction-2.jpg"
+            }
+        ]
+    },
+    "Best Sim/Strategy": {
+        "weight": 5,
+        "description": "Best game focused on real time or turn-based simulation or strategy gameplay.",
+        "nominees": [
+            {
+                "Nominee": "The Alters",
+                "Publisher": "11 Bit Studios",
+                "Winner": false,
+                "Genre": "Strategy",
+                "Image": "/imgs/the_alters.jpg"
+            },
+            {
+                "Nominee": "Final Fantasy Tactics: The Ivalice Chronicles",
+                "Publisher": "Square Enix",
+                "Winner": false,
+                "Genre": "Strategy",
+                "Image": "/imgs/final_fantasy_tactics.jpg"
+            },
+            {
+                "Nominee": "Jurassic World Evolution 3",
+                "Publisher": "Frontier",
+                "Winner": false,
+                "Genre": "Sim",
+                "Image": "/imgs/jurassic_world_evolution.jpg"
+            },
+            {
+                "Nominee": "Sid Meier's Civilization VII",
+                "Publisher": "Firaxis Games",
+                "Winner": false,
+                "Genre": "Strategy",
+                "Image": "/imgs/civilization_7.jpg"
+            },
+            {
+                "Nominee": "Two Point Museum",
+                "Publisher": "Two Point Studios",
+                "Winner": false,
+                "Genre": "Sim",
+                "Image": "/imgs/two_point_museum.jpg"
+            }
+        ]
+    },
+    "Best Sports/Racing": {
+        "weight": 5,
+        "description": "For the best traditional and non-traditional sports and racing game.",
+        "nominees": [
+            {
+                "Nominee": "EA Sports FC 26",
+                "Publisher": "EA Sports",
+                "Winner": false,
+                "Genre": "Sports",
+                "Image": "/imgs/eafc_26.jpg"
+            },
+            {
+                "Nominee": "F1 25",
+                "Publisher": "Codemasters",
+                "Winner": false,
+                "Genre": "Racing",
+                "Image": "/imgs/f1_25.jpg"
+            },
+            {
+                "Nominee": "Mario Kart World",
+                "Publisher": "Nintendo",
+                "Winner": false,
+                "Genre": "Racing",
+                "Image": "/imgs/mario_kart_world.jpg"
+            },
+            {
+                "Nominee": "Rematch",
+                "Publisher": "Unknown",
+                "Winner": false,
+                "Genre": "Sports",
+                "Image": "/imgs/rematch.jpg"
+            },
+            {
+                "Nominee": "Sonic Racing: CrossWorlds",
+                "Publisher": "Sega",
+                "Winner": false,
+                "Genre": "Racing",
+                "Image": "/imgs/sonic_racing_crossworlds.jpg"
+            }
+        ]
+    },
+    "Best Multiplayer": {
+        "weight": 5,
+        "description": "For outstanding online multiplayer gameplay and design.",
+        "nominees": [
+            {
+                "Nominee": "ARC Raiders",
+                "Publisher": "Embark Studios",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/arc_raiders.jpg"
+            },
+            {
+                "Nominee": "Battlefield 6",
+                "Publisher": "EA / DICE",
+                "Winner": false,
+                "Genre": "FPS",
+                "Image": "/imgs/battlefield6.jpg"
+            },
+            {
+                "Nominee": "Elden Ring: Nightreign",
+                "Publisher": "FromSoftware",
+                "Winner": false,
+                "Genre": "Action RPG",
+                "Image": "/imgs/elden_ring_nightreign.jpg"
+            },
+            {
+                "Nominee": "Peak",
+                "Publisher": "Unknown",
+                "Winner": false,
+                "Genre": "Multiplayer",
+                "Image": "/imgs/peak.jpg"
+            },
+            {
+                "Nominee": "Split Fiction",
+                "Publisher": "Hazelight Studios",
+                "Winner": false,
+                "Genre": "Co-op",
+                "Image": "/imgs/split_fiction-2.jpg"
+            }
+        ]
+    },
+    "Best Independent Game": {
+        "weight": 6,
+        "description": "For outstanding creative and technical achievement in a game made outside the traditional publisher system.",
+        "nominees": [
+            {
+                "Nominee": "Absolum",
+                "Publisher": "Guard Crush Games",
+                "Winner": false,
+                "Genre": "Indie",
+                "Image": "/imgs/absoolum.jpg"
+            },
+            {
+                "Nominee": "Ball x Pit",
+                "Publisher": "Kenny Sun",
+                "Winner": false,
+                "Genre": "Indie",
+                "Image": "/imgs/ballxpit.jpg"
+            },
+            {
+                "Nominee": "Blue Prince",
+                "Publisher": "Dogubomb",
+                "Winner": false,
+                "Genre": "Puzzle",
+                "Image": "/imgs/blue_prince.jpg"
+            },
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Hades II",
+                "Publisher": "Supergiant Games",
+                "Winner": false,
+                "Genre": "Roguelike",
+                "Image": "/imgs/hades_2.jpg"
+            },
+            {
+                "Nominee": "Hollow Knight: Silksong",
+                "Publisher": "Team Cherry",
+                "Winner": false,
+                "Genre": "Metroidvania",
+                "Image": "/imgs/hollow_knight_silksong.jpg"
+            }
+        ]
+    },
+    "Best Debut Indie Game": {
+        "weight": 5,
+        "description": "For the best debut game created by a new independent studio.",
+        "nominees": [
+            {
+                "Nominee": "Blue Prince",
+                "Publisher": "Dogubomb",
+                "Winner": false,
+                "Genre": "Puzzle",
+                "Image": "/imgs/blue_prince.jpg"
+            },
+            {
+                "Nominee": "Clair Obscur: Expedition 33",
+                "Publisher": "Sandfall Interactive",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/expedition33.jpg"
+            },
+            {
+                "Nominee": "Despelote",
+                "Publisher": "Panic",
+                "Winner": false,
+                "Genre": "Adventure",
+                "Image": "/imgs/despelote.jpg"
+            },
+            {
+                "Nominee": "Dispatch",
+                "Publisher": "AdHoc Studio",
+                "Winner": false,
+                "Genre": "Narrative",
+                "Image": "/imgs/dispatch.jpg"
+            }
+        ]
+    },
+    "Best Mobile Game": {
+        "weight": 3,
+        "description": "For the best game playable on a dedicated mobile device.",
+        "nominees": [
+            {
+                "Nominee": "Destiny: Rising",
+                "Publisher": "NetEase Games",
+                "Winner": false,
+                "Genre": "Shooter",
+                "Image": "/imgs/destiny_rising.jpg"
+            },
+            {
+                "Nominee": "Persona 5: The Phantom X",
+                "Publisher": "Sega / Atlus",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/persona5_phantomx.jpg"
+            },
+            {
+                "Nominee": "Sonic Rumble",
+                "Publisher": "Sega",
+                "Winner": false,
+                "Genre": "Party",
+                "Image": "/imgs/sonic_rumble.jpg"
+            },
+            {
+                "Nominee": "Umamusume: Pretty Derby",
+                "Publisher": "Cygames",
+                "Winner": false,
+                "Genre": "Sim",
+                "Image": "/imgs/umumusume.jpg"
+            },
+            {
+                "Nominee": "Wuthering Waves",
+                "Publisher": "Kuro Games",
+                "Winner": false,
+                "Genre": "RPG",
+                "Image": "/imgs/wuthering_waves.jpg"
+            }
+        ]
+    },
+    "Best VR/AR": {
+        "weight": 3,
+        "description": "For the best game experience playable in virtual or augmented reality.",
+        "nominees": [
+            {
+                "Nominee": "Alien: Rogue Incursion",
+                "Publisher": "Survios",
+                "Winner": false,
+                "Genre": "Horror",
+                "Image": "/imgs/alien_rogue_incursion.jpg"
+            },
+            {
+                "Nominee": "Arken Age",
+                "Publisher": "VitruviusVR",
+                "Winner": false,
+                "Genre": "Adventure",
+                "Image": "/imgs/arken_age.jpg"
+            },
+            {
+                "Nominee": "Ghost Town",
+                "Publisher": "Fireproof Games",
+                "Winner": false,
+                "Genre": "Puzzle",
+                "Image": "/imgs/ghost_town.jpg"
+            },
+            {
+                "Nominee": "Marvel's Deadpool VR",
+                "Publisher": "Oculus Studios",
+                "Winner": false,
+                "Genre": "Action",
+                "Image": "/imgs/deadpool_vr.jpg"
+            },
+            {
+                "Nominee": "The Midnight Walk",
+                "Publisher": "MoonHood",
+                "Winner": false,
+                "Genre": "Adventure",
+                "Image": "/imgs/the_midnight_walk.jpg"
+            }
+        ]
+    }
+}
