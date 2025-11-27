@@ -14,6 +14,15 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ error: "Missing fields" });
     }
 
+    // Check if user already exists
+    const existingUser = await prisma.user.findUnique({
+      where: { username },
+    });
+
+    if (existingUser) {
+      return res.status(409).json({ error: "Username already exists" });
+    }
+
     const hashedPassword = bcrypt.hashSync(password, 8);
 
     const user = await prisma.user.create({
@@ -31,6 +40,10 @@ router.post("/register", async (req, res) => {
     res.json({ token });
   } catch (error) {
     console.error("Error registering user:", error);
+    // Handle Prisma unique constraint violation explicitly as a fallback
+    if (error.code === 'P2002') {
+        return res.status(409).json({ error: "Username already exists" });
+    }
     res.status(503).json({ error: "Internal server error" });
   }
 });
