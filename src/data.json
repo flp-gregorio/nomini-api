@@ -944,7 +944,7 @@
                 "Publisher": "Don't Nod",
                 "Winner": false,
                 "Genre": "Narrative",
-                "Image": "/imgs/lost_records_bloom_rage.jpg"
+                "Image": "/imgs/lost_records.jpg"
             },
             {
                 "Nominee": "South of Midnight",
@@ -978,28 +978,28 @@
                 "Publisher": "Netflix",
                 "Winner": false,
                 "Genre": "Anime",
-                "Image": "/imgs/devil_may_cry_anime.jpg"
+                "Image": "/imgs/devil_may_cry.jpg"
             },
             {
                 "Nominee": "Splinter Cell: Deathwatch",
                 "Publisher": "Netflix",
                 "Winner": false,
                 "Genre": "Anime",
-                "Image": "/imgs/splinter_cell_deathwatch.jpg"
+                "Image": "/imgs/splinter_cell.jpg"
             },
             {
                 "Nominee": "The Last of Us Season 2",
                 "Publisher": "HBO",
                 "Winner": false,
                 "Genre": "Series",
-                "Image": "/imgs/tlou_season_2.jpg"
+                "Image": "/imgs/tlou_season2.jpg"
             },
             {
                 "Nominee": "Until Dawn",
                 "Publisher": "PlayStation Productions",
                 "Winner": false,
                 "Genre": "Film",
-                "Image": "/imgs/until_dawn_movie.jpg"
+                "Image": "/imgs/until_dawn.jpg"
             }
         ]
     },
@@ -1026,7 +1026,7 @@
                 "Publisher": "Insomniac Games",
                 "Winner": false,
                 "Genre": "Action",
-                "Image": "/imgs/marvels_wolverine.jpg"
+                "Image": "/imgs/wolverine.jpg"
             },
             {
                 "Nominee": "Resident Evil Requiem",
@@ -1040,7 +1040,7 @@
                 "Publisher": "CD Projekt Red",
                 "Winner": false,
                 "Genre": "RPG",
-                "Image": "/imgs/the_witcher_4.jpg"
+                "Image": "/imgs/witcher_4.jpg"
             }
         ]
     },
@@ -1060,14 +1060,14 @@
                 "Publisher": "Twitch",
                 "Winner": false,
                 "Genre": "Creator",
-                "Image": "/imgs/kai_cenat.jpg"
+                "Image": "/imgs/kaicenat.jpg"
             },
             {
                 "Nominee": "MoistCr1TiKaL",
                 "Publisher": "YouTube",
                 "Winner": false,
                 "Genre": "Creator",
-                "Image": "/imgs/moistcr1tikal.jpg"
+                "Image": "/imgs/moistcritical.jpg"
             },
             {
                 "Nominee": "Sakura Miko",
@@ -1081,7 +1081,7 @@
                 "Publisher": "Unknown",
                 "Winner": false,
                 "Genre": "Creator",
-                "Image": "/imgs/the_burnt_peanut.jpg"
+                "Image": "/imgs/content-creator-of-the-year-the-burnt-peanut.jpg"
             }
         ]
     },
@@ -1115,7 +1115,7 @@
                 "Publisher": "Moonton",
                 "Winner": false,
                 "Genre": "MOBA",
-                "Image": "/imgs/mobile_legends_bang_bang.jpg"
+                "Image": "/imgs/mobile_legends.jpg"
             },
             {
                 "Nominee": "Valorant",
@@ -1149,7 +1149,7 @@
                 "Publisher": "Paper Rex",
                 "Winner": false,
                 "Genre": "Valorant",
-                "Image": "/imgs/f0rsaken.jpg"
+                "Image": "/imgs/forsaken.jpg"
             },
             {
                 "Nominee": "Kakeru",
@@ -1183,7 +1183,7 @@
                 "Publisher": "League of Legends",
                 "Winner": false,
                 "Genre": "Team",
-                "Image": "/imgs/geng.jpg"
+                "Image": "/imgs/gen-g.jpg"
             },
             {
                 "Nominee": "NRG",
@@ -1197,7 +1197,7 @@
                 "Publisher": "Dota 2",
                 "Winner": false,
                 "Genre": "Team",
-                "Image": "/imgs/team_falcons.jpg"
+                "Image": "/imgs/falcons.jpg"
             },
             {
                 "Nominee": "Team Liquid PH",
@@ -1211,7 +1211,7 @@
                 "Publisher": "Counter-Strike 2",
                 "Winner": false,
                 "Genre": "Team",
-                "Image": "/imgs/team_vitality.jpg"
+                "Image": "/imgs/teamvitalty.jpg"
             }
         ]
     }
