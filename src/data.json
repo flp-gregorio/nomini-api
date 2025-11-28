@@ -90,7 +90,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Action-Adventure",
-                "Image": "/imgs/split_fiction_2.jpg"
+                "Image": "/imgs/split_fiction-2.jpg"
             }
         ]
     },
@@ -384,7 +384,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Action-Adventure",
-                "Image": "/imgs/split_fiction_2.jpg"
+                "Image": "/imgs/split_fiction-2.jpg"
             }
         ]
     },
@@ -507,7 +507,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Adventure",
-                "Image": "/imgs/split_fiction_2.jpg"
+                "Image": "/imgs/split_fiction-2.jpg"
             }
         ]
     },
@@ -630,7 +630,7 @@
                 "Publisher": "Hazelight Studios",
                 "Winner": false,
                 "Genre": "Co-op",
-                "Image": "/imgs/split_fiction_2.jpg"
+                "Image": "/imgs/split_fiction-2.jpg"
             }
         ]
     },
@@ -1214,5 +1214,10 @@
                 "Image": "/imgs/teamvitalty.jpg"
             }
         ]
+    },
+    "Voting Complete": {
+        "weight": 0,
+        "description": "Thank you for voting! The results will be announced live with the show.",
+        "nominees": []
     }
 }
