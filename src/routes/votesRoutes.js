@@ -3,6 +3,18 @@ import prisma from "../prismaClient.js";
 
 const router = express.Router();
 
+// TODO: Update this to the actual event start time
+const EVENT_START_TIME = new Date("2025-12-12T21:30:00-03:00");
+
+const checkVotingOpen = (req, res, next) => {
+  if (new Date() >= EVENT_START_TIME) {
+    return res
+      .status(403)
+      .json({ message: "Voting has closed as the event has started." });
+  }
+  next();
+};
+
 // --------------------------------------------------------
 // GET /votes/user
 // Get ALL votes for the currently logged-in user
@@ -25,8 +37,6 @@ router.get("/user", async (req, res) => {
   }
 });
 
-// ... (Rest of your file: /stats, POST /, PUT /:id, DELETE /:id) ...
-// Ensure you keep the rest of the file content!
 // --------------------------------------------------------
 // GET /votes/stats
 // Returns the vote count for every nominee in every category
@@ -70,7 +80,7 @@ router.get("/stats", async (req, res) => {
 // POST /votes
 // Cast a vote (Create)
 // --------------------------------------------------------
-router.post("/", async (req, res) => {
+router.post("/", checkVotingOpen, async (req, res) => {
   const { category, nominee } = req.body;
 
   if (!category || !nominee) {
@@ -104,7 +114,7 @@ router.post("/", async (req, res) => {
 // PUT /votes/:id
 // Update a vote
 // --------------------------------------------------------
-router.put("/:id", async (req, res) => {
+router.put("/:id", checkVotingOpen, async (req, res) => {
   const { id } = req.params;
   const { nominee } = req.body;
 
@@ -140,7 +150,7 @@ router.put("/:id", async (req, res) => {
 // DELETE /votes/:id
 // Remove a vote
 // --------------------------------------------------------
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", checkVotingOpen, async (req, res) => {
   const { id } = req.params;
 
   try {
