@@ -78,4 +78,61 @@ router.post("/login", async (req, res) => {
   }
 });
 
+import authMiddleware from "../middleware/authMiddleware.js";
+
+// GET USER INFO ENDPOINT /auth/me
+router.get("/me", authMiddleware, async (req, res) => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.userId },
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json({ username: user.username, email: user.email });
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    res.status(503).json({ error: "Internal server error" });
+  }
+});
+
+// UPDATE PASSWORD ENDPOINT /auth/change-password
+router.put("/change-password", authMiddleware, async (req, res) => {
+    const { currentPassword, newPassword } = req.body;
+  
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ error: "Missing fields" });
+    }
+  
+    try {
+      const user = await prisma.user.findUnique({
+        where: { id: req.userId },
+      });
+  
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+  
+      const passwordIsValid = bcrypt.compareSync(currentPassword, user.password);
+  
+      if (!passwordIsValid) {
+        return res.status(401).json({ error: "Invalid current password" });
+      }
+  
+      const hashedPassword = bcrypt.hashSync(newPassword, 8);
+  
+      await prisma.user.update({
+        where: { id: req.userId },
+        data: { password: hashedPassword },
+      });
+  
+      res.json({ message: "Password updated successfully" });
+    } catch (error) {
+      console.error("Error updating password:", error);
+      res.status(503).json({ error: "Internal server error" });
+    }
+  });
+
 export default router;
