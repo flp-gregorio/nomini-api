@@ -6,7 +6,7 @@
       {
         "Nominee": "Clair Obscur: Expedition 33",
         "Publisher": "Sandfall Interactive",
-        "Winner": false,
+        "Winner": true,
         "Genre": "RPG",
         "Description": "A groundbreaking turn-based RPG with real-time mechanics and stunning visuals.",
         "Image": "/imgs/expedition33.jpg"
