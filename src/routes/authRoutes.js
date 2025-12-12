@@ -34,15 +34,15 @@ router.post("/register", async (req, res) => {
     });
 
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: "24h",
+      expiresIn: "1h",
     });
 
     res.json({ token });
   } catch (error) {
     console.error("Error registering user:", error);
     // Handle Prisma unique constraint violation explicitly as a fallback
-    if (error.code === 'P2002') {
-        return res.status(409).json({ error: "Username already exists" });
+    if (error.code === "P2002") {
+      return res.status(409).json({ error: "Username already exists" });
     }
     res.status(503).json({ error: "Internal server error" });
   }
@@ -69,7 +69,7 @@ router.post("/login", async (req, res) => {
     console.log(user);
 
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: "24h",
+      expiresIn: "1h",
     });
     res.json({ token });
   } catch (error) {
@@ -100,39 +100,39 @@ router.get("/me", authMiddleware, async (req, res) => {
 
 // UPDATE PASSWORD ENDPOINT /auth/change-password
 router.put("/change-password", authMiddleware, async (req, res) => {
-    const { currentPassword, newPassword } = req.body;
-  
-    if (!currentPassword || !newPassword) {
-      return res.status(400).json({ error: "Missing fields" });
+  const { currentPassword, newPassword } = req.body;
+
+  if (!currentPassword || !newPassword) {
+    return res.status(400).json({ error: "Missing fields" });
+  }
+
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.userId },
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
     }
-  
-    try {
-      const user = await prisma.user.findUnique({
-        where: { id: req.userId },
-      });
-  
-      if (!user) {
-        return res.status(404).json({ error: "User not found" });
-      }
-  
-      const passwordIsValid = bcrypt.compareSync(currentPassword, user.password);
-  
-      if (!passwordIsValid) {
-        return res.status(401).json({ error: "Invalid current password" });
-      }
-  
-      const hashedPassword = bcrypt.hashSync(newPassword, 8);
-  
-      await prisma.user.update({
-        where: { id: req.userId },
-        data: { password: hashedPassword },
-      });
-  
-      res.json({ message: "Password updated successfully" });
-    } catch (error) {
-      console.error("Error updating password:", error);
-      res.status(503).json({ error: "Internal server error" });
+
+    const passwordIsValid = bcrypt.compareSync(currentPassword, user.password);
+
+    if (!passwordIsValid) {
+      return res.status(401).json({ error: "Invalid current password" });
     }
-  });
+
+    const hashedPassword = bcrypt.hashSync(newPassword, 8);
+
+    await prisma.user.update({
+      where: { id: req.userId },
+      data: { password: hashedPassword },
+    });
+
+    res.json({ message: "Password updated successfully" });
+  } catch (error) {
+    console.error("Error updating password:", error);
+    res.status(503).json({ error: "Internal server error" });
+  }
+});
 
 export default router;
