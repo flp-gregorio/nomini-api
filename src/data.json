@@ -573,7 +573,7 @@
       {
         "Nominee": "Mario Kart World",
         "Publisher": "Nintendo",
-        "Winner": false,
+        "Winner": true,
         "Genre": "Racing",
         "Image": "/imgs/mario_kart_world.jpg"
       },
@@ -1209,7 +1209,7 @@
       {
         "Nominee": "Team Vitality",
         "Publisher": "Counter-Strike 2",
-        "Winner": false,
+        "Winner": true,
         "Genre": "Team",
         "Image": "/imgs/teamvitalty.jpg"
       }
