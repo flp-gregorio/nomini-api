@@ -4,7 +4,7 @@ import prisma from "../prismaClient.js";
 const router = express.Router();
 
 // TODO: Update this to the actual event start time
-const EVENT_START_TIME = new Date("2025-12-12T21:30:00-03:00");
+const EVENT_START_TIME = new Date("2025-12-11T21:30:00-03:00");
 
 const checkVotingOpen = (req, res, next) => {
   if (new Date() >= EVENT_START_TIME) {
