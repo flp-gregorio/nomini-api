@@ -1,6 +1,6 @@
-# CritPick API 🚀
+# Nomini API 🚀
 
-This is the backend API for the CritPick application. It handles user authentication, vote storage, and serving category data.
+This is the backend API for the Nomini application. It handles user authentication, vote storage, and serving category data.
 
 ## Project Structure
 
