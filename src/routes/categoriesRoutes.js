@@ -1,60 +1,81 @@
 import express from "express";
-import fs from "fs";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
 import prisma from "../prismaClient.js";
+import authMiddleware from "../middleware/authMiddleware.js";
+import adminMiddleware from "../middleware/adminMiddleware.js";
 
 const router = express.Router();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const getData = () => {
+// GET /categories — returns all categories for the latest (or specified) year
+router.get("/", async (req, res) => {
   try {
-    const dataPath = path.join(__dirname, "../data.json");
-    const rawData = fs.readFileSync(dataPath, "utf-8");
-    return JSON.parse(rawData);
-  } catch (err) {
-    console.error("Error reading data.json:", err.message);
-    return {};
-  }
-};
+    const year = req.query.year ? parseInt(req.query.year) : null;
 
-router.get("/", (req, res) => {
-  const data = getData();
-  const categories = Object.keys(data).map((key, index) => ({
-    id: index + 1,
-    title: key,
-    description: data[key].description,
-  }));
-  res.json(categories);
-});
+    // If no year specified, find the latest year
+    let targetYear = year;
+    if (!targetYear) {
+      const latest = await prisma.category.findFirst({
+        orderBy: { year: "desc" },
+        select: { year: true },
+      });
+      targetYear = latest ? latest.year : new Date().getFullYear();
+    }
 
-router.get("/:id/nominees", async (req, res) => {
-  const data = getData();
-  const keys = Object.keys(data);
-  const id = parseInt(req.params.id);
-
-  if (isNaN(id) || id < 1 || id > keys.length) {
-    return res.status(404).json({ message: "Category not found" });
-  }
-
-  const categoryKey = keys[id - 1];
-  const categoryData = data[categoryKey];
-
-  try {
-    const winnerRecord = await prisma.winner.findUnique({
-      where: { category: categoryKey },
+    const categories = await prisma.category.findMany({
+      where: { year: targetYear },
+      orderBy: { id: "asc" },
     });
 
-    const nominees = categoryData.nominees.map(n => ({
-      id: n.Nominee,
-      name: n.Nominee,
-      publisher: n.Publisher,
-      image: n.Image,
-      description: n.Description,
-      genre: n.Genre,
-      Winner: winnerRecord ? n.Nominee === winnerRecord.nominee : n.Winner
+    const result = categories.map((cat) => ({
+      id: cat.id,
+      title: cat.title,
+      description: cat.description,
+      weight: cat.weight,
+      year: cat.year,
+    }));
+
+    res.json(result);
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    res.status(500).json({ message: "Failed to fetch categories" });
+  }
+});
+
+// GET /categories/:id/nominees — returns nominees for a specific category
+router.get("/:id/nominees", async (req, res) => {
+  const id = parseInt(req.params.id);
+
+  if (isNaN(id)) {
+    return res.status(400).json({ message: "Invalid category ID" });
+  }
+
+  try {
+    const category = await prisma.category.findUnique({
+      where: { id },
+      include: { nominees: true },
+    });
+
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    // Check for winner in the Winner table
+    let winnerRecord = null;
+    try {
+      winnerRecord = await prisma.winner.findUnique({
+        where: { category: category.title },
+      });
+    } catch {
+      // Winner table might not exist yet — safe to ignore
+    }
+
+    const nominees = category.nominees.map((n) => ({
+      id: n.name,
+      name: n.name,
+      publisher: n.publisher,
+      image: n.image,
+      description: n.description,
+      genre: n.genre,
+      Winner: winnerRecord ? n.name === winnerRecord.nominee : false,
     }));
 
     res.json(nominees);
@@ -64,38 +85,38 @@ router.get("/:id/nominees", async (req, res) => {
   }
 });
 
-router.post("/winner", async (req, res) => {
-  const { category, nominee, adminKey } = req.body;
-
-  // Simple Admin Key Check
-  // TODO: Move this to environment variable for better security
-  if (adminKey !== process.env.ADMIN_KEY) {
-    return res.status(403).json({ message: "Invalid Admin Key" });
-  }
+// POST /categories/winner — admin sets the winner for a category
+// Protected by authMiddleware + adminMiddleware (set in index.js)
+router.post("/winner", authMiddleware, adminMiddleware, async (req, res) => {
+  const { category, nominee } = req.body;
 
   if (!category || !nominee) {
     return res.status(400).json({ message: "Category and Nominee are required" });
   }
 
-  const data = getData();
-
-  if (!data[category]) {
-    return res.status(404).json({ message: "Category not found" });
-  }
-
-  // Check if the nominee exists in the category
-  const nomineeExists = data[category].nominees.some(n => n.Nominee === nominee);
-  if (!nomineeExists) {
-    return res.status(404).json({ message: "Nominee not found in this category" });
-  }
-
-  // Update or insert winner in the database
   try {
+    // Verify the category exists
+    const cat = await prisma.category.findFirst({
+      where: { title: category },
+      include: { nominees: true },
+    });
+
+    if (!cat) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    // Verify the nominee exists in this category
+    const nomineeExists = cat.nominees.some((n) => n.name === nominee);
+    if (!nomineeExists) {
+      return res.status(404).json({ message: "Nominee not found in this category" });
+    }
+
     await prisma.winner.upsert({
       where: { category: category },
       update: { nominee: nominee },
       create: { category: category, nominee: nominee },
     });
+
     res.json({ message: `Winner set for ${category}: ${nominee}` });
   } catch (err) {
     console.error("Error writing winner to database:", err);

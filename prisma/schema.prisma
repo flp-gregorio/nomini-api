@@ -14,10 +14,11 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  username String @unique
+  id       Int     @id @default(autoincrement())
+  username String  @unique
   email    String
   password String
+  admin    Boolean @default(false)
   votes    Vote[]
 }
 
@@ -29,6 +30,28 @@ model Vote {
   user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, category])
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String?
+  weight      Int       @default(1)
+  year        Int
+  nominees    Nominee[]
+
+  @@unique([title, year])
+}
+
+model Nominee {
+  id          Int      @id @default(autoincrement())
+  name        String
+  publisher   String?
+  genre       String?
+  description String?
+  image       String?
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 }
 
 model Winner {

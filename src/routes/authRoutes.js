@@ -91,7 +91,7 @@ router.get("/me", authMiddleware, async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    res.json({ username: user.username, email: user.email });
+    res.json({ username: user.username, email: user.email, admin: user.admin });
   } catch (error) {
     console.error("Error fetching user:", error);
     res.status(503).json({ error: "Internal server error" });

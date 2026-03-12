@@ -19,11 +19,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../../goty-bet/dist")));
 
+// Public routes
 app.use('/auth', authRoutes);
-app.use('/votes', authMiddleware, votesRoutes);
-app.use('/leaderboard', authMiddleware, leaderboardRoutes);
 app.use('/categories', categoriesRoutes);
 app.use('/event', eventRoutes);
+
+// Authenticated routes
+app.use('/votes', authMiddleware, votesRoutes);
+app.use('/leaderboard', authMiddleware, leaderboardRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running 🚀");

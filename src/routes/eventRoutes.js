@@ -1,12 +1,13 @@
 import express from "express";
 import prisma from "../prismaClient.js";
+import authMiddleware from "../middleware/authMiddleware.js";
+import adminMiddleware from "../middleware/adminMiddleware.js";
 
 const router = express.Router();
 
-// Singleton ID for the event config row
 const EVENT_CONFIG_ID = 1;
 
-// GET /event - Returns the current event date, or null if TBA
+// GET /event - Public, returns the current event date or null (TBA)
 router.get("/", async (req, res) => {
   try {
     const config = await prisma.eventConfig.findUnique({
@@ -25,16 +26,11 @@ router.get("/", async (req, res) => {
 });
 
 // POST /event - Admin sets or clears the event date
-// Body: { adminKey: string, eventDate: string | null }
-router.post("/", async (req, res) => {
-  const { adminKey, eventDate } = req.body;
-
-  if (adminKey !== process.env.ADMIN_KEY) {
-    return res.status(403).json({ message: "Invalid Admin Key" });
-  }
+// Protected by authMiddleware + adminMiddleware (set in index.js)
+router.post("/", authMiddleware, adminMiddleware, async (req, res) => {
+  const { eventDate } = req.body;
 
   try {
-    // eventDate can be an ISO date string or null (TBA)
     const parsedDate = eventDate ? new Date(eventDate) : null;
 
     if (eventDate && isNaN(parsedDate.getTime())) {
