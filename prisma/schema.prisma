@@ -36,3 +36,8 @@ model Winner {
   category String @unique
   nominee  String
 }
+
+model EventConfig {
+  id        Int       @id @default(autoincrement())
+  eventDate DateTime?
+}

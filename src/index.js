@@ -7,6 +7,7 @@ import votesRoutes from './routes/votesRoutes.js';
 import authMiddleware from './middleware/authMiddleware.js';
 import leaderboardRoutes from './routes/leaderboardRoutes.js';
 import categoriesRoutes from './routes/categoriesRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,6 +23,7 @@ app.use('/auth', authRoutes);
 app.use('/votes', authMiddleware, votesRoutes);
 app.use('/leaderboard', authMiddleware, leaderboardRoutes);
 app.use('/categories', categoriesRoutes);
+app.use('/event', eventRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running 🚀");
