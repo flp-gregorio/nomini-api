@@ -5,6 +5,21 @@ import adminMiddleware from "../middleware/adminMiddleware.js";
 
 const router = express.Router();
 
+// GET /categories/years — returns all distinct years available
+router.get("/years", async (req, res) => {
+  try {
+    const results = await prisma.category.findMany({
+      select: { year: true },
+      distinct: ["year"],
+      orderBy: { year: "desc" },
+    });
+    res.json(results.map((r) => r.year));
+  } catch (error) {
+    console.error("Error fetching years:", error);
+    res.status(500).json({ message: "Failed to fetch years" });
+  }
+});
+
 // GET /categories — returns all categories for the latest (or specified) year
 router.get("/", async (req, res) => {
   try {

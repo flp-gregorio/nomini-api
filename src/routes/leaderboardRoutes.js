@@ -3,8 +3,13 @@ import prisma from "../prismaClient.js";
 
 const router = express.Router();
 
+// GET /leaderboard — returns scored leaderboard
+// ?year=XXXX → filter to categories of that year only
+// No year param → global (all years combined)
 router.get("/", async (req, res) => {
   try {
+    const year = req.query.year ? parseInt(req.query.year) : null;
+
     const users = await prisma.user.findMany({
       select: {
         id: true,
@@ -24,15 +29,21 @@ router.get("/", async (req, res) => {
       console.warn("Winner table not available:", winnerErr.message);
     }
 
-    // Fetch all categories with their weights
+    // Fetch categories with weights, optionally filtered by year
     let categoryWeights = {};
+    let validCategories = null; // null = all categories valid (global)
     try {
+      const where = year ? { year } : {};
       const categories = await prisma.category.findMany({
+        where,
         select: { title: true, weight: true },
       });
       categories.forEach((c) => {
         categoryWeights[c.title] = c.weight;
       });
+      if (year) {
+        validCategories = new Set(categories.map((c) => c.title));
+      }
     } catch {
       // If Category table doesn't exist yet, use default weight of 1
     }
@@ -42,6 +53,10 @@ router.get("/", async (req, res) => {
 
       user.votes.forEach((vote) => {
         const categoryKey = vote.category;
+
+        // If filtering by year, skip categories not in that year
+        if (validCategories && !validCategories.has(categoryKey)) return;
+
         const winningNomineeName = winnersMap[categoryKey];
 
         if (winningNomineeName && winningNomineeName === vote.nominee) {
