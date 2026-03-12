@@ -30,3 +30,9 @@ model Vote {
 
   @@unique([userId, category])
 }
+
+model Winner {
+  id       Int    @id @default(autoincrement())
+  category String @unique
+  nominee  String
+}

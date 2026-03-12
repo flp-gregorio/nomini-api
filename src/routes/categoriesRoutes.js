@@ -2,6 +2,7 @@ import express from "express";
 import fs from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import prisma from "../prismaClient.js";
 
 const router = express.Router();
 
@@ -29,7 +30,7 @@ router.get("/", (req, res) => {
   res.json(categories);
 });
 
-router.get("/:id/nominees", (req, res) => {
+router.get("/:id/nominees", async (req, res) => {
   const data = getData();
   const keys = Object.keys(data);
   const id = parseInt(req.params.id);
@@ -41,20 +42,29 @@ router.get("/:id/nominees", (req, res) => {
   const categoryKey = keys[id - 1];
   const categoryData = data[categoryKey];
 
-  const nominees = categoryData.nominees.map(n => ({
-    id: n.Nominee,
-    name: n.Nominee,
-    publisher: n.Publisher,
-    image: n.Image,
-    description: n.Description,
-    genre: n.Genre,
-    Winner: n.Winner
-  }));
+  try {
+    const winnerRecord = await prisma.winner.findUnique({
+      where: { category: categoryKey },
+    });
 
-  res.json(nominees);
+    const nominees = categoryData.nominees.map(n => ({
+      id: n.Nominee,
+      name: n.Nominee,
+      publisher: n.Publisher,
+      image: n.Image,
+      description: n.Description,
+      genre: n.Genre,
+      Winner: winnerRecord ? n.Nominee === winnerRecord.nominee : n.Winner
+    }));
+
+    res.json(nominees);
+  } catch (error) {
+    console.error("Error fetching nominees:", error);
+    res.status(500).json({ message: "Failed to fetch nominees" });
+  }
 });
 
-router.post("/winner", (req, res) => {
+router.post("/winner", async (req, res) => {
   const { category, nominee, adminKey } = req.body;
 
   // Simple Admin Key Check
@@ -73,28 +83,22 @@ router.post("/winner", (req, res) => {
     return res.status(404).json({ message: "Category not found" });
   }
 
-  // Update winners
-  let found = false;
-  data[category].nominees.forEach((n) => {
-    if (n.Nominee === nominee) {
-      n.Winner = true;
-      found = true;
-    } else {
-      n.Winner = false;
-    }
-  });
-
-  if (!found) {
+  // Check if the nominee exists in the category
+  const nomineeExists = data[category].nominees.some(n => n.Nominee === nominee);
+  if (!nomineeExists) {
     return res.status(404).json({ message: "Nominee not found in this category" });
   }
 
-  // Write back to file
+  // Update or insert winner in the database
   try {
-    const dataPath = path.join(__dirname, "../data.json");
-    fs.writeFileSync(dataPath, JSON.stringify(data, null, 4), "utf-8");
+    await prisma.winner.upsert({
+      where: { category: category },
+      update: { nominee: nominee },
+      create: { category: category, nominee: nominee },
+    });
     res.json({ message: `Winner set for ${category}: ${nominee}` });
   } catch (err) {
-    console.error("Error writing data.json:", err);
+    console.error("Error writing winner to database:", err);
     res.status(500).json({ message: "Failed to save winner" });
   }
 });

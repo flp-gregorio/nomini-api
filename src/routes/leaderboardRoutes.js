@@ -24,12 +24,21 @@ router.get("/", async (req, res) => {
   try {
     const staticData = getData();
 
-    const users = await prisma.user.findMany({
-      select: {
-        id: true,
-        username: true,
-        votes: true, 
-      },
+    const [users, winnersData] = await Promise.all([
+      prisma.user.findMany({
+        select: {
+          id: true,
+          username: true,
+          votes: true, 
+        },
+      }),
+      prisma.winner.findMany()
+    ]);
+    
+    // Create a map for quick winner lookup
+    const winnersMap = {};
+    winnersData.forEach(w => {
+      winnersMap[w.category] = w.nominee;
     });
 
     const leaderboard = users.map((user) => {
@@ -40,11 +49,21 @@ router.get("/", async (req, res) => {
         const categoryData = staticData[categoryKey];
 
         if (categoryData) {
-          const winningNominee = categoryData.nominees.find(
-            (n) => n.Winner === true || n.winner === true
-          );
+          // Check against the winner from database
+          const winningNomineeName = winnersMap[categoryKey];
 
-          if (winningNominee && winningNominee.Nominee === vote.nominee) {
+          // Fallback to data.json if no winner in DB, to maintain backward compatibility
+          let isWinner = false;
+          if (winningNomineeName) {
+            isWinner = winningNomineeName === vote.nominee;
+          } else {
+            const fallbackWinner = categoryData.nominees.find(
+              (n) => n.Winner === true || n.winner === true
+            );
+            isWinner = fallbackWinner && fallbackWinner.Nominee === vote.nominee;
+          }
+
+          if (isWinner) {
              totalPoints += (categoryData.weight || 1);
           }
         }
