@@ -124,7 +124,8 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   username: 'username',
   email: 'email',
-  password: 'password'
+  password: 'password',
+  admin: 'admin'
 };
 
 exports.Prisma.VoteScalarFieldEnum = {
@@ -132,6 +133,35 @@ exports.Prisma.VoteScalarFieldEnum = {
   category: 'category',
   nominee: 'nominee',
   userId: 'userId'
+};
+
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  weight: 'weight',
+  year: 'year'
+};
+
+exports.Prisma.NomineeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  publisher: 'publisher',
+  genre: 'genre',
+  description: 'description',
+  image: 'image',
+  categoryId: 'categoryId'
+};
+
+exports.Prisma.WinnerScalarFieldEnum = {
+  id: 'id',
+  category: 'category',
+  nominee: 'nominee'
+};
+
+exports.Prisma.EventConfigScalarFieldEnum = {
+  id: 'id',
+  eventDate: 'eventDate'
 };
 
 exports.Prisma.SortOrder = {
@@ -144,10 +174,19 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Vote: 'Vote'
+  Vote: 'Vote',
+  Category: 'Category',
+  Nominee: 'Nominee',
+  Winner: 'Winner',
+  EventConfig: 'EventConfig'
 };
 
 /**

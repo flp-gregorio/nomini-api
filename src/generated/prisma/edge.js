@@ -96,7 +96,8 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   username: 'username',
   email: 'email',
-  password: 'password'
+  password: 'password',
+  admin: 'admin'
 };
 
 exports.Prisma.VoteScalarFieldEnum = {
@@ -104,6 +105,35 @@ exports.Prisma.VoteScalarFieldEnum = {
   category: 'category',
   nominee: 'nominee',
   userId: 'userId'
+};
+
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  weight: 'weight',
+  year: 'year'
+};
+
+exports.Prisma.NomineeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  publisher: 'publisher',
+  genre: 'genre',
+  description: 'description',
+  image: 'image',
+  categoryId: 'categoryId'
+};
+
+exports.Prisma.WinnerScalarFieldEnum = {
+  id: 'id',
+  category: 'category',
+  nominee: 'nominee'
+};
+
+exports.Prisma.EventConfigScalarFieldEnum = {
+  id: 'id',
+  eventDate: 'eventDate'
 };
 
 exports.Prisma.SortOrder = {
@@ -116,10 +146,19 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Vote: 'Vote'
+  Vote: 'Vote',
+  Category: 'Category',
+  Nominee: 'Nominee',
+  Winner: 'Winner',
+  EventConfig: 'EventConfig'
 };
 /**
  * Create the Client
@@ -129,10 +168,10 @@ const config = {
   "clientVersion": "7.0.1",
   "engineVersion": "f09f2815f091dbba658cdcd2264306d88bb5bda6",
   "activeProvider": "postgresql",
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel User {\n  id       Int    @id @default(autoincrement())\n  username String @unique\n  email    String\n  password String\n  votes    Vote[]\n}\n\nmodel Vote {\n  id       Int    @id @default(autoincrement())\n  category String\n  nominee  String\n  userId   Int\n  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)\n\n  @@unique([userId, category])\n}\n"
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel User {\n  id       Int     @id @default(autoincrement())\n  username String  @unique\n  email    String\n  password String\n  admin    Boolean @default(false)\n  votes    Vote[]\n}\n\nmodel Vote {\n  id       Int    @id @default(autoincrement())\n  category String\n  nominee  String\n  userId   Int\n  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)\n\n  @@unique([userId, category])\n}\n\nmodel Category {\n  id          Int       @id @default(autoincrement())\n  title       String\n  description String?\n  weight      Int       @default(1)\n  year        Int\n  nominees    Nominee[]\n\n  @@unique([title, year])\n}\n\nmodel Nominee {\n  id          Int      @id @default(autoincrement())\n  name        String\n  publisher   String?\n  genre       String?\n  description String?\n  image       String?\n  categoryId  Int\n  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)\n}\n\nmodel Winner {\n  id       Int    @id @default(autoincrement())\n  category String @unique\n  nominee  String\n}\n\nmodel EventConfig {\n  id        Int       @id @default(autoincrement())\n  eventDate DateTime?\n}\n"
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"votes\",\"kind\":\"object\",\"type\":\"Vote\",\"relationName\":\"UserToVote\"}],\"dbName\":null},\"Vote\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"category\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nominee\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"UserToVote\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"admin\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"votes\",\"kind\":\"object\",\"type\":\"Vote\",\"relationName\":\"UserToVote\"}],\"dbName\":null},\"Vote\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"category\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nominee\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"UserToVote\"}],\"dbName\":null},\"Category\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"weight\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"year\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"nominees\",\"kind\":\"object\",\"type\":\"Nominee\",\"relationName\":\"CategoryToNominee\"}],\"dbName\":null},\"Nominee\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"publisher\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"genre\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"image\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"categoryId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"category\",\"kind\":\"object\",\"type\":\"Category\",\"relationName\":\"CategoryToNominee\"}],\"dbName\":null},\"Winner\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"category\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nominee\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"EventConfig\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"eventDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.compilerWasm = {
   getRuntime: async () => require('./query_compiler_bg.js'),
