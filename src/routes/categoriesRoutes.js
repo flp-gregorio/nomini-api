@@ -78,7 +78,7 @@ router.post("/winner", async (req, res) => {
   }
 
   const data = getData();
-  
+
   if (!data[category]) {
     return res.status(404).json({ message: "Category not found" });
   }

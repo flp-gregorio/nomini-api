@@ -29,12 +29,12 @@ router.get("/", async (req, res) => {
         select: {
           id: true,
           username: true,
-          votes: true, 
+          votes: true,
         },
       }),
       prisma.winner.findMany()
     ]);
-    
+
     // Create a map for quick winner lookup
     const winnersMap = {};
     winnersData.forEach(w => {
@@ -64,7 +64,7 @@ router.get("/", async (req, res) => {
           }
 
           if (isWinner) {
-             totalPoints += (categoryData.weight || 1);
+            totalPoints += (categoryData.weight || 1);
           }
         }
       });
