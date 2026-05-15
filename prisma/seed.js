@@ -1,6 +1,7 @@
 import fs from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import bcrypt from "bcryptjs";
 import prisma from "../src/prismaClient.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -12,6 +13,33 @@ async function main() {
   const dataPath = path.join(__dirname, "../src/data.json");
   const rawData = fs.readFileSync(dataPath, "utf-8");
   const data = JSON.parse(rawData);
+  if (process.env.NODE_ENV !== 'production') {
+    console.log("Seeding test users...");
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash("password123", salt);
+
+    await prisma.user.upsert({
+      where: { username: "admin_dev" },
+      update: { password: hashedPassword, admin: true, email: "admin@nomini.test" },
+      create: {
+        username: "admin_dev",
+        email: "admin@nomini.test",
+        password: hashedPassword,
+        admin: true,
+      },
+    });
+
+    await prisma.user.upsert({
+      where: { username: "test_dev" },
+      update: { password: hashedPassword, admin: false, email: "user@nomini.test" },
+      create: {
+        username: "test_dev",
+        email: "user@nomini.test",
+        password: hashedPassword,
+        admin: false,
+      },
+    });
+  }
 
   console.log(`Seeding ${Object.keys(data).length} categories for year ${YEAR}...`);
 
