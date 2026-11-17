@@ -21,7 +21,7 @@ export async function getEventConfig() {
 router.get("/", async (req, res) => {
   try {
     const payload = await getEventConfig();
-    setPublicCacheHeaders(res, 30, 120);
+    setPublicCacheHeaders(res, 120);
     res.json(payload);
   } catch (error) {
     console.error("Error fetching event config:", error);

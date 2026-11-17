@@ -77,7 +77,7 @@ async function safeQuery(promise, fallback = []) {
 router.get("/years", async (req, res) => {
   try {
     const years = await fetchDistinctYears();
-    setPublicCacheHeaders(res, 60, 300);
+    setPublicCacheHeaders(res, 120);
     res.json(years);
   } catch (error) {
     console.error("Error fetching years:", error);
@@ -175,7 +175,7 @@ router.get("/winners", async (req, res) => {
       };
     });
 
-    setPublicCacheHeaders(res, 30, 120);
+    setPublicCacheHeaders(res, 120);
     res.json(payload);
   } catch (error) {
     console.error("Error fetching winners:", error);
@@ -259,7 +259,7 @@ router.get("/", async (req, res) => {
       });
     });
 
-    setPublicCacheHeaders(res, 30, 120);
+    setPublicCacheHeaders(res, 120);
     res.json(result);
   } catch (error) {
     console.error("Error fetching categories:", error);
@@ -327,7 +327,7 @@ router.get("/:id/nominees", async (req, res) => {
       return res.status(404).json({ message: "Category not found" });
     }
 
-    setPublicCacheHeaders(res, 30, 120);
+    setPublicCacheHeaders(res, 120);
     res.json(nominees);
   } catch (error) {
     console.error("Error fetching nominees:", error);

@@ -59,11 +59,12 @@ export function createCache(defaultTtlMs = 60_000) {
 export const catalogCache = createCache(60_000);
 export const eventCache = createCache(60_000);
 
-export function setPublicCacheHeaders(res, maxAge = 30, swr = 120) {
-  res.set(
-    "Cache-Control",
-    `public, max-age=${maxAge}, stale-while-revalidate=${swr}`
-  );
+export function setPublicCacheHeaders(res, maxAge = 120, swr = 0) {
+  const value =
+    swr > 0
+      ? `public, max-age=${maxAge}, stale-while-revalidate=${swr}`
+      : `public, max-age=${maxAge}`;
+  res.set("Cache-Control", value);
 }
 
 export function setPrivateNoStoreHeaders(res) {
