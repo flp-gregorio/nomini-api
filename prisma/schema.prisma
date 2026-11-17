@@ -31,6 +31,8 @@ model Vote {
   user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, category, year])
+  @@index([userId, year])
+  @@index([year, category, nominee])
 }
 
 model Category {
@@ -42,6 +44,7 @@ model Category {
   nominees    Nominee[]
 
   @@unique([title, year])
+  @@index([year, id])
 }
 
 model Nominee {
@@ -53,6 +56,8 @@ model Nominee {
   image       String?
   categoryId  Int
   category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([categoryId])
 }
 
 model Winner {
@@ -62,6 +67,7 @@ model Winner {
   year     Int    @default(2025)
 
   @@unique([category, year])
+  @@index([year])
 }
 
 model EventConfig {

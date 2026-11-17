@@ -5,7 +5,12 @@ import { PrismaClient } from './generated/prisma/index.js'
 
 const connectionString = `${process.env.DATABASE_URL}`
 
-const pool = new pg.Pool({ connectionString })
+const pool = new pg.Pool({
+  connectionString,
+  max: 20,
+  idleTimeoutMillis: 30_000,
+  connectionTimeoutMillis: 10_000,
+});
 const adapter = new PrismaPg(pool)
 const prisma = new PrismaClient({ adapter })
 

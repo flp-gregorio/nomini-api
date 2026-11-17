@@ -1,23 +1,19 @@
 import express from "express";
 import prisma from "../prismaClient.js";
+import { getActiveYear } from "./categoriesRoutes.js";
+import { getEventConfig } from "./eventRoutes.js";
+import { setPrivateNoStoreHeaders } from "../utils/cache.js";
 
 const router = express.Router();
 
-const EVENT_CONFIG_ID = 1;
-
-async function getActiveYear() {
-  const latest = await prisma.category.findFirst({
-    orderBy: { year: "desc" },
-    select: { year: true },
-  });
-  return latest ? latest.year : new Date().getFullYear();
-}
+router.use((req, res, next) => {
+  setPrivateNoStoreHeaders(res);
+  next();
+});
 
 const checkVotingOpen = async (req, res, next) => {
   try {
-    const config = await prisma.eventConfig.findUnique({
-      where: { id: EVENT_CONFIG_ID },
-    });
+    const config = await getEventConfig();
 
     if (config?.eventDate && new Date() >= new Date(config.eventDate)) {
       return res
@@ -41,15 +37,10 @@ router.get("/user", async (req, res) => {
       ? parseInt(req.query.year, 10)
       : await getActiveYear();
 
-    // Debug: Check who is asking
-    console.log(`Fetching votes for User ID: ${req.userId} (year: ${targetYear})`);
-
     const votes = await prisma.vote.findMany({
       where: { userId: Number(req.userId), year: targetYear },
     });
 
-    console.log("Votes found in DB:", votes.length);
-    // Send response
     res.json(votes);
   } catch (error) {
     console.error("Error fetching user votes:", error);

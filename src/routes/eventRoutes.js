@@ -2,23 +2,27 @@ import express from "express";
 import prisma from "../prismaClient.js";
 import authMiddleware from "../middleware/authMiddleware.js";
 import adminMiddleware from "../middleware/adminMiddleware.js";
+import { eventCache, setPublicCacheHeaders } from "../utils/cache.js";
 
 const router = express.Router();
 
 const EVENT_CONFIG_ID = 1;
 
-// GET /event - Public, returns the current event date or null (TBA)
-router.get("/", async (req, res) => {
-  try {
+export async function getEventConfig() {
+  return eventCache.getOrSet("eventConfig", async () => {
     const config = await prisma.eventConfig.findUnique({
       where: { id: EVENT_CONFIG_ID },
     });
+    return { eventDate: config?.eventDate ?? null };
+  });
+}
 
-    if (!config) {
-      return res.json({ eventDate: null });
-    }
-
-    res.json({ eventDate: config.eventDate });
+// GET /event - Public, returns the current event date or null (TBA)
+router.get("/", async (req, res) => {
+  try {
+    const payload = await getEventConfig();
+    setPublicCacheHeaders(res, 30, 120);
+    res.json(payload);
   } catch (error) {
     console.error("Error fetching event config:", error);
     res.status(500).json({ message: "Failed to fetch event date" });
@@ -42,6 +46,8 @@ router.post("/", authMiddleware, adminMiddleware, async (req, res) => {
       update: { eventDate: parsedDate },
       create: { id: EVENT_CONFIG_ID, eventDate: parsedDate },
     });
+
+    eventCache.invalidate();
 
     res.json({
       message: parsedDate

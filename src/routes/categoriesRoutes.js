@@ -2,52 +2,264 @@ import express from "express";
 import prisma from "../prismaClient.js";
 import authMiddleware from "../middleware/authMiddleware.js";
 import adminMiddleware from "../middleware/adminMiddleware.js";
+import { catalogCache, setPublicCacheHeaders } from "../utils/cache.js";
 
 const router = express.Router();
 
-// GET /categories/years — returns all distinct years available
-router.get("/years", async (req, res) => {
-  try {
+const ARTWORK_SELECT = {
+  name: true,
+  provider: true,
+  providerGameId: true,
+  imageId: true,
+  imageUrl: true,
+  type: true,
+  width: true,
+  height: true,
+};
+
+function formatArtwork(savedArtwork) {
+  if (!savedArtwork) return null;
+  return {
+    provider: savedArtwork.provider,
+    providerGameId: savedArtwork.providerGameId,
+    imageId: savedArtwork.imageId,
+    imageUrl: savedArtwork.imageUrl,
+    type: savedArtwork.type,
+    width: savedArtwork.width,
+    height: savedArtwork.height,
+  };
+}
+
+function formatNominee(nominee, winningNomineeName, savedArtwork) {
+  return {
+    id: nominee.name,
+    name: nominee.name,
+    publisher: nominee.publisher,
+    image: savedArtwork ? savedArtwork.imageUrl : nominee.image,
+    description: nominee.description,
+    genre: nominee.genre,
+    Winner: winningNomineeName ? nominee.name === winningNomineeName : false,
+    artwork: formatArtwork(savedArtwork),
+  };
+}
+
+export async function getActiveYear() {
+  return catalogCache.getOrSet("activeYear", async () => {
+    const latest = await prisma.category.findFirst({
+      orderBy: { year: "desc" },
+      select: { year: true },
+    });
+    return latest ? latest.year : new Date().getFullYear();
+  });
+}
+
+async function fetchDistinctYears() {
+  return catalogCache.getOrSet("years", async () => {
     const results = await prisma.category.findMany({
       select: { year: true },
       distinct: ["year"],
       orderBy: { year: "desc" },
     });
-    res.json(results.map((r) => r.year));
+    return results.map((r) => r.year);
+  });
+}
+
+// Safe wrapper for optional tables if migrations haven't been run in an environment
+async function safeQuery(promise, fallback = []) {
+  try {
+    return await promise;
+  } catch {
+    return fallback;
+  }
+}
+
+// GET /categories/years — returns all distinct years available
+router.get("/years", async (req, res) => {
+  try {
+    const years = await fetchDistinctYears();
+    setPublicCacheHeaders(res, 60, 300);
+    res.json(years);
   } catch (error) {
     console.error("Error fetching years:", error);
     res.status(500).json({ message: "Failed to fetch years" });
   }
 });
 
-// GET /categories — returns all categories for the latest (or specified) year
-router.get("/", async (req, res) => {
+// GET /categories/winners — consolidated winners payload for a year (or latest year)
+router.get("/winners", async (req, res) => {
+  const rawYear = req.query.year;
+  const parsedYear = rawYear ? parseInt(rawYear, 10) : null;
+  if (rawYear && isNaN(parsedYear)) {
+    return res.status(400).json({ message: "Invalid year parameter" });
+  }
+
   try {
-    const year = req.query.year ? parseInt(req.query.year) : null;
+    const cacheKey = `winners:${parsedYear ?? "latest"}`;
+    const payload = await catalogCache.getOrSet(cacheKey, async () => {
+      const years = await fetchDistinctYears();
+      const targetYear =
+        parsedYear ?? (years.length > 0 ? years[0] : new Date().getFullYear());
 
-    // If no year specified, find the latest year
-    let targetYear = year;
-    if (!targetYear) {
-      const latest = await prisma.category.findFirst({
-        orderBy: { year: "desc" },
-        select: { year: true },
+      const [categories, winners] = await Promise.all([
+        prisma.category.findMany({
+          where: { year: targetYear },
+          orderBy: { id: "asc" },
+          select: {
+            id: true,
+            title: true,
+            description: true,
+            weight: true,
+            year: true,
+          },
+        }),
+        safeQuery(
+          prisma.winner.findMany({
+            where: { year: targetYear },
+            select: { category: true, nominee: true },
+          })
+        ),
+      ]);
+
+      const winnerByCategory = new Map(
+        winners.map((w) => [w.category, w.nominee])
+      );
+      const winnerNames = [...new Set(winners.map((w) => w.nominee))];
+      const categoryIds = categories.map((c) => c.id);
+
+      let nomineeMap = new Map();
+      let artworkMap = new Map();
+
+      if (winnerNames.length > 0 && categoryIds.length > 0) {
+        const [winningNominees, artworks] = await Promise.all([
+          prisma.nominee.findMany({
+            where: {
+              categoryId: { in: categoryIds },
+              name: { in: winnerNames },
+            },
+          }),
+          safeQuery(
+            prisma.gameArtwork.findMany({
+              where: { name: { in: winnerNames } },
+              select: ARTWORK_SELECT,
+            })
+          ),
+        ]);
+
+        nomineeMap = new Map(
+          winningNominees.map((n) => [`${n.categoryId}:${n.name}`, n])
+        );
+        artworkMap = new Map(artworks.map((a) => [a.name, a]));
+      }
+
+      const items = categories.map((cat) => {
+        const winningName = winnerByCategory.get(cat.title) ?? null;
+        const nomineeRow = winningName
+          ? nomineeMap.get(`${cat.id}:${winningName}`) ?? null
+          : null;
+        const savedArtwork = nomineeRow
+          ? artworkMap.get(nomineeRow.name)
+          : null;
+
+        return {
+          category: cat,
+          winnerNominee: nomineeRow
+            ? formatNominee(nomineeRow, winningName, savedArtwork)
+            : null,
+        };
       });
-      targetYear = latest ? latest.year : new Date().getFullYear();
-    }
 
-    const categories = await prisma.category.findMany({
-      where: { year: targetYear },
-      orderBy: { id: "asc" },
+      return {
+        year: targetYear,
+        years,
+        categories: items,
+      };
     });
 
-    const result = categories.map((cat) => ({
-      id: cat.id,
-      title: cat.title,
-      description: cat.description,
-      weight: cat.weight,
-      year: cat.year,
-    }));
+    setPublicCacheHeaders(res, 30, 120);
+    res.json(payload);
+  } catch (error) {
+    console.error("Error fetching winners:", error);
+    res.status(500).json({ message: "Failed to fetch winners" });
+  }
+});
 
+// GET /categories — returns all categories for the latest (or specified) year
+// Optional ?include=nominees embeds nominees, winner flags, and artwork in one response
+router.get("/", async (req, res) => {
+  try {
+    const rawYear = req.query.year;
+    const year = rawYear ? parseInt(rawYear, 10) : null;
+    if (rawYear && isNaN(year)) {
+      return res.status(400).json({ message: "Invalid year parameter" });
+    }
+
+    const includeNominees = req.query.include === "nominees";
+    const cacheKey = `categories:${year ?? "latest"}:${
+      includeNominees ? "full" : "list"
+    }`;
+
+    const result = await catalogCache.getOrSet(cacheKey, async () => {
+      const targetYear = year ?? (await getActiveYear());
+
+      if (!includeNominees) {
+        const categories = await prisma.category.findMany({
+          where: { year: targetYear },
+          orderBy: { id: "asc" },
+          select: {
+            id: true,
+            title: true,
+            description: true,
+            weight: true,
+            year: true,
+          },
+        });
+        return categories;
+      }
+
+      const [categories, winners, artworks] = await Promise.all([
+        prisma.category.findMany({
+          where: { year: targetYear },
+          orderBy: { id: "asc" },
+          include: {
+            nominees: {
+              orderBy: { id: "asc" },
+            },
+          },
+        }),
+        safeQuery(
+          prisma.winner.findMany({
+            where: { year: targetYear },
+            select: { category: true, nominee: true },
+          })
+        ),
+        safeQuery(
+          prisma.gameArtwork.findMany({
+            select: ARTWORK_SELECT,
+          })
+        ),
+      ]);
+
+      const winnerByCategory = new Map(
+        winners.map((w) => [w.category, w.nominee])
+      );
+      const artworkMap = new Map(artworks.map((a) => [a.name, a]));
+
+      return categories.map((cat) => {
+        const winningName = winnerByCategory.get(cat.title) ?? null;
+        return {
+          id: cat.id,
+          title: cat.title,
+          description: cat.description,
+          weight: cat.weight,
+          year: cat.year,
+          nominees: cat.nominees.map((n) =>
+            formatNominee(n, winningName, artworkMap.get(n.name))
+          ),
+        };
+      });
+    });
+
+    setPublicCacheHeaders(res, 30, 120);
     res.json(result);
   } catch (error) {
     console.error("Error fetching categories:", error);
@@ -57,75 +269,65 @@ router.get("/", async (req, res) => {
 
 // GET /categories/:id/nominees — returns nominees for a specific category
 router.get("/:id/nominees", async (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id, 10);
 
   if (isNaN(id)) {
     return res.status(400).json({ message: "Invalid category ID" });
   }
 
   try {
-    const category = await prisma.category.findUnique({
-      where: { id },
-      include: { nominees: true },
-    });
+    const nominees = await catalogCache.getOrSet(
+      `categoryNominees:${id}`,
+      async () => {
+        const category = await prisma.category.findUnique({
+          where: { id },
+          include: { nominees: { orderBy: { id: "asc" } } },
+        });
 
-    if (!category) {
+        if (!category) {
+          return null;
+        }
+
+        const nomineeNames = [
+          ...new Set(category.nominees.map((n) => n.name)),
+        ];
+
+        const [winnerRecord, artworks] = await Promise.all([
+          safeQuery(
+            prisma.winner.findUnique({
+              where: {
+                category_year: {
+                  category: category.title,
+                  year: category.year,
+                },
+              },
+            }),
+            null
+          ),
+          nomineeNames.length > 0
+            ? safeQuery(
+                prisma.gameArtwork.findMany({
+                  where: { name: { in: nomineeNames } },
+                  select: ARTWORK_SELECT,
+                })
+              )
+            : Promise.resolve([]),
+        ]);
+
+        const artworkMap = new Map(artworks.map((a) => [a.name, a]));
+        const winningName = winnerRecord ? winnerRecord.nominee : null;
+
+        return category.nominees.map((n) =>
+          formatNominee(n, winningName, artworkMap.get(n.name))
+        );
+      }
+    );
+
+    if (!nominees) {
       return res.status(404).json({ message: "Category not found" });
     }
 
-    // Check for winner in the Winner table scoped to the category's year
-    let winnerRecord = null;
-    try {
-      winnerRecord = await prisma.winner.findUnique({
-        where: {
-          category_year: {
-            category: category.title,
-            year: category.year,
-          },
-        },
-      });
-    } catch {
-      // Winner table might not exist yet — safe to ignore
-    }
-
-    // Resolve normalized GameArtwork references (deduplicated across categories)
-    const nomineeNames = [...new Set(category.nominees.map((n) => n.name))];
-    let artworkMap = new Map();
-    if (nomineeNames.length > 0) {
-      try {
-        const artworks = await prisma.gameArtwork.findMany({
-          where: { name: { in: nomineeNames } },
-        });
-        artworkMap = new Map(artworks.map((a) => [a.name, a]));
-      } catch {
-        // Safe fallback if GameArtwork table is unavailable
-      }
-    }
-
-    const nominees = category.nominees.map((n) => {
-      const savedArtwork = artworkMap.get(n.name);
-      return {
-        id: n.name,
-        name: n.name,
-        publisher: n.publisher,
-        image: savedArtwork ? savedArtwork.imageUrl : n.image,
-        description: n.description,
-        genre: n.genre,
-        Winner: winnerRecord ? n.name === winnerRecord.nominee : false,
-        artwork: savedArtwork
-          ? {
-              provider: savedArtwork.provider,
-              providerGameId: savedArtwork.providerGameId,
-              imageId: savedArtwork.imageId,
-              imageUrl: savedArtwork.imageUrl,
-              type: savedArtwork.type,
-              width: savedArtwork.width,
-              height: savedArtwork.height,
-            }
-          : null,
-      };
-    });
-
+    setPublicCacheHeaders(res, 30, 120);
     res.json(nominees);
   } catch (error) {
     console.error("Error fetching nominees:", error);
@@ -134,7 +336,7 @@ router.get("/:id/nominees", async (req, res) => {
 });
 
 // POST /categories/winner — admin sets the winner for a category
-// Protected by authMiddleware + adminMiddleware (set in index.js)
+// Protected by authMiddleware + adminMiddleware
 router.post("/winner", authMiddleware, adminMiddleware, async (req, res) => {
   const { category, nominee, year } = req.body;
 
@@ -145,11 +347,7 @@ router.post("/winner", authMiddleware, adminMiddleware, async (req, res) => {
   try {
     let targetYear = year ? parseInt(year, 10) : null;
     if (!targetYear) {
-      const latest = await prisma.category.findFirst({
-        orderBy: { year: "desc" },
-        select: { year: true },
-      });
-      targetYear = latest ? latest.year : new Date().getFullYear();
+      targetYear = await getActiveYear();
     }
 
     // Verify the category exists in the target year
@@ -178,6 +376,8 @@ router.post("/winner", authMiddleware, adminMiddleware, async (req, res) => {
       update: { nominee: nominee },
       create: { category: category, nominee: nominee, year: targetYear },
     });
+
+    catalogCache.invalidate();
 
     res.json({ message: `Winner set for ${category} (${targetYear}): ${nominee}` });
   } catch (err) {

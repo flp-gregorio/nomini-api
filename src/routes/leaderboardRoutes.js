@@ -1,5 +1,6 @@
 import express from "express";
 import prisma from "../prismaClient.js";
+import { setPrivateNoStoreHeaders } from "../utils/cache.js";
 
 const router = express.Router();
 
@@ -7,57 +8,65 @@ const router = express.Router();
 // ?year=XXXX → filter to categories of that year only
 // No year param → global (all years combined)
 router.get("/", async (req, res) => {
+  setPrivateNoStoreHeaders(res);
   try {
-    const year = req.query.year ? parseInt(req.query.year) : null;
+    const rawYear = req.query.year;
+    const year = rawYear ? parseInt(rawYear, 10) : null;
+    if (rawYear && isNaN(year)) {
+      return res.status(400).json({ message: "Invalid year parameter" });
+    }
 
-    const users = await prisma.user.findMany({
-      select: {
-        id: true,
-        username: true,
-        votes: true,
-      },
+    const [users, winnersData, categories] = await Promise.all([
+      prisma.user.findMany({
+        select: {
+          id: true,
+          username: true,
+          votes: {
+            where: year ? { year } : undefined,
+            select: {
+              category: true,
+              nominee: true,
+              year: true,
+            },
+          },
+        },
+      }),
+      prisma.winner
+        .findMany({
+          where: year ? { year } : {},
+          select: { category: true, nominee: true, year: true },
+        })
+        .catch((winnerErr) => {
+          console.warn("Winner table not available:", winnerErr.message);
+          return [];
+        }),
+      prisma.category
+        .findMany({
+          where: year ? { year } : {},
+          select: { title: true, weight: true, year: true },
+        })
+        .catch(() => []),
+    ]);
+
+    const winnersMap = new Map();
+    winnersData.forEach((w) => {
+      winnersMap.set(`${w.year}:${w.category}`, w.nominee);
     });
 
-    // Fetch winners from DB, optionally filtered by year
-    let winnersMap = {};
-    try {
-      const winnersData = await prisma.winner.findMany({
-        where: year ? { year } : {},
-      });
-      winnersData.forEach((w) => {
-        winnersMap[`${w.year}:${w.category}`] = w.nominee;
-      });
-    } catch (winnerErr) {
-      console.warn("Winner table not available:", winnerErr.message);
-    }
-
-    // Fetch categories with weights, optionally filtered by year
-    let categoryWeights = {};
-    try {
-      const where = year ? { year } : {};
-      const categories = await prisma.category.findMany({
-        where,
-        select: { title: true, weight: true, year: true },
-      });
-      categories.forEach((c) => {
-        categoryWeights[`${c.year}:${c.title}`] = c.weight;
-      });
-    } catch {
-      // If Category table doesn't exist yet, use default weight of 1
-    }
+    const categoryWeights = new Map();
+    categories.forEach((c) => {
+      categoryWeights.set(`${c.year}:${c.title}`, c.weight);
+    });
 
     const leaderboard = users.map((user) => {
       let totalPoints = 0;
 
       user.votes.forEach((vote) => {
-        // If filtering by year, skip votes from other seasons
-        if (year && vote.year !== year) return;
-
         const key = `${vote.year}:${vote.category}`;
-        const winningNomineeName = winnersMap[key];
+        const winningNomineeName = winnersMap.get(key);
 
         if (winningNomineeName && winningNomineeName === vote.nominee) {
-          totalPoints += categoryWeights[key] || 1;
+          totalPoints += categoryWeights.get(key) || 1;
         }
       });
 

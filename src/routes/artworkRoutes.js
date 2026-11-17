@@ -14,6 +14,7 @@ import {
   SteamGridDbError,
 } from "../services/steamgriddbService.js";
 import { isIgdbConfigured } from "../services/igdbService.js";
+import { catalogCache, setPrivateNoStoreHeaders } from "../utils/cache.js";
 
 const router = express.Router();
 
@@ -41,7 +42,10 @@ function handleError(res, error, fallbackMessage) {
 }
 
 // All /artwork routes require authenticated admin access
-router.use(authMiddleware, adminMiddleware);
+router.use(authMiddleware, adminMiddleware, (req, res, next) => {
+  setPrivateNoStoreHeaders(res);
+  next();
+});
 
 // GET /artwork/status — reports provider configuration without exposing credentials
 router.get("/status", (req, res) => {
@@ -209,6 +213,8 @@ router.put("/select", async (req, res) => {
       },
     });
 
+    catalogCache.invalidate();
+
     res.json({
       message: `Saved artwork for ${cleanName}`,
       artwork: saved,
@@ -270,6 +276,8 @@ router.post("/bulk-select", async (req, res) => {
       })
     );
 
+    catalogCache.invalidate();
+
     res.json({
       message: `Saved artwork for ${saved.length} nominees`,
       count: saved.length,
@@ -291,6 +299,7 @@ router.delete("/:name", async (req, res) => {
     await prisma.gameArtwork.deleteMany({
       where: { name },
     });
+    catalogCache.invalidate();
     res.json({ message: `Cleared artwork override for ${name}` });
   } catch (error) {
     handleError(res, error, "Failed to remove artwork override");

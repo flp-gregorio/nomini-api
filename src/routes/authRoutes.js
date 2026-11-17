@@ -79,19 +79,22 @@ router.post("/login", async (req, res) => {
 });
 
 import authMiddleware from "../middleware/authMiddleware.js";
+import { setPrivateNoStoreHeaders } from "../utils/cache.js";
 
 // GET USER INFO ENDPOINT /auth/me
 router.get("/me", authMiddleware, async (req, res) => {
+  setPrivateNoStoreHeaders(res);
   try {
     const user = await prisma.user.findUnique({
       where: { id: req.userId },
+      select: { username: true, email: true, admin: true },
     });
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
 
-    res.json({ username: user.username, email: user.email, admin: user.admin });
+    res.json(user);
   } catch (error) {
     console.error("Error fetching user:", error);
     res.status(503).json({ error: "Internal server error" });
