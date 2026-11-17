@@ -1,0 +1,818 @@
+{
+  "Game of the Year": {
+    "weight": 10,
+    "description": "Recognizing a game that delivers the absolute best experience across all creative and technical fields.",
+    "nominees": [
+      {
+        "Nominee": "007 First Light",
+        "Winner": false
+      },
+      {
+        "Nominee": "Control Resonant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Phantom Blade Zero",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil Requiem",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Legend of Zelda: Ocarina of Time",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Game Direction": {
+    "weight": 8,
+    "description": "Awarded for outstanding creative vision and innovation in game direction and design.",
+    "nominees": [
+      {
+        "Nominee": "Control Resonant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Phantom Blade Zero",
+        "Winner": false
+      },
+      {
+        "Nominee": "Pragmata",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil Requiem",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Narrative": {
+    "weight": 8,
+    "description": "For outstanding storytelling and narrative development in a game.",
+    "nominees": [
+      {
+        "Nominee": "007 First Light",
+        "Winner": false
+      },
+      {
+        "Nominee": "Control Resonant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil Requiem",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Blood of Dawnwalker",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Art Direction": {
+    "weight": 8,
+    "description": "For outstanding creative and/or technical achievement in artistic design and animation.",
+    "nominees": [
+      {
+        "Nominee": "Control Resonant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mouse PI For Hire",
+        "Winner": false
+      },
+      {
+        "Nominee": "Phantom Blade Zero",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Legend of Zelda: Ocarina of Time",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Score and Music": {
+    "weight": 8,
+    "description": "For outstanding music, inclusive of score, original song and/or licensed soundtrack.",
+    "nominees": [
+      {
+        "Nominee": "Ace Combat 8: Wings of Theve",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mixtape",
+        "Winner": false
+      },
+      {
+        "Nominee": "Phantom Blade Zero",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Legend of Zelda: Ocarina of Time",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Audio Design": {
+    "weight": 8,
+    "description": "Recognizing the best in-game audio, comprising sound effects, sound mixing, location sound and spatial audio.",
+    "nominees": [
+      {
+        "Nominee": "Ace Combat 8: Wings of Theve",
+        "Winner": false
+      },
+      {
+        "Nominee": "Control Resonant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil Requiem",
+        "Winner": false
+      },
+      {
+        "Nominee": "Star Wars Galactic Racer",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Performance": {
+    "weight": 8,
+    "description": "Awarded to an individual for voice-over acting, motion, and/or performance capture.",
+    "nominees": [
+      {
+        "Nominee": "Angela Sant’Albano",
+        "Publisher": "Resident Evil Requiem",
+        "Winner": false
+      },
+      {
+        "Nominee": "Liam McIntyre",
+        "Publisher": "Marvel's Wolverine",
+        "Winner": false
+      },
+      {
+        "Nominee": "Manni L. Perez",
+        "Publisher": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Patrick Gibson",
+        "Publisher": "007 First Light",
+        "Winner": false
+      },
+      {
+        "Nominee": "Rahul Kohli",
+        "Publisher": "Saros",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Action Game": {
+    "weight": 5,
+    "description": "For the best game in the action genre focused primarily on combat.",
+    "nominees": [
+      {
+        "Nominee": "Ace Combat 8: Wings of Theve",
+        "Winner": false
+      },
+      {
+        "Nominee": "Gears of War: E-Day",
+        "Winner": false
+      },
+      {
+        "Nominee": "Onimusha: Way of the Sword",
+        "Winner": false
+      },
+      {
+        "Nominee": "Phantom Blade Zero",
+        "Winner": false
+      },
+      {
+        "Nominee": "Saros",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Action/Adventure": {
+    "weight": 5,
+    "description": "For the best action/adventure game, combining combat with traversal and puzzle solving.",
+    "nominees": [
+      {
+        "Nominee": "007 First Light",
+        "Winner": false
+      },
+      {
+        "Nominee": "Control Resonant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Grand Theft Auto 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Pragmata",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil Requiem",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Legend of Zelda: Ocarina of Time",
+        "Winner": false
+      }
+    ]
+  },
+  "Best RPG": {
+    "weight": 5,
+    "description": "For the best game designed with rich player character customization and progression.",
+    "nominees": [
+      {
+        "Nominee": "Final Fantasy Resonance",
+        "Winner": false
+      },
+      {
+        "Nominee": "Fire Emblem Fortune’s Weave",
+        "Winner": false
+      },
+      {
+        "Nominee": "Monster Hunter Stories 3: Twisted Reflection",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Blood of Dawnwalker",
+        "Winner": false
+      },
+      {
+        "Nominee": "Trails in the Sky 2nd Chapter",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Fighting": {
+    "weight": 5,
+    "description": "For the best game designed primarily around head-to-head combat.",
+    "nominees": [
+      {
+        "Nominee": "2XKO",
+        "Winner": false
+      },
+      {
+        "Nominee": "Avatar Legends: The Fighting Game",
+        "Winner": false
+      },
+      {
+        "Nominee": "Invincible Vs",
+        "Winner": false
+      },
+      {
+        "Nominee": "Marvel Tokon: Fighting Souls",
+        "Winner": false
+      },
+      {
+        "Nominee": "My Hero Academia: All's Justice",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Family": {
+    "weight": 4,
+    "description": "For the best game appropriate for family play, irrespective of genre or platform.",
+    "nominees": [
+      {
+        "Nominee": "Big Walk",
+        "Winner": false
+      },
+      {
+        "Nominee": "Lego Batman: Legacy of the Dark Knight",
+        "Winner": false
+      },
+      {
+        "Nominee": "Nintendo Switch Sports Resort",
+        "Winner": false
+      },
+      {
+        "Nominee": "Pokémon Pokopia",
+        "Winner": false
+      },
+      {
+        "Nominee": "Yoshi and the Mysterious Block",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Sim/Strategy": {
+    "weight": 5,
+    "description": "Best game focused on real time or turn-based simulation or strategy gameplay.",
+    "nominees": [
+      {
+        "Nominee": "Mewgenics",
+        "Winner": false
+      },
+      {
+        "Nominee": "Planet Zoo 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Pokemon Pokopia",
+        "Winner": false
+      },
+      {
+        "Nominee": "Slay the Spire 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Star Wars Zero Company",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Sports/Racing": {
+    "weight": 5,
+    "description": "For the best traditional and non-traditional sports and racing game.",
+    "nominees": [
+      {
+        "Nominee": "EA Sports FC 27",
+        "Winner": false
+      },
+      {
+        "Nominee": "Forza Horizon 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Nintendo Switch Sports Resort",
+        "Winner": false
+      },
+      {
+        "Nominee": "Screamer",
+        "Winner": false
+      },
+      {
+        "Nominee": "Star Wars Galactic Racer",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Multiplayer": {
+    "weight": 5,
+    "description": "For outstanding online multiplayer gameplay and design.",
+    "nominees": [
+      {
+        "Nominee": "Big Walk",
+        "Winner": false
+      },
+      {
+        "Nominee": "Call of Duty: Modern Warfare 4",
+        "Winner": false
+      },
+      {
+        "Nominee": "Gears of War: E-Day",
+        "Winner": false
+      },
+      {
+        "Nominee": "Marathon",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mecca Chameleon",
+        "Winner": false
+      },
+      {
+        "Nominee": "Orbitals",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Independent Game": {
+    "weight": 6,
+    "description": "For outstanding creative and technical achievement in a game made outside the traditional publisher system.",
+    "nominees": [
+      {
+        "Nominee": "Big Walk",
+        "Winner": false
+      },
+      {
+        "Nominee": "Cairn",
+        "Winner": false
+      },
+      {
+        "Nominee": "Denshattack!",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mewgenics",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mina the Hollower",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Debut Indie Game": {
+    "weight": 5,
+    "description": "For the best debut game created by a new independent studio.",
+    "nominees": [
+      {
+        "Nominee": "Dressmaker",
+        "Winner": false
+      },
+      {
+        "Nominee": "Esoteric Ebb",
+        "Winner": false
+      },
+      {
+        "Nominee": "Orbitals",
+        "Winner": false
+      },
+      {
+        "Nominee": "Replaced",
+        "Winner": false
+      },
+      {
+        "Nominee": "Silver Pines",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Mobile Game": {
+    "weight": 3,
+    "description": "For the best game playable on a dedicated mobile device.",
+    "nominees": [
+      {
+        "Nominee": "Arknights: Enfield",
+        "Winner": false
+      },
+      {
+        "Nominee": "Monster Hunter Outlanders",
+        "Winner": false
+      },
+      {
+        "Nominee": "Neverness to Everness",
+        "Winner": false
+      },
+      {
+        "Nominee": "Pokémon Champions",
+        "Winner": false
+      },
+      {
+        "Nominee": "Where Winds Meet",
+        "Winner": false
+      }
+    ]
+  },
+  "Best VR/AR": {
+    "weight": 3,
+    "description": "For the best game experience playable in virtual or augmented reality.",
+    "nominees": [
+      {
+        "Nominee": "Forefront",
+        "Winner": false
+      },
+      {
+        "Nominee": "Into the Radius 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Little Nightmare VR: Altered Echoes",
+        "Winner": false
+      },
+      {
+        "Nominee": "Teenage Mutant Ninja Turtles: Empire City",
+        "Winner": false
+      },
+      {
+        "Nominee": "Thief VR: Legacy of Shadow",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Ongoing Game": {
+    "weight": 5,
+    "description": "Awarded to a game for outstanding development of ongoing content that evolves the player experience over time.",
+    "nominees": [
+      {
+        "Nominee": "Arc Raiders",
+        "Winner": false
+      },
+      {
+        "Nominee": "Final Fantasy 14",
+        "Winner": false
+      },
+      {
+        "Nominee": "Fortnite",
+        "Winner": false
+      },
+      {
+        "Nominee": "No Man's Sky",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Witcher 3: Wild Hunt",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Community Support": {
+    "weight": 4,
+    "description": "Recognizing a game for outstanding community support, transparency and responsiveness.",
+    "nominees": [
+      {
+        "Nominee": "Crimson Desert",
+        "Winner": false
+      },
+      {
+        "Nominee": "Helldivers 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "No Man’s Sky",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Witcher 3 Wild Hunt",
+        "Winner": false
+      },
+      {
+        "Nominee": "Warframe",
+        "Winner": false
+      }
+    ]
+  },
+  "Best User Creation": {
+    "weight": 3,
+    "description": "Recognizing outstanding user-generated creations, mods, and community-built experiences.",
+    "nominees": [
+      {
+        "Nominee": "A Dream of Silence: Revamped",
+        "Winner": false
+      },
+      {
+        "Nominee": "Create Aeruonautics",
+        "Winner": false
+      },
+      {
+        "Nominee": "Nopixel 5",
+        "Winner": false
+      },
+      {
+        "Nominee": "Star Wars: Droid Tycoon",
+        "Winner": false
+      },
+      {
+        "Nominee": "TTK Testing",
+        "Winner": false
+      }
+    ]
+  },
+  "Innovation in Accessibility": {
+    "weight": 4,
+    "description": "Recognizing software and/or hardware that is pushing the medium forward by adding features, technology and content to help games be played and enjoyed by an even wider audience.",
+    "nominees": [
+      {
+        "Nominee": "Assassins Creed Black Flag Resynced",
+        "Winner": false
+      },
+      {
+        "Nominee": "Forza Horizon 6",
+        "Winner": false
+      },
+      {
+        "Nominee": "Gears of War: E-Day",
+        "Winner": false
+      },
+      {
+        "Nominee": "Marvel's Wolverine",
+        "Winner": false
+      },
+      {
+        "Nominee": "Rhythm Heaven Groove",
+        "Winner": false
+      }
+    ]
+  },
+  "Games for Impact": {
+    "weight": 4,
+    "description": "For a thought-provoking game with a pro-social meaning or message.",
+    "nominees": [
+      {
+        "Nominee": "Big Walk",
+        "Winner": false
+      },
+      {
+        "Nominee": "Cairn",
+        "Winner": false
+      },
+      {
+        "Nominee": "Forever Ago",
+        "Winner": false
+      },
+      {
+        "Nominee": "Life is Strange Reunion",
+        "Winner": false
+      },
+      {
+        "Nominee": "Lily’s World XD",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mixtape",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Adaptation": {
+    "weight": 3,
+    "description": "Recognizing creative work that faithfully and authentically adapts a video game intellectual property to another entertainment medium.",
+    "nominees": [
+      {
+        "Nominee": "Cyberpunk Edgerunners season 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Fallout season 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mortal Kombat 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Super Mario Galaxy Movie",
+        "Winner": false
+      }
+    ]
+  },
+  "Most Anticipated Game": {
+    "weight": 3,
+    "description": "Recognizing an announced game that has demonstrably illustrated potential to push the gaming medium forward.",
+    "nominees": [
+      {
+        "Nominee": "Fable",
+        "Winner": false
+      },
+      {
+        "Nominee": "Final Fantasy 7 Revelation",
+        "Winner": false
+      },
+      {
+        "Nominee": "God of War Laufey",
+        "Winner": false
+      },
+      {
+        "Nominee": "Resident Evil Veronica",
+        "Winner": false
+      },
+      {
+        "Nominee": "The Witcher 4",
+        "Winner": false
+      }
+    ]
+  },
+  "Content Creator of the Year": {
+    "weight": 2,
+    "description": "For a streamer or content creator who has made an important and positive impact on the community.",
+    "nominees": [
+      {
+        "Nominee": "Cdawg",
+        "Winner": false
+      },
+      {
+        "Nominee": "Cellbit",
+        "Winner": false
+      },
+      {
+        "Nominee": "IShowSpeed",
+        "Winner": false
+      },
+      {
+        "Nominee": "LilSimsie",
+        "Winner": false
+      },
+      {
+        "Nominee": "OhnePixel",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Esports Game": {
+    "weight": 2,
+    "description": "For the game that has delivered the best overall esports experience to players.",
+    "nominees": [
+      {
+        "Nominee": "Counter-Strike 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Dota 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "League of Legends",
+        "Winner": false
+      },
+      {
+        "Nominee": "Mobile Legends: Bang Bang",
+        "Winner": false
+      },
+      {
+        "Nominee": "Valorant",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Esports Athlete": {
+    "weight": 2,
+    "description": "The esports athlete judged to be the most outstanding for performance and conduct.",
+    "nominees": [
+      {
+        "Nominee": "Chovy",
+        "Publisher": "Gen.G",
+        "Winner": false
+      },
+      {
+        "Nominee": "Donk",
+        "Publisher": "Team Spirit",
+        "Winner": false
+      },
+      {
+        "Nominee": "Erde",
+        "Publisher": "LOUD",
+        "Winner": false
+      },
+      {
+        "Nominee": "Yatoro",
+        "Publisher": "Team Spirit",
+        "Winner": false
+      },
+      {
+        "Nominee": "Zywoo",
+        "Publisher": "Team Vitality",
+        "Winner": false
+      }
+    ]
+  },
+  "Best Esports Team": {
+    "weight": 2,
+    "description": "Recognizing a specific esports team for performance and conduct.",
+    "nominees": [
+      {
+        "Nominee": "Gen.G",
+        "Publisher": "League of Legends",
+        "Winner": false
+      },
+      {
+        "Nominee": "LOUD",
+        "Publisher": "Valorant",
+        "Winner": false
+      },
+      {
+        "Nominee": "Team Falcons (Counter-Strike 2)",
+        "Publisher": "Counter-Strike 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Team Falcons (Rocket League)",
+        "Publisher": "Rocket League",
+        "Winner": false
+      },
+      {
+        "Nominee": "Team Spirit",
+        "Publisher": "Dota 2",
+        "Winner": false
+      },
+      {
+        "Nominee": "Team Vitality",
+        "Publisher": "Counter-Strike 2",
+        "Winner": false
+      }
+    ]
+  }
+}

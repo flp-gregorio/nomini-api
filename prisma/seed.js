@@ -7,12 +7,67 @@ import prisma from "../src/prismaClient.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const YEAR = 2025;
+const SEED_SOURCES = [
+  { year: 2025, file: "../src/data.json" },
+  { year: 2026, file: "../src/data-2026.json" },
+];
 
-async function main() {
-  const dataPath = path.join(__dirname, "../src/data.json");
+async function seedYear(year, file) {
+  const dataPath = path.join(__dirname, file);
   const rawData = fs.readFileSync(dataPath, "utf-8");
   const data = JSON.parse(rawData);
+
+  console.log(`Seeding ${Object.keys(data).length} categories for year ${year}...`);
+
+  for (const [categoryTitle, categoryData] of Object.entries(data)) {
+    if (!categoryData.nominees || categoryData.nominees.length === 0) {
+      console.log(`  Skipping empty category: ${categoryTitle}`);
+      continue;
+    }
+
+    const category = await prisma.category.upsert({
+      where: {
+        title_year: { title: categoryTitle, year },
+      },
+      update: {
+        description: categoryData.description || null,
+        weight: categoryData.weight || 1,
+      },
+      create: {
+        title: categoryTitle,
+        description: categoryData.description || null,
+        weight: categoryData.weight || 1,
+        year,
+      },
+    });
+
+    console.log(`  Category: ${category.title} (id: ${category.id})`);
+
+    await prisma.nominee.deleteMany({
+      where: { categoryId: category.id },
+    });
+
+    for (const nom of categoryData.nominees) {
+      await prisma.nominee.create({
+        data: {
+          name: nom.Nominee,
+          publisher: nom.Publisher || null,
+          genre: nom.Genre || null,
+          description: nom.Description || null,
+          image: nom.Image || null,
+          categoryId: category.id,
+        },
+      });
+    }
+
+    console.log(`    -> ${categoryData.nominees.length} nominees seeded`);
+  }
+}
+
+async function main() {
+  const yearArg = process.argv.find((arg) => arg.startsWith("--year="));
+  const filterYear = yearArg ? parseInt(yearArg.split("=")[1], 10) : null;
+
   if (process.env.NODE_ENV !== 'production') {
     console.log("Seeding test users...");
     const salt = await bcrypt.genSalt(10);
@@ -41,50 +96,16 @@ async function main() {
     });
   }
 
-  console.log(`Seeding ${Object.keys(data).length} categories for year ${YEAR}...`);
+  const sources = filterYear
+    ? SEED_SOURCES.filter((s) => s.year === filterYear)
+    : SEED_SOURCES;
 
-  for (const [categoryTitle, categoryData] of Object.entries(data)) {
-    if (!categoryData.nominees || categoryData.nominees.length === 0) {
-      console.log(`  Skipping empty category: ${categoryTitle}`);
-      continue;
-    }
+  if (sources.length === 0) {
+    throw new Error(`No seed source configured for year ${filterYear}`);
+  }
 
-    const category = await prisma.category.upsert({
-      where: {
-        title_year: { title: categoryTitle, year: YEAR },
-      },
-      update: {
-        description: categoryData.description || null,
-        weight: categoryData.weight || 1,
-      },
-      create: {
-        title: categoryTitle,
-        description: categoryData.description || null,
-        weight: categoryData.weight || 1,
-        year: YEAR,
-      },
-    });
-
-    console.log(`  Category: ${category.title} (id: ${category.id})`);
-
-    await prisma.nominee.deleteMany({
-      where: { categoryId: category.id },
-    });
-
-    for (const nom of categoryData.nominees) {
-      await prisma.nominee.create({
-        data: {
-          name: nom.Nominee,
-          publisher: nom.Publisher || null,
-          genre: nom.Genre || null,
-          description: nom.Description || null,
-          image: nom.Image || null,
-          categoryId: category.id,
-        },
-      });
-    }
-
-    console.log(`    -> ${categoryData.nominees.length} nominees seeded`);
+  for (const source of sources) {
+    await seedYear(source.year, source.file);
   }
 
   console.log("\nSeed complete!");
