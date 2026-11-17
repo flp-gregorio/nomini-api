@@ -2480,11 +2480,13 @@ export namespace Prisma {
 
   export type VoteAvgAggregateOutputType = {
     id: number | null
+    year: number | null
     userId: number | null
   }
 
   export type VoteSumAggregateOutputType = {
     id: number | null
+    year: number | null
     userId: number | null
   }
 
@@ -2492,6 +2494,7 @@ export namespace Prisma {
     id: number | null
     category: string | null
     nominee: string | null
+    year: number | null
     userId: number | null
   }
 
@@ -2499,6 +2502,7 @@ export namespace Prisma {
     id: number | null
     category: string | null
     nominee: string | null
+    year: number | null
     userId: number | null
   }
 
@@ -2506,6 +2510,7 @@ export namespace Prisma {
     id: number
     category: number
     nominee: number
+    year: number
     userId: number
     _all: number
   }
@@ -2513,11 +2518,13 @@ export namespace Prisma {
 
   export type VoteAvgAggregateInputType = {
     id?: true
+    year?: true
     userId?: true
   }
 
   export type VoteSumAggregateInputType = {
     id?: true
+    year?: true
     userId?: true
   }
 
@@ -2525,6 +2532,7 @@ export namespace Prisma {
     id?: true
     category?: true
     nominee?: true
+    year?: true
     userId?: true
   }
 
@@ -2532,6 +2540,7 @@ export namespace Prisma {
     id?: true
     category?: true
     nominee?: true
+    year?: true
     userId?: true
   }
 
@@ -2539,6 +2548,7 @@ export namespace Prisma {
     id?: true
     category?: true
     nominee?: true
+    year?: true
     userId?: true
     _all?: true
   }
@@ -2633,6 +2643,7 @@ export namespace Prisma {
     id: number
     category: string
     nominee: string
+    year: number
     userId: number
     _count: VoteCountAggregateOutputType | null
     _avg: VoteAvgAggregateOutputType | null
@@ -2659,6 +2670,7 @@ export namespace Prisma {
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vote"]>
@@ -2667,6 +2679,7 @@ export namespace Prisma {
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vote"]>
@@ -2675,6 +2688,7 @@ export namespace Prisma {
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vote"]>
@@ -2683,10 +2697,11 @@ export namespace Prisma {
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
     userId?: boolean
   }
 
-  export type VoteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "category" | "nominee" | "userId", ExtArgs["result"]["vote"]>
+  export type VoteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "category" | "nominee" | "year" | "userId", ExtArgs["result"]["vote"]>
   export type VoteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -2706,6 +2721,7 @@ export namespace Prisma {
       id: number
       category: string
       nominee: string
+      year: number
       userId: number
     }, ExtArgs["result"]["vote"]>
     composites: {}
@@ -3134,6 +3150,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Vote", 'Int'>
     readonly category: FieldRef<"Vote", 'String'>
     readonly nominee: FieldRef<"Vote", 'String'>
+    readonly year: FieldRef<"Vote", 'Int'>
     readonly userId: FieldRef<"Vote", 'Int'>
   }
     
@@ -5797,56 +5814,66 @@ export namespace Prisma {
 
   export type WinnerAvgAggregateOutputType = {
     id: number | null
+    year: number | null
   }
 
   export type WinnerSumAggregateOutputType = {
     id: number | null
+    year: number | null
   }
 
   export type WinnerMinAggregateOutputType = {
     id: number | null
     category: string | null
     nominee: string | null
+    year: number | null
   }
 
   export type WinnerMaxAggregateOutputType = {
     id: number | null
     category: string | null
     nominee: string | null
+    year: number | null
   }
 
   export type WinnerCountAggregateOutputType = {
     id: number
     category: number
     nominee: number
+    year: number
     _all: number
   }
 
 
   export type WinnerAvgAggregateInputType = {
     id?: true
+    year?: true
   }
 
   export type WinnerSumAggregateInputType = {
     id?: true
+    year?: true
   }
 
   export type WinnerMinAggregateInputType = {
     id?: true
     category?: true
     nominee?: true
+    year?: true
   }
 
   export type WinnerMaxAggregateInputType = {
     id?: true
     category?: true
     nominee?: true
+    year?: true
   }
 
   export type WinnerCountAggregateInputType = {
     id?: true
     category?: true
     nominee?: true
+    year?: true
     _all?: true
   }
 
@@ -5940,6 +5967,7 @@ export namespace Prisma {
     id: number
     category: string
     nominee: string
+    year: number
     _count: WinnerCountAggregateOutputType | null
     _avg: WinnerAvgAggregateOutputType | null
     _sum: WinnerSumAggregateOutputType | null
@@ -5965,27 +5993,31 @@ export namespace Prisma {
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
   }, ExtArgs["result"]["winner"]>
 
   export type WinnerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
   }, ExtArgs["result"]["winner"]>
 
   export type WinnerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
   }, ExtArgs["result"]["winner"]>
 
   export type WinnerSelectScalar = {
     id?: boolean
     category?: boolean
     nominee?: boolean
+    year?: boolean
   }
 
-  export type WinnerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "category" | "nominee", ExtArgs["result"]["winner"]>
+  export type WinnerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "category" | "nominee" | "year", ExtArgs["result"]["winner"]>
 
   export type $WinnerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Winner"
@@ -5994,6 +6026,7 @@ export namespace Prisma {
       id: number
       category: string
       nominee: string
+      year: number
     }, ExtArgs["result"]["winner"]>
     composites: {}
   }
@@ -6420,6 +6453,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Winner", 'Int'>
     readonly category: FieldRef<"Winner", 'String'>
     readonly nominee: FieldRef<"Winner", 'String'>
+    readonly year: FieldRef<"Winner", 'Int'>
   }
     
 
@@ -7805,6 +7839,7 @@ export namespace Prisma {
     id: 'id',
     category: 'category',
     nominee: 'nominee',
+    year: 'year',
     userId: 'userId'
   };
 
@@ -7838,7 +7873,8 @@ export namespace Prisma {
   export const WinnerScalarFieldEnum: {
     id: 'id',
     category: 'category',
-    nominee: 'nominee'
+    nominee: 'nominee',
+    year: 'year'
   };
 
   export type WinnerScalarFieldEnum = (typeof WinnerScalarFieldEnum)[keyof typeof WinnerScalarFieldEnum]
@@ -8011,6 +8047,7 @@ export namespace Prisma {
     id?: IntFilter<"Vote"> | number
     category?: StringFilter<"Vote"> | string
     nominee?: StringFilter<"Vote"> | string
+    year?: IntFilter<"Vote"> | number
     userId?: IntFilter<"Vote"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -8019,26 +8056,29 @@ export namespace Prisma {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
   }
 
   export type VoteWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    userId_category?: VoteUserIdCategoryCompoundUniqueInput
+    userId_category_year?: VoteUserIdCategoryYearCompoundUniqueInput
     AND?: VoteWhereInput | VoteWhereInput[]
     OR?: VoteWhereInput[]
     NOT?: VoteWhereInput | VoteWhereInput[]
     category?: StringFilter<"Vote"> | string
     nominee?: StringFilter<"Vote"> | string
+    year?: IntFilter<"Vote"> | number
     userId?: IntFilter<"Vote"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id" | "userId_category">
+  }, "id" | "userId_category_year">
 
   export type VoteOrderByWithAggregationInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
     _count?: VoteCountOrderByAggregateInput
     _avg?: VoteAvgOrderByAggregateInput
@@ -8054,6 +8094,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Vote"> | number
     category?: StringWithAggregatesFilter<"Vote"> | string
     nominee?: StringWithAggregatesFilter<"Vote"> | string
+    year?: IntWithAggregatesFilter<"Vote"> | number
     userId?: IntWithAggregatesFilter<"Vote"> | number
   }
 
@@ -8189,27 +8230,32 @@ export namespace Prisma {
     id?: IntFilter<"Winner"> | number
     category?: StringFilter<"Winner"> | string
     nominee?: StringFilter<"Winner"> | string
+    year?: IntFilter<"Winner"> | number
   }
 
   export type WinnerOrderByWithRelationInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
   }
 
   export type WinnerWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    category?: string
+    category_year?: WinnerCategoryYearCompoundUniqueInput
     AND?: WinnerWhereInput | WinnerWhereInput[]
     OR?: WinnerWhereInput[]
     NOT?: WinnerWhereInput | WinnerWhereInput[]
+    category?: StringFilter<"Winner"> | string
     nominee?: StringFilter<"Winner"> | string
-  }, "id" | "category">
+    year?: IntFilter<"Winner"> | number
+  }, "id" | "category_year">
 
   export type WinnerOrderByWithAggregationInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
     _count?: WinnerCountOrderByAggregateInput
     _avg?: WinnerAvgOrderByAggregateInput
     _max?: WinnerMaxOrderByAggregateInput
@@ -8224,6 +8270,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Winner"> | number
     category?: StringWithAggregatesFilter<"Winner"> | string
     nominee?: StringWithAggregatesFilter<"Winner"> | string
+    year?: IntWithAggregatesFilter<"Winner"> | number
   }
 
   export type EventConfigWhereInput = {
@@ -8325,6 +8372,7 @@ export namespace Prisma {
   export type VoteCreateInput = {
     category: string
     nominee: string
+    year?: number
     user: UserCreateNestedOneWithoutVotesInput
   }
 
@@ -8332,12 +8380,14 @@ export namespace Prisma {
     id?: number
     category: string
     nominee: string
+    year?: number
     userId: number
   }
 
   export type VoteUpdateInput = {
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutVotesNestedInput
   }
 
@@ -8345,6 +8395,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -8352,18 +8403,21 @@ export namespace Prisma {
     id?: number
     category: string
     nominee: string
+    year?: number
     userId: number
   }
 
   export type VoteUpdateManyMutationInput = {
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type VoteUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -8493,40 +8547,47 @@ export namespace Prisma {
   export type WinnerCreateInput = {
     category: string
     nominee: string
+    year?: number
   }
 
   export type WinnerUncheckedCreateInput = {
     id?: number
     category: string
     nominee: string
+    year?: number
   }
 
   export type WinnerUpdateInput = {
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type WinnerUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type WinnerCreateManyInput = {
     id?: number
     category: string
     nominee: string
+    year?: number
   }
 
   export type WinnerUpdateManyMutationInput = {
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type WinnerUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type EventConfigCreateInput = {
@@ -8681,20 +8742,23 @@ export namespace Prisma {
     isNot?: UserWhereInput
   }
 
-  export type VoteUserIdCategoryCompoundUniqueInput = {
+  export type VoteUserIdCategoryYearCompoundUniqueInput = {
     userId: number
     category: string
+    year: number
   }
 
   export type VoteCountOrderByAggregateInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
   }
 
   export type VoteAvgOrderByAggregateInput = {
     id?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
   }
 
@@ -8702,6 +8766,7 @@ export namespace Prisma {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
   }
 
@@ -8709,11 +8774,13 @@ export namespace Prisma {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
   }
 
   export type VoteSumOrderByAggregateInput = {
     id?: SortOrder
+    year?: SortOrder
     userId?: SortOrder
   }
 
@@ -8851,30 +8918,40 @@ export namespace Prisma {
     categoryId?: SortOrder
   }
 
+  export type WinnerCategoryYearCompoundUniqueInput = {
+    category: string
+    year: number
+  }
+
   export type WinnerCountOrderByAggregateInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
   }
 
   export type WinnerAvgOrderByAggregateInput = {
     id?: SortOrder
+    year?: SortOrder
   }
 
   export type WinnerMaxOrderByAggregateInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
   }
 
   export type WinnerMinOrderByAggregateInput = {
     id?: SortOrder
     category?: SortOrder
     nominee?: SortOrder
+    year?: SortOrder
   }
 
   export type WinnerSumOrderByAggregateInput = {
     id?: SortOrder
+    year?: SortOrder
   }
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
@@ -9213,12 +9290,14 @@ export namespace Prisma {
   export type VoteCreateWithoutUserInput = {
     category: string
     nominee: string
+    year?: number
   }
 
   export type VoteUncheckedCreateWithoutUserInput = {
     id?: number
     category: string
     nominee: string
+    year?: number
   }
 
   export type VoteCreateOrConnectWithoutUserInput = {
@@ -9254,6 +9333,7 @@ export namespace Prisma {
     id?: IntFilter<"Vote"> | number
     category?: StringFilter<"Vote"> | string
     nominee?: StringFilter<"Vote"> | string
+    year?: IntFilter<"Vote"> | number
     userId?: IntFilter<"Vote"> | number
   }
 
@@ -9409,23 +9489,27 @@ export namespace Prisma {
     id?: number
     category: string
     nominee: string
+    year?: number
   }
 
   export type VoteUpdateWithoutUserInput = {
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type VoteUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type VoteUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
     nominee?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type NomineeCreateManyCategoryInput = {

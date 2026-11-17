@@ -18,12 +18,14 @@ router.get("/", async (req, res) => {
       },
     });
 
-    // Fetch winners from DB
+    // Fetch winners from DB, optionally filtered by year
     let winnersMap = {};
     try {
-      const winnersData = await prisma.winner.findMany();
+      const winnersData = await prisma.winner.findMany({
+        where: year ? { year } : {},
+      });
       winnersData.forEach((w) => {
-        winnersMap[w.category] = w.nominee;
+        winnersMap[`${w.year}:${w.category}`] = w.nominee;
       });
     } catch (winnerErr) {
       console.warn("Winner table not available:", winnerErr.message);
@@ -31,19 +33,15 @@ router.get("/", async (req, res) => {
 
     // Fetch categories with weights, optionally filtered by year
     let categoryWeights = {};
-    let validCategories = null; // null = all categories valid (global)
     try {
       const where = year ? { year } : {};
       const categories = await prisma.category.findMany({
         where,
-        select: { title: true, weight: true },
+        select: { title: true, weight: true, year: true },
       });
       categories.forEach((c) => {
-        categoryWeights[c.title] = c.weight;
+        categoryWeights[`${c.year}:${c.title}`] = c.weight;
       });
-      if (year) {
-        validCategories = new Set(categories.map((c) => c.title));
-      }
     } catch {
       // If Category table doesn't exist yet, use default weight of 1
     }
@@ -52,15 +50,14 @@ router.get("/", async (req, res) => {
       let totalPoints = 0;
 
       user.votes.forEach((vote) => {
-        const categoryKey = vote.category;
+        // If filtering by year, skip votes from other seasons
+        if (year && vote.year !== year) return;
 
-        // If filtering by year, skip categories not in that year
-        if (validCategories && !validCategories.has(categoryKey)) return;
-
-        const winningNomineeName = winnersMap[categoryKey];
+        const key = `${vote.year}:${vote.category}`;
+        const winningNomineeName = winnersMap[key];
 
         if (winningNomineeName && winningNomineeName === vote.nominee) {
-          totalPoints += categoryWeights[categoryKey] || 1;
+          totalPoints += categoryWeights[key] || 1;
         }
       });
 

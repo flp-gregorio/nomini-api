@@ -73,11 +73,16 @@ router.get("/:id/nominees", async (req, res) => {
       return res.status(404).json({ message: "Category not found" });
     }
 
-    // Check for winner in the Winner table
+    // Check for winner in the Winner table scoped to the category's year
     let winnerRecord = null;
     try {
       winnerRecord = await prisma.winner.findUnique({
-        where: { category: category.title },
+        where: {
+          category_year: {
+            category: category.title,
+            year: category.year,
+          },
+        },
       });
     } catch {
       // Winner table might not exist yet — safe to ignore
@@ -103,16 +108,25 @@ router.get("/:id/nominees", async (req, res) => {
 // POST /categories/winner — admin sets the winner for a category
 // Protected by authMiddleware + adminMiddleware (set in index.js)
 router.post("/winner", authMiddleware, adminMiddleware, async (req, res) => {
-  const { category, nominee } = req.body;
+  const { category, nominee, year } = req.body;
 
   if (!category || !nominee) {
     return res.status(400).json({ message: "Category and Nominee are required" });
   }
 
   try {
-    // Verify the category exists
+    let targetYear = year ? parseInt(year, 10) : null;
+    if (!targetYear) {
+      const latest = await prisma.category.findFirst({
+        orderBy: { year: "desc" },
+        select: { year: true },
+      });
+      targetYear = latest ? latest.year : new Date().getFullYear();
+    }
+
+    // Verify the category exists in the target year
     const cat = await prisma.category.findFirst({
-      where: { title: category },
+      where: { title: category, year: targetYear },
       include: { nominees: true },
     });
 
@@ -127,12 +141,17 @@ router.post("/winner", authMiddleware, adminMiddleware, async (req, res) => {
     }
 
     await prisma.winner.upsert({
-      where: { category: category },
+      where: {
+        category_year: {
+          category: category,
+          year: targetYear,
+        },
+      },
       update: { nominee: nominee },
-      create: { category: category, nominee: nominee },
+      create: { category: category, nominee: nominee, year: targetYear },
     });
 
-    res.json({ message: `Winner set for ${category}: ${nominee}` });
+    res.json({ message: `Winner set for ${category} (${targetYear}): ${nominee}` });
   } catch (err) {
     console.error("Error writing winner to database:", err);
     res.status(500).json({ message: "Failed to save winner" });

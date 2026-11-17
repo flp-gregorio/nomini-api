@@ -26,10 +26,11 @@ model Vote {
   id       Int    @id @default(autoincrement())
   category String
   nominee  String
+  year     Int    @default(2025)
   userId   Int
   user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([userId, category])
+  @@unique([userId, category, year])
 }
 
 model Category {
@@ -56,8 +57,11 @@ model Nominee {
 
 model Winner {
   id       Int    @id @default(autoincrement())
-  category String @unique
+  category String
   nominee  String
+  year     Int    @default(2025)
+
+  @@unique([category, year])
 }
 
 model EventConfig {

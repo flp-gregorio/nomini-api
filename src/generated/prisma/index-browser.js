@@ -132,6 +132,7 @@ exports.Prisma.VoteScalarFieldEnum = {
   id: 'id',
   category: 'category',
   nominee: 'nominee',
+  year: 'year',
   userId: 'userId'
 };
 
@@ -156,7 +157,8 @@ exports.Prisma.NomineeScalarFieldEnum = {
 exports.Prisma.WinnerScalarFieldEnum = {
   id: 'id',
   category: 'category',
-  nominee: 'nominee'
+  nominee: 'nominee',
+  year: 'year'
 };
 
 exports.Prisma.EventConfigScalarFieldEnum = {

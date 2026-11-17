@@ -3,29 +3,49 @@ import prisma from "../prismaClient.js";
 
 const router = express.Router();
 
-// TODO: Update this to the actual event start time
-const EVENT_START_TIME = new Date("2025-12-11T21:30:00-03:00");
+const EVENT_CONFIG_ID = 1;
 
-const checkVotingOpen = (req, res, next) => {
-  if (new Date() >= EVENT_START_TIME) {
-    return res
-      .status(403)
-      .json({ message: "Voting has closed as the event has started." });
+async function getActiveYear() {
+  const latest = await prisma.category.findFirst({
+    orderBy: { year: "desc" },
+    select: { year: true },
+  });
+  return latest ? latest.year : new Date().getFullYear();
+}
+
+const checkVotingOpen = async (req, res, next) => {
+  try {
+    const config = await prisma.eventConfig.findUnique({
+      where: { id: EVENT_CONFIG_ID },
+    });
+
+    if (config?.eventDate && new Date() >= new Date(config.eventDate)) {
+      return res
+        .status(403)
+        .json({ message: "Voting has closed as the event has started." });
+    }
+    next();
+  } catch (error) {
+    console.error("Error checking event config:", error);
+    res.status(500).json({ message: "Failed to verify voting status" });
   }
-  next();
 };
 
 // --------------------------------------------------------
 // GET /votes/user
-// Get ALL votes for the currently logged-in user
+// Get ALL votes for the currently logged-in user (active season by default)
 // --------------------------------------------------------
 router.get("/user", async (req, res) => {
   try {
+    const targetYear = req.query.year
+      ? parseInt(req.query.year, 10)
+      : await getActiveYear();
+
     // Debug: Check who is asking
-    console.log(`Fetching votes for User ID: ${req.userId}`);
+    console.log(`Fetching votes for User ID: ${req.userId} (year: ${targetYear})`);
 
     const votes = await prisma.vote.findMany({
-      where: { userId: Number(req.userId) },
+      where: { userId: Number(req.userId), year: targetYear },
     });
 
     console.log("Votes found in DB:", votes.length);
@@ -39,12 +59,17 @@ router.get("/user", async (req, res) => {
 
 // --------------------------------------------------------
 // GET /votes/stats
-// Returns the vote count for every nominee in every category
+// Returns the vote count for every nominee in every category (active season by default)
 // --------------------------------------------------------
 router.get("/stats", async (req, res) => {
   try {
+    const targetYear = req.query.year
+      ? parseInt(req.query.year, 10)
+      : await getActiveYear();
+
     const results = await prisma.vote.groupBy({
       by: ["category", "nominee"],
+      where: { year: targetYear },
       _count: {
         _all: true,
       },
@@ -90,10 +115,12 @@ router.post("/", checkVotingOpen, async (req, res) => {
   }
 
   try {
+    const activeYear = await getActiveYear();
     const vote = await prisma.vote.create({
       data: {
         category,
         nominee,
+        year: activeYear,
         userId: Number(req.userId),
       },
     });
@@ -123,10 +150,12 @@ router.put("/:id", checkVotingOpen, async (req, res) => {
   }
 
   try {
+    const activeYear = await getActiveYear();
     const result = await prisma.vote.updateMany({
       where: {
         id: Number(id),
         userId: Number(req.userId),
+        year: activeYear,
       },
       data: {
         nominee,
@@ -154,10 +183,12 @@ router.delete("/:id", checkVotingOpen, async (req, res) => {
   const { id } = req.params;
 
   try {
+    const activeYear = await getActiveYear();
     const result = await prisma.vote.deleteMany({
       where: {
         id: Number(id),
         userId: Number(req.userId),
+        year: activeYear,
       },
     });
 
