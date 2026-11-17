@@ -8,6 +8,7 @@ import authMiddleware from './middleware/authMiddleware.js';
 import leaderboardRoutes from './routes/leaderboardRoutes.js';
 import categoriesRoutes from './routes/categoriesRoutes.js';
 import eventRoutes from './routes/eventRoutes.js';
+import artworkRoutes from './routes/artworkRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -27,6 +28,7 @@ app.use('/event', eventRoutes);
 // Authenticated routes
 app.use('/votes', authMiddleware, votesRoutes);
 app.use('/leaderboard', authMiddleware, leaderboardRoutes);
+app.use('/artwork', artworkRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running 🚀");

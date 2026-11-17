@@ -88,15 +88,43 @@ router.get("/:id/nominees", async (req, res) => {
       // Winner table might not exist yet — safe to ignore
     }
 
-    const nominees = category.nominees.map((n) => ({
-      id: n.name,
-      name: n.name,
-      publisher: n.publisher,
-      image: n.image,
-      description: n.description,
-      genre: n.genre,
-      Winner: winnerRecord ? n.name === winnerRecord.nominee : false,
-    }));
+    // Resolve normalized GameArtwork references (deduplicated across categories)
+    const nomineeNames = [...new Set(category.nominees.map((n) => n.name))];
+    let artworkMap = new Map();
+    if (nomineeNames.length > 0) {
+      try {
+        const artworks = await prisma.gameArtwork.findMany({
+          where: { name: { in: nomineeNames } },
+        });
+        artworkMap = new Map(artworks.map((a) => [a.name, a]));
+      } catch {
+        // Safe fallback if GameArtwork table is unavailable
+      }
+    }
+
+    const nominees = category.nominees.map((n) => {
+      const savedArtwork = artworkMap.get(n.name);
+      return {
+        id: n.name,
+        name: n.name,
+        publisher: n.publisher,
+        image: savedArtwork ? savedArtwork.imageUrl : n.image,
+        description: n.description,
+        genre: n.genre,
+        Winner: winnerRecord ? n.name === winnerRecord.nominee : false,
+        artwork: savedArtwork
+          ? {
+              provider: savedArtwork.provider,
+              providerGameId: savedArtwork.providerGameId,
+              imageId: savedArtwork.imageId,
+              imageUrl: savedArtwork.imageUrl,
+              type: savedArtwork.type,
+              width: savedArtwork.width,
+              height: savedArtwork.height,
+            }
+          : null,
+      };
+    });
 
     res.json(nominees);
   } catch (error) {

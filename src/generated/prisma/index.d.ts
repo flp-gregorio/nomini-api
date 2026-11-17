@@ -43,6 +43,11 @@ export type Winner = $Result.DefaultSelection<Prisma.$WinnerPayload>
  * 
  */
 export type EventConfig = $Result.DefaultSelection<Prisma.$EventConfigPayload>
+/**
+ * Model GameArtwork
+ * 
+ */
+export type GameArtwork = $Result.DefaultSelection<Prisma.$GameArtworkPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -220,6 +225,16 @@ export class PrismaClient<
     * ```
     */
   get eventConfig(): Prisma.EventConfigDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.gameArtwork`: Exposes CRUD operations for the **GameArtwork** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GameArtworks
+    * const gameArtworks = await prisma.gameArtwork.findMany()
+    * ```
+    */
+  get gameArtwork(): Prisma.GameArtworkDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -659,7 +674,8 @@ export namespace Prisma {
     Category: 'Category',
     Nominee: 'Nominee',
     Winner: 'Winner',
-    EventConfig: 'EventConfig'
+    EventConfig: 'EventConfig',
+    GameArtwork: 'GameArtwork'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -675,7 +691,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vote" | "category" | "nominee" | "winner" | "eventConfig"
+      modelProps: "user" | "vote" | "category" | "nominee" | "winner" | "eventConfig" | "gameArtwork"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1123,6 +1139,80 @@ export namespace Prisma {
           }
         }
       }
+      GameArtwork: {
+        payload: Prisma.$GameArtworkPayload<ExtArgs>
+        fields: Prisma.GameArtworkFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GameArtworkFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GameArtworkFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>
+          }
+          findFirst: {
+            args: Prisma.GameArtworkFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GameArtworkFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>
+          }
+          findMany: {
+            args: Prisma.GameArtworkFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>[]
+          }
+          create: {
+            args: Prisma.GameArtworkCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>
+          }
+          createMany: {
+            args: Prisma.GameArtworkCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.GameArtworkCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>[]
+          }
+          delete: {
+            args: Prisma.GameArtworkDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>
+          }
+          update: {
+            args: Prisma.GameArtworkUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>
+          }
+          deleteMany: {
+            args: Prisma.GameArtworkDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GameArtworkUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.GameArtworkUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>[]
+          }
+          upsert: {
+            args: Prisma.GameArtworkUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GameArtworkPayload>
+          }
+          aggregate: {
+            args: Prisma.GameArtworkAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGameArtwork>
+          }
+          groupBy: {
+            args: Prisma.GameArtworkGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GameArtworkGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GameArtworkCountArgs<ExtArgs>
+            result: $Utils.Optional<GameArtworkCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1221,6 +1311,7 @@ export namespace Prisma {
     nominee?: NomineeOmit
     winner?: WinnerOmit
     eventConfig?: EventConfigOmit
+    gameArtwork?: GameArtworkOmit
   }
 
   /* Types for Logging */
@@ -7811,6 +7902,1116 @@ export namespace Prisma {
 
 
   /**
+   * Model GameArtwork
+   */
+
+  export type AggregateGameArtwork = {
+    _count: GameArtworkCountAggregateOutputType | null
+    _avg: GameArtworkAvgAggregateOutputType | null
+    _sum: GameArtworkSumAggregateOutputType | null
+    _min: GameArtworkMinAggregateOutputType | null
+    _max: GameArtworkMaxAggregateOutputType | null
+  }
+
+  export type GameArtworkAvgAggregateOutputType = {
+    id: number | null
+    providerGameId: number | null
+    imageId: number | null
+    width: number | null
+    height: number | null
+  }
+
+  export type GameArtworkSumAggregateOutputType = {
+    id: number | null
+    providerGameId: number | null
+    imageId: number | null
+    width: number | null
+    height: number | null
+  }
+
+  export type GameArtworkMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    provider: string | null
+    providerGameId: number | null
+    imageId: number | null
+    imageUrl: string | null
+    type: string | null
+    width: number | null
+    height: number | null
+    updatedAt: Date | null
+  }
+
+  export type GameArtworkMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    provider: string | null
+    providerGameId: number | null
+    imageId: number | null
+    imageUrl: string | null
+    type: string | null
+    width: number | null
+    height: number | null
+    updatedAt: Date | null
+  }
+
+  export type GameArtworkCountAggregateOutputType = {
+    id: number
+    name: number
+    provider: number
+    providerGameId: number
+    imageId: number
+    imageUrl: number
+    type: number
+    width: number
+    height: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type GameArtworkAvgAggregateInputType = {
+    id?: true
+    providerGameId?: true
+    imageId?: true
+    width?: true
+    height?: true
+  }
+
+  export type GameArtworkSumAggregateInputType = {
+    id?: true
+    providerGameId?: true
+    imageId?: true
+    width?: true
+    height?: true
+  }
+
+  export type GameArtworkMinAggregateInputType = {
+    id?: true
+    name?: true
+    provider?: true
+    providerGameId?: true
+    imageId?: true
+    imageUrl?: true
+    type?: true
+    width?: true
+    height?: true
+    updatedAt?: true
+  }
+
+  export type GameArtworkMaxAggregateInputType = {
+    id?: true
+    name?: true
+    provider?: true
+    providerGameId?: true
+    imageId?: true
+    imageUrl?: true
+    type?: true
+    width?: true
+    height?: true
+    updatedAt?: true
+  }
+
+  export type GameArtworkCountAggregateInputType = {
+    id?: true
+    name?: true
+    provider?: true
+    providerGameId?: true
+    imageId?: true
+    imageUrl?: true
+    type?: true
+    width?: true
+    height?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type GameArtworkAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GameArtwork to aggregate.
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GameArtworks to fetch.
+     */
+    orderBy?: GameArtworkOrderByWithRelationInput | GameArtworkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GameArtworkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GameArtworks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GameArtworks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GameArtworks
+    **/
+    _count?: true | GameArtworkCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GameArtworkAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GameArtworkSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GameArtworkMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GameArtworkMaxAggregateInputType
+  }
+
+  export type GetGameArtworkAggregateType<T extends GameArtworkAggregateArgs> = {
+        [P in keyof T & keyof AggregateGameArtwork]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGameArtwork[P]>
+      : GetScalarType<T[P], AggregateGameArtwork[P]>
+  }
+
+
+
+
+  export type GameArtworkGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GameArtworkWhereInput
+    orderBy?: GameArtworkOrderByWithAggregationInput | GameArtworkOrderByWithAggregationInput[]
+    by: GameArtworkScalarFieldEnum[] | GameArtworkScalarFieldEnum
+    having?: GameArtworkScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GameArtworkCountAggregateInputType | true
+    _avg?: GameArtworkAvgAggregateInputType
+    _sum?: GameArtworkSumAggregateInputType
+    _min?: GameArtworkMinAggregateInputType
+    _max?: GameArtworkMaxAggregateInputType
+  }
+
+  export type GameArtworkGroupByOutputType = {
+    id: number
+    name: string
+    provider: string
+    providerGameId: number | null
+    imageId: number | null
+    imageUrl: string
+    type: string
+    width: number | null
+    height: number | null
+    updatedAt: Date
+    _count: GameArtworkCountAggregateOutputType | null
+    _avg: GameArtworkAvgAggregateOutputType | null
+    _sum: GameArtworkSumAggregateOutputType | null
+    _min: GameArtworkMinAggregateOutputType | null
+    _max: GameArtworkMaxAggregateOutputType | null
+  }
+
+  type GetGameArtworkGroupByPayload<T extends GameArtworkGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GameArtworkGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GameArtworkGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GameArtworkGroupByOutputType[P]>
+            : GetScalarType<T[P], GameArtworkGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GameArtworkSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    provider?: boolean
+    providerGameId?: boolean
+    imageId?: boolean
+    imageUrl?: boolean
+    type?: boolean
+    width?: boolean
+    height?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["gameArtwork"]>
+
+  export type GameArtworkSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    provider?: boolean
+    providerGameId?: boolean
+    imageId?: boolean
+    imageUrl?: boolean
+    type?: boolean
+    width?: boolean
+    height?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["gameArtwork"]>
+
+  export type GameArtworkSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    provider?: boolean
+    providerGameId?: boolean
+    imageId?: boolean
+    imageUrl?: boolean
+    type?: boolean
+    width?: boolean
+    height?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["gameArtwork"]>
+
+  export type GameArtworkSelectScalar = {
+    id?: boolean
+    name?: boolean
+    provider?: boolean
+    providerGameId?: boolean
+    imageId?: boolean
+    imageUrl?: boolean
+    type?: boolean
+    width?: boolean
+    height?: boolean
+    updatedAt?: boolean
+  }
+
+  export type GameArtworkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "provider" | "providerGameId" | "imageId" | "imageUrl" | "type" | "width" | "height" | "updatedAt", ExtArgs["result"]["gameArtwork"]>
+
+  export type $GameArtworkPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GameArtwork"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string
+      provider: string
+      providerGameId: number | null
+      imageId: number | null
+      imageUrl: string
+      type: string
+      width: number | null
+      height: number | null
+      updatedAt: Date
+    }, ExtArgs["result"]["gameArtwork"]>
+    composites: {}
+  }
+
+  type GameArtworkGetPayload<S extends boolean | null | undefined | GameArtworkDefaultArgs> = $Result.GetResult<Prisma.$GameArtworkPayload, S>
+
+  type GameArtworkCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GameArtworkFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GameArtworkCountAggregateInputType | true
+    }
+
+  export interface GameArtworkDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GameArtwork'], meta: { name: 'GameArtwork' } }
+    /**
+     * Find zero or one GameArtwork that matches the filter.
+     * @param {GameArtworkFindUniqueArgs} args - Arguments to find a GameArtwork
+     * @example
+     * // Get one GameArtwork
+     * const gameArtwork = await prisma.gameArtwork.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends GameArtworkFindUniqueArgs>(args: SelectSubset<T, GameArtworkFindUniqueArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one GameArtwork that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {GameArtworkFindUniqueOrThrowArgs} args - Arguments to find a GameArtwork
+     * @example
+     * // Get one GameArtwork
+     * const gameArtwork = await prisma.gameArtwork.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends GameArtworkFindUniqueOrThrowArgs>(args: SelectSubset<T, GameArtworkFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GameArtwork that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkFindFirstArgs} args - Arguments to find a GameArtwork
+     * @example
+     * // Get one GameArtwork
+     * const gameArtwork = await prisma.gameArtwork.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends GameArtworkFindFirstArgs>(args?: SelectSubset<T, GameArtworkFindFirstArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GameArtwork that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkFindFirstOrThrowArgs} args - Arguments to find a GameArtwork
+     * @example
+     * // Get one GameArtwork
+     * const gameArtwork = await prisma.gameArtwork.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends GameArtworkFindFirstOrThrowArgs>(args?: SelectSubset<T, GameArtworkFindFirstOrThrowArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more GameArtworks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GameArtworks
+     * const gameArtworks = await prisma.gameArtwork.findMany()
+     * 
+     * // Get first 10 GameArtworks
+     * const gameArtworks = await prisma.gameArtwork.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const gameArtworkWithIdOnly = await prisma.gameArtwork.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends GameArtworkFindManyArgs>(args?: SelectSubset<T, GameArtworkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a GameArtwork.
+     * @param {GameArtworkCreateArgs} args - Arguments to create a GameArtwork.
+     * @example
+     * // Create one GameArtwork
+     * const GameArtwork = await prisma.gameArtwork.create({
+     *   data: {
+     *     // ... data to create a GameArtwork
+     *   }
+     * })
+     * 
+     */
+    create<T extends GameArtworkCreateArgs>(args: SelectSubset<T, GameArtworkCreateArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many GameArtworks.
+     * @param {GameArtworkCreateManyArgs} args - Arguments to create many GameArtworks.
+     * @example
+     * // Create many GameArtworks
+     * const gameArtwork = await prisma.gameArtwork.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends GameArtworkCreateManyArgs>(args?: SelectSubset<T, GameArtworkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many GameArtworks and returns the data saved in the database.
+     * @param {GameArtworkCreateManyAndReturnArgs} args - Arguments to create many GameArtworks.
+     * @example
+     * // Create many GameArtworks
+     * const gameArtwork = await prisma.gameArtwork.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many GameArtworks and only return the `id`
+     * const gameArtworkWithIdOnly = await prisma.gameArtwork.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends GameArtworkCreateManyAndReturnArgs>(args?: SelectSubset<T, GameArtworkCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a GameArtwork.
+     * @param {GameArtworkDeleteArgs} args - Arguments to delete one GameArtwork.
+     * @example
+     * // Delete one GameArtwork
+     * const GameArtwork = await prisma.gameArtwork.delete({
+     *   where: {
+     *     // ... filter to delete one GameArtwork
+     *   }
+     * })
+     * 
+     */
+    delete<T extends GameArtworkDeleteArgs>(args: SelectSubset<T, GameArtworkDeleteArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one GameArtwork.
+     * @param {GameArtworkUpdateArgs} args - Arguments to update one GameArtwork.
+     * @example
+     * // Update one GameArtwork
+     * const gameArtwork = await prisma.gameArtwork.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends GameArtworkUpdateArgs>(args: SelectSubset<T, GameArtworkUpdateArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more GameArtworks.
+     * @param {GameArtworkDeleteManyArgs} args - Arguments to filter GameArtworks to delete.
+     * @example
+     * // Delete a few GameArtworks
+     * const { count } = await prisma.gameArtwork.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends GameArtworkDeleteManyArgs>(args?: SelectSubset<T, GameArtworkDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GameArtworks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GameArtworks
+     * const gameArtwork = await prisma.gameArtwork.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends GameArtworkUpdateManyArgs>(args: SelectSubset<T, GameArtworkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GameArtworks and returns the data updated in the database.
+     * @param {GameArtworkUpdateManyAndReturnArgs} args - Arguments to update many GameArtworks.
+     * @example
+     * // Update many GameArtworks
+     * const gameArtwork = await prisma.gameArtwork.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more GameArtworks and only return the `id`
+     * const gameArtworkWithIdOnly = await prisma.gameArtwork.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends GameArtworkUpdateManyAndReturnArgs>(args: SelectSubset<T, GameArtworkUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one GameArtwork.
+     * @param {GameArtworkUpsertArgs} args - Arguments to update or create a GameArtwork.
+     * @example
+     * // Update or create a GameArtwork
+     * const gameArtwork = await prisma.gameArtwork.upsert({
+     *   create: {
+     *     // ... data to create a GameArtwork
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GameArtwork we want to update
+     *   }
+     * })
+     */
+    upsert<T extends GameArtworkUpsertArgs>(args: SelectSubset<T, GameArtworkUpsertArgs<ExtArgs>>): Prisma__GameArtworkClient<$Result.GetResult<Prisma.$GameArtworkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of GameArtworks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkCountArgs} args - Arguments to filter GameArtworks to count.
+     * @example
+     * // Count the number of GameArtworks
+     * const count = await prisma.gameArtwork.count({
+     *   where: {
+     *     // ... the filter for the GameArtworks we want to count
+     *   }
+     * })
+    **/
+    count<T extends GameArtworkCountArgs>(
+      args?: Subset<T, GameArtworkCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GameArtworkCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GameArtwork.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GameArtworkAggregateArgs>(args: Subset<T, GameArtworkAggregateArgs>): Prisma.PrismaPromise<GetGameArtworkAggregateType<T>>
+
+    /**
+     * Group by GameArtwork.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GameArtworkGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GameArtworkGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GameArtworkGroupByArgs['orderBy'] }
+        : { orderBy?: GameArtworkGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GameArtworkGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGameArtworkGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GameArtwork model
+   */
+  readonly fields: GameArtworkFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GameArtwork.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GameArtworkClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the GameArtwork model
+   */
+  interface GameArtworkFieldRefs {
+    readonly id: FieldRef<"GameArtwork", 'Int'>
+    readonly name: FieldRef<"GameArtwork", 'String'>
+    readonly provider: FieldRef<"GameArtwork", 'String'>
+    readonly providerGameId: FieldRef<"GameArtwork", 'Int'>
+    readonly imageId: FieldRef<"GameArtwork", 'Int'>
+    readonly imageUrl: FieldRef<"GameArtwork", 'String'>
+    readonly type: FieldRef<"GameArtwork", 'String'>
+    readonly width: FieldRef<"GameArtwork", 'Int'>
+    readonly height: FieldRef<"GameArtwork", 'Int'>
+    readonly updatedAt: FieldRef<"GameArtwork", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * GameArtwork findUnique
+   */
+  export type GameArtworkFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * Filter, which GameArtwork to fetch.
+     */
+    where: GameArtworkWhereUniqueInput
+  }
+
+  /**
+   * GameArtwork findUniqueOrThrow
+   */
+  export type GameArtworkFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * Filter, which GameArtwork to fetch.
+     */
+    where: GameArtworkWhereUniqueInput
+  }
+
+  /**
+   * GameArtwork findFirst
+   */
+  export type GameArtworkFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * Filter, which GameArtwork to fetch.
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GameArtworks to fetch.
+     */
+    orderBy?: GameArtworkOrderByWithRelationInput | GameArtworkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GameArtworks.
+     */
+    cursor?: GameArtworkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GameArtworks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GameArtworks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GameArtworks.
+     */
+    distinct?: GameArtworkScalarFieldEnum | GameArtworkScalarFieldEnum[]
+  }
+
+  /**
+   * GameArtwork findFirstOrThrow
+   */
+  export type GameArtworkFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * Filter, which GameArtwork to fetch.
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GameArtworks to fetch.
+     */
+    orderBy?: GameArtworkOrderByWithRelationInput | GameArtworkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GameArtworks.
+     */
+    cursor?: GameArtworkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GameArtworks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GameArtworks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GameArtworks.
+     */
+    distinct?: GameArtworkScalarFieldEnum | GameArtworkScalarFieldEnum[]
+  }
+
+  /**
+   * GameArtwork findMany
+   */
+  export type GameArtworkFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * Filter, which GameArtworks to fetch.
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GameArtworks to fetch.
+     */
+    orderBy?: GameArtworkOrderByWithRelationInput | GameArtworkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GameArtworks.
+     */
+    cursor?: GameArtworkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GameArtworks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GameArtworks.
+     */
+    skip?: number
+    distinct?: GameArtworkScalarFieldEnum | GameArtworkScalarFieldEnum[]
+  }
+
+  /**
+   * GameArtwork create
+   */
+  export type GameArtworkCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * The data needed to create a GameArtwork.
+     */
+    data: XOR<GameArtworkCreateInput, GameArtworkUncheckedCreateInput>
+  }
+
+  /**
+   * GameArtwork createMany
+   */
+  export type GameArtworkCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GameArtworks.
+     */
+    data: GameArtworkCreateManyInput | GameArtworkCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GameArtwork createManyAndReturn
+   */
+  export type GameArtworkCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * The data used to create many GameArtworks.
+     */
+    data: GameArtworkCreateManyInput | GameArtworkCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GameArtwork update
+   */
+  export type GameArtworkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * The data needed to update a GameArtwork.
+     */
+    data: XOR<GameArtworkUpdateInput, GameArtworkUncheckedUpdateInput>
+    /**
+     * Choose, which GameArtwork to update.
+     */
+    where: GameArtworkWhereUniqueInput
+  }
+
+  /**
+   * GameArtwork updateMany
+   */
+  export type GameArtworkUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GameArtworks.
+     */
+    data: XOR<GameArtworkUpdateManyMutationInput, GameArtworkUncheckedUpdateManyInput>
+    /**
+     * Filter which GameArtworks to update
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * Limit how many GameArtworks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GameArtwork updateManyAndReturn
+   */
+  export type GameArtworkUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * The data used to update GameArtworks.
+     */
+    data: XOR<GameArtworkUpdateManyMutationInput, GameArtworkUncheckedUpdateManyInput>
+    /**
+     * Filter which GameArtworks to update
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * Limit how many GameArtworks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GameArtwork upsert
+   */
+  export type GameArtworkUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * The filter to search for the GameArtwork to update in case it exists.
+     */
+    where: GameArtworkWhereUniqueInput
+    /**
+     * In case the GameArtwork found by the `where` argument doesn't exist, create a new GameArtwork with this data.
+     */
+    create: XOR<GameArtworkCreateInput, GameArtworkUncheckedCreateInput>
+    /**
+     * In case the GameArtwork was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GameArtworkUpdateInput, GameArtworkUncheckedUpdateInput>
+  }
+
+  /**
+   * GameArtwork delete
+   */
+  export type GameArtworkDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+    /**
+     * Filter which GameArtwork to delete.
+     */
+    where: GameArtworkWhereUniqueInput
+  }
+
+  /**
+   * GameArtwork deleteMany
+   */
+  export type GameArtworkDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GameArtworks to delete
+     */
+    where?: GameArtworkWhereInput
+    /**
+     * Limit how many GameArtworks to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * GameArtwork without action
+   */
+  export type GameArtworkDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GameArtwork
+     */
+    select?: GameArtworkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GameArtwork
+     */
+    omit?: GameArtworkOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -7886,6 +9087,22 @@ export namespace Prisma {
   };
 
   export type EventConfigScalarFieldEnum = (typeof EventConfigScalarFieldEnum)[keyof typeof EventConfigScalarFieldEnum]
+
+
+  export const GameArtworkScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    provider: 'provider',
+    providerGameId: 'providerGameId',
+    imageId: 'imageId',
+    imageUrl: 'imageUrl',
+    type: 'type',
+    width: 'width',
+    height: 'height',
+    updatedAt: 'updatedAt'
+  };
+
+  export type GameArtworkScalarFieldEnum = (typeof GameArtworkScalarFieldEnum)[keyof typeof GameArtworkScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -8312,6 +9529,85 @@ export namespace Prisma {
     eventDate?: DateTimeNullableWithAggregatesFilter<"EventConfig"> | Date | string | null
   }
 
+  export type GameArtworkWhereInput = {
+    AND?: GameArtworkWhereInput | GameArtworkWhereInput[]
+    OR?: GameArtworkWhereInput[]
+    NOT?: GameArtworkWhereInput | GameArtworkWhereInput[]
+    id?: IntFilter<"GameArtwork"> | number
+    name?: StringFilter<"GameArtwork"> | string
+    provider?: StringFilter<"GameArtwork"> | string
+    providerGameId?: IntNullableFilter<"GameArtwork"> | number | null
+    imageId?: IntNullableFilter<"GameArtwork"> | number | null
+    imageUrl?: StringFilter<"GameArtwork"> | string
+    type?: StringFilter<"GameArtwork"> | string
+    width?: IntNullableFilter<"GameArtwork"> | number | null
+    height?: IntNullableFilter<"GameArtwork"> | number | null
+    updatedAt?: DateTimeFilter<"GameArtwork"> | Date | string
+  }
+
+  export type GameArtworkOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    provider?: SortOrder
+    providerGameId?: SortOrderInput | SortOrder
+    imageId?: SortOrderInput | SortOrder
+    imageUrl?: SortOrder
+    type?: SortOrder
+    width?: SortOrderInput | SortOrder
+    height?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GameArtworkWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    name?: string
+    AND?: GameArtworkWhereInput | GameArtworkWhereInput[]
+    OR?: GameArtworkWhereInput[]
+    NOT?: GameArtworkWhereInput | GameArtworkWhereInput[]
+    provider?: StringFilter<"GameArtwork"> | string
+    providerGameId?: IntNullableFilter<"GameArtwork"> | number | null
+    imageId?: IntNullableFilter<"GameArtwork"> | number | null
+    imageUrl?: StringFilter<"GameArtwork"> | string
+    type?: StringFilter<"GameArtwork"> | string
+    width?: IntNullableFilter<"GameArtwork"> | number | null
+    height?: IntNullableFilter<"GameArtwork"> | number | null
+    updatedAt?: DateTimeFilter<"GameArtwork"> | Date | string
+  }, "id" | "name">
+
+  export type GameArtworkOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    provider?: SortOrder
+    providerGameId?: SortOrderInput | SortOrder
+    imageId?: SortOrderInput | SortOrder
+    imageUrl?: SortOrder
+    type?: SortOrder
+    width?: SortOrderInput | SortOrder
+    height?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    _count?: GameArtworkCountOrderByAggregateInput
+    _avg?: GameArtworkAvgOrderByAggregateInput
+    _max?: GameArtworkMaxOrderByAggregateInput
+    _min?: GameArtworkMinOrderByAggregateInput
+    _sum?: GameArtworkSumOrderByAggregateInput
+  }
+
+  export type GameArtworkScalarWhereWithAggregatesInput = {
+    AND?: GameArtworkScalarWhereWithAggregatesInput | GameArtworkScalarWhereWithAggregatesInput[]
+    OR?: GameArtworkScalarWhereWithAggregatesInput[]
+    NOT?: GameArtworkScalarWhereWithAggregatesInput | GameArtworkScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"GameArtwork"> | number
+    name?: StringWithAggregatesFilter<"GameArtwork"> | string
+    provider?: StringWithAggregatesFilter<"GameArtwork"> | string
+    providerGameId?: IntNullableWithAggregatesFilter<"GameArtwork"> | number | null
+    imageId?: IntNullableWithAggregatesFilter<"GameArtwork"> | number | null
+    imageUrl?: StringWithAggregatesFilter<"GameArtwork"> | string
+    type?: StringWithAggregatesFilter<"GameArtwork"> | string
+    width?: IntNullableWithAggregatesFilter<"GameArtwork"> | number | null
+    height?: IntNullableWithAggregatesFilter<"GameArtwork"> | number | null
+    updatedAt?: DateTimeWithAggregatesFilter<"GameArtwork"> | Date | string
+  }
+
   export type UserCreateInput = {
     username: string
     email: string
@@ -8620,6 +9916,94 @@ export namespace Prisma {
   export type EventConfigUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     eventDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type GameArtworkCreateInput = {
+    name: string
+    provider: string
+    providerGameId?: number | null
+    imageId?: number | null
+    imageUrl: string
+    type?: string
+    width?: number | null
+    height?: number | null
+    updatedAt?: Date | string
+  }
+
+  export type GameArtworkUncheckedCreateInput = {
+    id?: number
+    name: string
+    provider: string
+    providerGameId?: number | null
+    imageId?: number | null
+    imageUrl: string
+    type?: string
+    width?: number | null
+    height?: number | null
+    updatedAt?: Date | string
+  }
+
+  export type GameArtworkUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    providerGameId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    width?: NullableIntFieldUpdateOperationsInput | number | null
+    height?: NullableIntFieldUpdateOperationsInput | number | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GameArtworkUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    providerGameId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    width?: NullableIntFieldUpdateOperationsInput | number | null
+    height?: NullableIntFieldUpdateOperationsInput | number | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GameArtworkCreateManyInput = {
+    id?: number
+    name: string
+    provider: string
+    providerGameId?: number | null
+    imageId?: number | null
+    imageUrl: string
+    type?: string
+    width?: number | null
+    height?: number | null
+    updatedAt?: Date | string
+  }
+
+  export type GameArtworkUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    providerGameId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    width?: NullableIntFieldUpdateOperationsInput | number | null
+    height?: NullableIntFieldUpdateOperationsInput | number | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GameArtworkUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    providerGameId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageId?: NullableIntFieldUpdateOperationsInput | number | null
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    width?: NullableIntFieldUpdateOperationsInput | number | null
+    height?: NullableIntFieldUpdateOperationsInput | number | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -9002,6 +10386,113 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type GameArtworkCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    provider?: SortOrder
+    providerGameId?: SortOrder
+    imageId?: SortOrder
+    imageUrl?: SortOrder
+    type?: SortOrder
+    width?: SortOrder
+    height?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GameArtworkAvgOrderByAggregateInput = {
+    id?: SortOrder
+    providerGameId?: SortOrder
+    imageId?: SortOrder
+    width?: SortOrder
+    height?: SortOrder
+  }
+
+  export type GameArtworkMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    provider?: SortOrder
+    providerGameId?: SortOrder
+    imageId?: SortOrder
+    imageUrl?: SortOrder
+    type?: SortOrder
+    width?: SortOrder
+    height?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GameArtworkMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    provider?: SortOrder
+    providerGameId?: SortOrder
+    imageId?: SortOrder
+    imageUrl?: SortOrder
+    type?: SortOrder
+    width?: SortOrder
+    height?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GameArtworkSumOrderByAggregateInput = {
+    id?: SortOrder
+    providerGameId?: SortOrder
+    imageId?: SortOrder
+    width?: SortOrder
+    height?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type VoteCreateNestedManyWithoutUserInput = {
     create?: XOR<VoteCreateWithoutUserInput, VoteUncheckedCreateWithoutUserInput> | VoteCreateWithoutUserInput[] | VoteUncheckedCreateWithoutUserInput[]
     connectOrCreate?: VoteCreateOrConnectWithoutUserInput | VoteCreateOrConnectWithoutUserInput[]
@@ -9136,6 +10627,18 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -9285,6 +10788,58 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type VoteCreateWithoutUserInput = {

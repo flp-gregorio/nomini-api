@@ -5,27 +5,51 @@
     "nominees": [
       {
         "Nominee": "007 First Light",
-        "Winner": false
+        "Publisher": "IO Interactive",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A cinematic espionage action-adventure that reimagines James Bond's origin as he earns a place in MI6's 00 programme.",
+        "Image": "/imgs/007_first_light.jpg"
       },
       {
         "Nominee": "Control Resonant",
-        "Winner": false
+        "Publisher": "Remedy Entertainment",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "An action RPG set in a warped Manhattan, where Dylan Faden confronts a reality-bending paranatural threat.",
+        "Image": "/imgs/control_resonant.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Phantom Blade Zero",
-        "Winner": false
+        "Publisher": "S-GAME",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "A fast-paced wuxia action RPG following Soul, a warrior with only 66 days to uncover a conspiracy and survive.",
+        "Image": "/imgs/phantom_blade_zero.jpg"
       },
       {
         "Nominee": "Resident Evil Requiem",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Survival Horror",
+        "Description": "A survival-horror entry in the Resident Evil series, built around tense exploration, dangerous encounters and a new nightmare.",
+        "Image": "/imgs/resident_evil_requiem.jpg"
       },
       {
         "Nominee": "The Legend of Zelda: Ocarina of Time",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A rebuilt action-adventure in which Link travels across time, explores Hyrule's dungeons and confronts Ganondorf.",
+        "Image": "/imgs/the_legend_of_zelda_ocarina_of_time.jpg"
       }
     ]
   },
@@ -35,23 +59,43 @@
     "nominees": [
       {
         "Nominee": "Control Resonant",
-        "Winner": false
+        "Publisher": "Remedy Entertainment",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "An action RPG set in a warped Manhattan, where Dylan Faden confronts a reality-bending paranatural threat.",
+        "Image": "/imgs/control_resonant.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Phantom Blade Zero",
-        "Winner": false
+        "Publisher": "S-GAME",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "A fast-paced wuxia action RPG following Soul, a warrior with only 66 days to uncover a conspiracy and survive.",
+        "Image": "/imgs/phantom_blade_zero.jpg"
       },
       {
         "Nominee": "Pragmata",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Sci-Fi Action-Adventure",
+        "Description": "A science-fiction action-adventure on the Moon, pairing astronaut Hugh with the android Diana in combat and puzzle-solving.",
+        "Image": "/imgs/pragmata.jpg"
       },
       {
         "Nominee": "Resident Evil Requiem",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Survival Horror",
+        "Description": "A survival-horror entry in the Resident Evil series, built around tense exploration, dangerous encounters and a new nightmare.",
+        "Image": "/imgs/resident_evil_requiem.jpg"
       }
     ]
   },
@@ -61,23 +105,43 @@
     "nominees": [
       {
         "Nominee": "007 First Light",
-        "Winner": false
+        "Publisher": "IO Interactive",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A cinematic espionage action-adventure that reimagines James Bond's origin as he earns a place in MI6's 00 programme.",
+        "Image": "/imgs/007_first_light.jpg"
       },
       {
         "Nominee": "Control Resonant",
-        "Winner": false
+        "Publisher": "Remedy Entertainment",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "An action RPG set in a warped Manhattan, where Dylan Faden confronts a reality-bending paranatural threat.",
+        "Image": "/imgs/control_resonant.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Resident Evil Requiem",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Survival Horror",
+        "Description": "A survival-horror entry in the Resident Evil series, built around tense exploration, dangerous encounters and a new nightmare.",
+        "Image": "/imgs/resident_evil_requiem.jpg"
       },
       {
         "Nominee": "The Blood of Dawnwalker",
-        "Winner": false
+        "Publisher": "Rebel Wolves",
+        "Winner": false,
+        "Genre": "Dark Fantasy Action RPG",
+        "Description": "An open-world dark-fantasy RPG about Coen, who is human by day and a vampire by night, fighting to save his family.",
+        "Image": "/imgs/the_blood_of_dawnwalker.jpg"
       }
     ]
   },
@@ -87,23 +151,43 @@
     "nominees": [
       {
         "Nominee": "Control Resonant",
-        "Winner": false
+        "Publisher": "Remedy Entertainment",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "An action RPG set in a warped Manhattan, where Dylan Faden confronts a reality-bending paranatural threat.",
+        "Image": "/imgs/control_resonant.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Mouse PI For Hire",
-        "Winner": false
+        "Publisher": "Fumi Games",
+        "Winner": false,
+        "Genre": "First-Person Shooter",
+        "Description": "A noir-flavoured first-person shooter starring private investigator Jack Pepper in a hand-drawn world inspired by 1930s cartoons.",
+        "Image": "/imgs/mouse_p_i_for_hire.jpg"
       },
       {
         "Nominee": "Phantom Blade Zero",
-        "Winner": false
+        "Publisher": "S-GAME",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "A fast-paced wuxia action RPG following Soul, a warrior with only 66 days to uncover a conspiracy and survive.",
+        "Image": "/imgs/phantom_blade_zero.jpg"
       },
       {
         "Nominee": "The Legend of Zelda: Ocarina of Time",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A rebuilt action-adventure in which Link travels across time, explores Hyrule's dungeons and confronts Ganondorf.",
+        "Image": "/imgs/the_legend_of_zelda_ocarina_of_time.jpg"
       }
     ]
   },
@@ -113,23 +197,43 @@
     "nominees": [
       {
         "Nominee": "Ace Combat 8: Wings of Theve",
-        "Winner": false
+        "Publisher": "Bandai Namco Aces",
+        "Winner": false,
+        "Genre": "Aerial Combat",
+        "Description": "An aerial-combat game that casts players as an ace pilot fighting to reclaim a war-torn homeland.",
+        "Image": "/imgs/ace_combat_8_wings_of_theve.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Mixtape",
-        "Winner": false
+        "Publisher": "Beethoven & Dinosaur",
+        "Winner": false,
+        "Genre": "Narrative Adventure",
+        "Description": "A coming-of-age narrative adventure following three friends through a final night together, shaped by music and memories.",
+        "Image": "/imgs/mixtape.jpg"
       },
       {
         "Nominee": "Phantom Blade Zero",
-        "Winner": false
+        "Publisher": "S-GAME",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "A fast-paced wuxia action RPG following Soul, a warrior with only 66 days to uncover a conspiracy and survive.",
+        "Image": "/imgs/phantom_blade_zero.jpg"
       },
       {
         "Nominee": "The Legend of Zelda: Ocarina of Time",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A rebuilt action-adventure in which Link travels across time, explores Hyrule's dungeons and confronts Ganondorf.",
+        "Image": "/imgs/the_legend_of_zelda_ocarina_of_time.jpg"
       }
     ]
   },
@@ -139,23 +243,43 @@
     "nominees": [
       {
         "Nominee": "Ace Combat 8: Wings of Theve",
-        "Winner": false
+        "Publisher": "Bandai Namco Aces",
+        "Winner": false,
+        "Genre": "Aerial Combat",
+        "Description": "An aerial-combat game that casts players as an ace pilot fighting to reclaim a war-torn homeland.",
+        "Image": "/imgs/ace_combat_8_wings_of_theve.jpg"
       },
       {
         "Nominee": "Control Resonant",
-        "Winner": false
+        "Publisher": "Remedy Entertainment",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "An action RPG set in a warped Manhattan, where Dylan Faden confronts a reality-bending paranatural threat.",
+        "Image": "/imgs/control_resonant.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Resident Evil Requiem",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Survival Horror",
+        "Description": "A survival-horror entry in the Resident Evil series, built around tense exploration, dangerous encounters and a new nightmare.",
+        "Image": "/imgs/resident_evil_requiem.jpg"
       },
       {
         "Nominee": "Star Wars Galactic Racer",
-        "Winner": false
+        "Publisher": "Fuse Games",
+        "Winner": false,
+        "Genre": "Racing",
+        "Description": "A high-speed racing game set in the Star Wars galaxy, focused on dangerous underground circuits and customizable racing craft.",
+        "Image": "/imgs/star_wars_galactic_racer.jpg"
       }
     ]
   },
@@ -166,27 +290,42 @@
       {
         "Nominee": "Angela Sant’Albano",
         "Publisher": "Resident Evil Requiem",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Role: Grace Ashcroft",
+        "Description": "Performs Grace Ashcroft in Resident Evil Requiem, bringing the game's central survival-horror perspective to life.",
+        "Image": "/imgs/angela_sant_albano.jpg"
       },
       {
         "Nominee": "Liam McIntyre",
         "Publisher": "Marvel's Wolverine",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Role: Wolverine",
+        "Description": "Performs Wolverine in Marvel's Wolverine, portraying the character's physical intensity and emotional conflict.",
+        "Image": "/imgs/liam_mcintyre.jpg"
       },
       {
         "Nominee": "Manni L. Perez",
         "Publisher": "Grand Theft Auto 6",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Performance",
+        "Description": "Recognized for her acting and performance-capture work in Grand Theft Auto VI.",
+        "Image": "/imgs/manni_l_perez.jpg"
       },
       {
         "Nominee": "Patrick Gibson",
         "Publisher": "007 First Light",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Role: James Bond",
+        "Description": "Portrays a young James Bond in 007 First Light's reimagined origin story.",
+        "Image": "/imgs/patrick_gibson.jpg"
       },
       {
         "Nominee": "Rahul Kohli",
         "Publisher": "Saros",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Role: Arjun Devraj",
+        "Description": "Performs Arjun Devraj, the Soltari enforcer at the centre of Saros's science-fiction action story.",
+        "Image": "/imgs/rahul_kohli.jpg"
       }
     ]
   },
@@ -196,23 +335,43 @@
     "nominees": [
       {
         "Nominee": "Ace Combat 8: Wings of Theve",
-        "Winner": false
+        "Publisher": "Bandai Namco Aces",
+        "Winner": false,
+        "Genre": "Aerial Combat",
+        "Description": "An aerial-combat game that casts players as an ace pilot fighting to reclaim a war-torn homeland.",
+        "Image": "/imgs/ace_combat_8_wings_of_theve.jpg"
       },
       {
         "Nominee": "Gears of War: E-Day",
-        "Winner": false
+        "Publisher": "The Coalition",
+        "Winner": false,
+        "Genre": "Third-Person Shooter",
+        "Description": "A third-person shooter returning to the beginning of Emergence Day and the first devastating Locust attacks.",
+        "Image": "/imgs/gears_of_war_e_day.jpg"
       },
       {
         "Nominee": "Onimusha: Way of the Sword",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Action",
+        "Description": "A supernatural sword-action adventure in which a samurai battles demonic forces in a dark version of historic Japan.",
+        "Image": "/imgs/onimusha_way_of_the_sword.jpg"
       },
       {
         "Nominee": "Phantom Blade Zero",
-        "Winner": false
+        "Publisher": "S-GAME",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "A fast-paced wuxia action RPG following Soul, a warrior with only 66 days to uncover a conspiracy and survive.",
+        "Image": "/imgs/phantom_blade_zero.jpg"
       },
       {
         "Nominee": "Saros",
-        "Winner": false
+        "Publisher": "Housemarque",
+        "Winner": false,
+        "Genre": "Third-Person Action",
+        "Description": "A third-person action game following Soltari enforcer Arjun Devraj on the shifting, hostile world of Carcosa.",
+        "Image": "/imgs/saros.jpg"
       }
     ]
   },
@@ -222,27 +381,51 @@
     "nominees": [
       {
         "Nominee": "007 First Light",
-        "Winner": false
+        "Publisher": "IO Interactive",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A cinematic espionage action-adventure that reimagines James Bond's origin as he earns a place in MI6's 00 programme.",
+        "Image": "/imgs/007_first_light.jpg"
       },
       {
         "Nominee": "Control Resonant",
-        "Winner": false
+        "Publisher": "Remedy Entertainment",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "An action RPG set in a warped Manhattan, where Dylan Faden confronts a reality-bending paranatural threat.",
+        "Image": "/imgs/control_resonant.jpg"
       },
       {
         "Nominee": "Grand Theft Auto 6",
-        "Winner": false
+        "Publisher": "Rockstar North",
+        "Winner": false,
+        "Genre": "Open-World Action",
+        "Description": "An open-world crime adventure following Jason and Lucia through the fictional state of Leonida.",
+        "Image": "/imgs/grand_theft_auto_6.jpg"
       },
       {
         "Nominee": "Pragmata",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Sci-Fi Action-Adventure",
+        "Description": "A science-fiction action-adventure on the Moon, pairing astronaut Hugh with the android Diana in combat and puzzle-solving.",
+        "Image": "/imgs/pragmata.jpg"
       },
       {
         "Nominee": "Resident Evil Requiem",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Survival Horror",
+        "Description": "A survival-horror entry in the Resident Evil series, built around tense exploration, dangerous encounters and a new nightmare.",
+        "Image": "/imgs/resident_evil_requiem.jpg"
       },
       {
         "Nominee": "The Legend of Zelda: Ocarina of Time",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A rebuilt action-adventure in which Link travels across time, explores Hyrule's dungeons and confronts Ganondorf.",
+        "Image": "/imgs/the_legend_of_zelda_ocarina_of_time.jpg"
       }
     ]
   },
@@ -252,23 +435,43 @@
     "nominees": [
       {
         "Nominee": "Final Fantasy Resonance",
-        "Winner": false
+        "Publisher": "Lancarse",
+        "Winner": false,
+        "Genre": "RPG",
+        "Description": "A fantasy role-playing entry in the Final Fantasy universe, built around a new party, world and character-driven adventure.",
+        "Image": "/imgs/final_fantasy_resonance.jpg"
       },
       {
         "Nominee": "Fire Emblem Fortune’s Weave",
-        "Winner": false
+        "Publisher": "Intelligent Systems",
+        "Winner": false,
+        "Genre": "Tactical RPG",
+        "Description": "A tactical role-playing adventure in which four heroes' paths intertwine as they confront the return of the demon god Balor.",
+        "Image": "/imgs/fire_emblem_fortunes_weave.jpg"
       },
       {
         "Nominee": "Monster Hunter Stories 3: Twisted Reflection",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Turn-Based RPG",
+        "Description": "A role-playing adventure in the Monster Hunter world, built around Riders, companion monsters and turn-based battles.",
+        "Image": "/imgs/monster_hunter_stories_3_twisted_reflection.jpg"
       },
       {
         "Nominee": "The Blood of Dawnwalker",
-        "Winner": false
+        "Publisher": "Rebel Wolves",
+        "Winner": false,
+        "Genre": "Dark Fantasy Action RPG",
+        "Description": "An open-world dark-fantasy RPG about Coen, who is human by day and a vampire by night, fighting to save his family.",
+        "Image": "/imgs/the_blood_of_dawnwalker.jpg"
       },
       {
         "Nominee": "Trails in the Sky 2nd Chapter",
-        "Winner": false
+        "Publisher": "Nihon Falcom",
+        "Winner": false,
+        "Genre": "JRPG",
+        "Description": "A story-driven Japanese role-playing game continuing Estelle and Joshua's journey through the Liberl Kingdom.",
+        "Image": "/imgs/trails_in_the_sky_2nd_chapter.jpg"
       }
     ]
   },
@@ -278,23 +481,43 @@
     "nominees": [
       {
         "Nominee": "2XKO",
-        "Winner": false
+        "Publisher": "Riot Games",
+        "Winner": false,
+        "Genre": "Fighting",
+        "Description": "A tag-team fighting game set in the League of Legends universe, built around two-character teams and competitive combat.",
+        "Image": "/imgs/2xko.jpg"
       },
       {
         "Nominee": "Avatar Legends: The Fighting Game",
-        "Winner": false
+        "Publisher": "Gameplay Group",
+        "Winner": false,
+        "Genre": "2D Fighting",
+        "Description": "A 2D fighting game set in the Avatar universe, with combat styles inspired by water, earth, fire and air bending.",
+        "Image": "/imgs/avatar_legends_the_fighting_game.jpg"
       },
       {
         "Nominee": "Invincible Vs",
-        "Winner": false
+        "Publisher": "Quarter Up",
+        "Winner": false,
+        "Genre": "Tag-Team Fighting",
+        "Description": "A brutal three-versus-three superhero tag fighter set in the Invincible universe.",
+        "Image": "/imgs/invincible_vs.jpg"
       },
       {
         "Nominee": "Marvel Tokon: Fighting Souls",
-        "Winner": false
+        "Publisher": "Arc System Works",
+        "Winner": false,
+        "Genre": "Team Fighting",
+        "Description": "A four-versus-four tag-team fighter that brings Marvel heroes and villains together in fast-paced battles.",
+        "Image": "/imgs/marvel_tokon_fighting_souls.jpg"
       },
       {
         "Nominee": "My Hero Academia: All's Justice",
-        "Winner": false
+        "Publisher": "Byking",
+        "Winner": false,
+        "Genre": "3D Arena Fighting",
+        "Description": "A 3D arena fighter based on My Hero Academia, featuring characters and battles from the series' Final War.",
+        "Image": "/imgs/my_hero_academia_alls_justice.jpg"
       }
     ]
   },
@@ -304,23 +527,43 @@
     "nominees": [
       {
         "Nominee": "Big Walk",
-        "Winner": false
+        "Publisher": "House House",
+        "Winner": false,
+        "Genre": "Co-op Adventure",
+        "Description": "A cooperative online adventure about friends exploring a wide-open world, solving puzzles and communicating to overcome challenges.",
+        "Image": "/imgs/big_walk.jpg"
       },
       {
         "Nominee": "Lego Batman: Legacy of the Dark Knight",
-        "Winner": false
+        "Publisher": "TT Games",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "An open-world LEGO action-adventure following Bruce Wayne's journey to become Gotham's Dark Knight.",
+        "Image": "/imgs/lego_batman_legacy_of_the_dark_knight.jpg"
       },
       {
         "Nominee": "Nintendo Switch Sports Resort",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Sports",
+        "Description": "A motion-controlled sports collection set on Spocco Resort, featuring activities across land, sea and sky.",
+        "Image": "/imgs/nintendo_switch_sports_resort.jpg"
       },
       {
         "Nominee": "Pokémon Pokopia",
-        "Winner": false
+        "Publisher": "Game Freak / Omega Force",
+        "Winner": false,
+        "Genre": "Life Simulation",
+        "Description": "A relaxed Pokémon life-simulation adventure centred on exploring, building and creating a welcoming place for Pokémon.",
+        "Image": "/imgs/pokemon_pokopia.jpg"
       },
       {
         "Nominee": "Yoshi and the Mysterious Block",
-        "Winner": false
+        "Publisher": "Good-Feel",
+        "Winner": false,
+        "Genre": "Platform Adventure",
+        "Description": "A colourful Yoshi adventure about exploring the pages of a mysterious talking book and learning about the creatures within.",
+        "Image": "/imgs/yoshi_and_the_mysterious_book.jpg"
       }
     ]
   },
@@ -330,23 +573,43 @@
     "nominees": [
       {
         "Nominee": "Mewgenics",
-        "Winner": false
+        "Publisher": "Edmund McMillen / Tyler Glaiel",
+        "Winner": false,
+        "Genre": "Tactical Roguelike",
+        "Description": "A turn-based tactical roguelike about breeding, training and sending unusual cats into increasingly dangerous battles.",
+        "Image": "/imgs/mewgenics.jpg"
       },
       {
         "Nominee": "Planet Zoo 2",
-        "Winner": false
+        "Publisher": "Frontier Developments",
+        "Winner": false,
+        "Genre": "Zoo Management Simulation",
+        "Description": "A zoo-management simulation about designing habitats, caring for wildlife and building conservation-focused animal parks.",
+        "Image": "/imgs/planet_zoo_2.jpg"
       },
       {
         "Nominee": "Pokemon Pokopia",
-        "Winner": false
+        "Publisher": "Game Freak / Omega Force",
+        "Winner": false,
+        "Genre": "Life Simulation",
+        "Description": "A relaxed Pokémon life-simulation adventure centred on exploring, building and creating a welcoming place for Pokémon.",
+        "Image": "/imgs/pokemon_pokopia.jpg"
       },
       {
         "Nominee": "Slay the Spire 2",
-        "Winner": false
+        "Publisher": "Mega Crit",
+        "Winner": false,
+        "Genre": "Roguelike Deckbuilder",
+        "Description": "A sequel to the roguelike deckbuilder, challenging players to craft card combinations, gather relics and climb a dangerous spire.",
+        "Image": "/imgs/slay_the_spire_2.jpg"
       },
       {
         "Nominee": "Star Wars Zero Company",
-        "Winner": false
+        "Publisher": "Bit Reactor",
+        "Winner": false,
+        "Genre": "Turn-Based Tactics",
+        "Description": "A single-player turn-based tactics game set during the Clone Wars, where an unconventional squad undertakes high-risk missions.",
+        "Image": "/imgs/star_wars_zero_company.jpg"
       }
     ]
   },
@@ -356,23 +619,43 @@
     "nominees": [
       {
         "Nominee": "EA Sports FC 27",
-        "Winner": false
+        "Publisher": "EA Vancouver / EA Romania",
+        "Winner": false,
+        "Genre": "Football Simulation",
+        "Description": "The latest entry in EA's football simulation series, featuring club and international football.",
+        "Image": "/imgs/ea_sports_fc_27.jpg"
       },
       {
         "Nominee": "Forza Horizon 6",
-        "Winner": false
+        "Publisher": "Playground Games",
+        "Winner": false,
+        "Genre": "Open-World Racing",
+        "Description": "An open-world racing game set in Japan, featuring a large map, hundreds of cars and the Horizon Festival.",
+        "Image": "/imgs/forza_horizon_6.jpg"
       },
       {
         "Nominee": "Nintendo Switch Sports Resort",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Sports",
+        "Description": "A motion-controlled sports collection set on Spocco Resort, featuring activities across land, sea and sky.",
+        "Image": "/imgs/nintendo_switch_sports_resort.jpg"
       },
       {
         "Nominee": "Screamer",
-        "Winner": false
+        "Publisher": "Milestone",
+        "Winner": false,
+        "Genre": "Arcade Racing",
+        "Description": "An arcade racing game blending high-speed competition, combat mechanics and a story set in a dystopian world.",
+        "Image": "/imgs/screamer.jpg"
       },
       {
         "Nominee": "Star Wars Galactic Racer",
-        "Winner": false
+        "Publisher": "Fuse Games",
+        "Winner": false,
+        "Genre": "Racing",
+        "Description": "A high-speed racing game set in the Star Wars galaxy, focused on dangerous underground circuits and customizable racing craft.",
+        "Image": "/imgs/star_wars_galactic_racer.jpg"
       }
     ]
   },
@@ -382,27 +665,51 @@
     "nominees": [
       {
         "Nominee": "Big Walk",
-        "Winner": false
+        "Publisher": "House House",
+        "Winner": false,
+        "Genre": "Co-op Adventure",
+        "Description": "A cooperative online adventure about friends exploring a wide-open world, solving puzzles and communicating to overcome challenges.",
+        "Image": "/imgs/big_walk.jpg"
       },
       {
         "Nominee": "Call of Duty: Modern Warfare 4",
-        "Winner": false
+        "Publisher": "Infinity Ward",
+        "Winner": false,
+        "Genre": "First-Person Shooter",
+        "Description": "A military first-person shooter featuring a global conflict, a story campaign and competitive multiplayer.",
+        "Image": "/imgs/call_of_duty_modern_warfare_4.jpg"
       },
       {
         "Nominee": "Gears of War: E-Day",
-        "Winner": false
+        "Publisher": "The Coalition",
+        "Winner": false,
+        "Genre": "Third-Person Shooter",
+        "Description": "A third-person shooter returning to the beginning of Emergence Day and the first devastating Locust attacks.",
+        "Image": "/imgs/gears_of_war_e_day.jpg"
       },
       {
         "Nominee": "Marathon",
-        "Winner": false
+        "Publisher": "Bungie",
+        "Winner": false,
+        "Genre": "Extraction Shooter",
+        "Description": "A science-fiction PvPvE extraction shooter in which rival Runner crews search an abandoned colony for valuable resources.",
+        "Image": "/imgs/marathon.jpg"
       },
       {
         "Nominee": "Mecca Chameleon",
-        "Winner": false
+        "Publisher": "LEMORION",
+        "Winner": false,
+        "Genre": "Multiplayer Party Game",
+        "Description": "A multiplayer hide-and-seek game where players paint their characters to camouflage themselves in the environment.",
+        "Image": "/imgs/mecca_chameleon.jpg"
       },
       {
         "Nominee": "Orbitals",
-        "Winner": false
+        "Publisher": "Shapefarm",
+        "Winner": false,
+        "Genre": "Co-op Puzzle Adventure",
+        "Description": "A two-player cooperative puzzle adventure following explorers Maki and Omura beyond a dangerous storm wall.",
+        "Image": "/imgs/orbitals.jpg"
       }
     ]
   },
@@ -412,23 +719,43 @@
     "nominees": [
       {
         "Nominee": "Big Walk",
-        "Winner": false
+        "Publisher": "House House",
+        "Winner": false,
+        "Genre": "Co-op Adventure",
+        "Description": "A cooperative online adventure about friends exploring a wide-open world, solving puzzles and communicating to overcome challenges.",
+        "Image": "/imgs/big_walk.jpg"
       },
       {
         "Nominee": "Cairn",
-        "Winner": false
+        "Publisher": "The Game Bakers",
+        "Winner": false,
+        "Genre": "Climbing Adventure",
+        "Description": "A realistic climbing adventure in which a mountaineer plans routes, manages resources and attempts to reach an unforgiving summit.",
+        "Image": "/imgs/cairn.jpg"
       },
       {
         "Nominee": "Denshattack!",
-        "Winner": false
+        "Publisher": "Undercoders",
+        "Winner": false,
+        "Genre": "Arcade Action",
+        "Description": "An arcade action game about performing gravity-defying tricks on a customizable train while racing through a transformed Japan.",
+        "Image": "/imgs/denshattack.jpg"
       },
       {
         "Nominee": "Mewgenics",
-        "Winner": false
+        "Publisher": "Edmund McMillen / Tyler Glaiel",
+        "Winner": false,
+        "Genre": "Tactical Roguelike",
+        "Description": "A turn-based tactical roguelike about breeding, training and sending unusual cats into increasingly dangerous battles.",
+        "Image": "/imgs/mewgenics.jpg"
       },
       {
         "Nominee": "Mina the Hollower",
-        "Winner": false
+        "Publisher": "Yacht Club Games",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A gothic action-adventure starring Mina, who burrows through a cursed island and battles monsters with a whip and varied weapons.",
+        "Image": "/imgs/mina_the_hollower.jpg"
       }
     ]
   },
@@ -438,23 +765,43 @@
     "nominees": [
       {
         "Nominee": "Dressmaker",
-        "Winner": false
+        "Publisher": "Cozy Lives",
+        "Winner": false,
+        "Genre": "Crafting Simulation",
+        "Description": "A cozy crafting simulation about designing, cutting and sewing dresses to fulfil commissions from townsfolk.",
+        "Image": "/imgs/dressmaker.jpg"
       },
       {
         "Nominee": "Esoteric Ebb",
-        "Winner": false
+        "Publisher": "Christoffer Bodegård",
+        "Winner": false,
+        "Genre": "CRPG",
+        "Description": "An isometric fantasy CRPG inspired by tabletop role-playing, featuring dice-based encounters, branching dialogue and a political mystery.",
+        "Image": "/imgs/esoteric_ebb.jpg"
       },
       {
         "Nominee": "Orbitals",
-        "Winner": false
+        "Publisher": "Shapefarm",
+        "Winner": false,
+        "Genre": "Co-op Puzzle Adventure",
+        "Description": "A two-player cooperative puzzle adventure following explorers Maki and Omura beyond a dangerous storm wall.",
+        "Image": "/imgs/orbitals.jpg"
       },
       {
         "Nominee": "Replaced",
-        "Winner": false
+        "Publisher": "Sad Cat Studios",
+        "Winner": false,
+        "Genre": "2.5D Action-Adventure",
+        "Description": "A cinematic 2.5D action-adventure set in an alternate 1980s America, starring an AI trapped in a human body.",
+        "Image": "/imgs/replaced.jpg"
       },
       {
         "Nominee": "Silver Pines",
-        "Winner": false
+        "Publisher": "Wych Elm",
+        "Winner": false,
+        "Genre": "Survival Horror Metroidvania",
+        "Description": "A survival-horror Metroidvania about a private investigator uncovering the secrets of an eerie, seemingly abandoned town.",
+        "Image": "/imgs/silver_pines.jpg"
       }
     ]
   },
@@ -464,23 +811,43 @@
     "nominees": [
       {
         "Nominee": "Arknights: Enfield",
-        "Winner": false
+        "Publisher": "Hypergryph",
+        "Winner": false,
+        "Genre": "Action RPG / Strategy",
+        "Description": "A 3D real-time strategy RPG set on Talos-II, where the Endministrator explores, builds and defends the frontier.",
+        "Image": "/imgs/arknights_enfield.jpg"
       },
       {
         "Nominee": "Monster Hunter Outlanders",
-        "Winner": false
+        "Publisher": "TiMi Studio Group",
+        "Winner": false,
+        "Genre": "Mobile Action RPG",
+        "Description": "A mobile open-world hunting adventure where players explore natural environments and hunt giant monsters with companions.",
+        "Image": "/imgs/monster_hunter_outlanders.jpg"
       },
       {
         "Nominee": "Neverness to Everness",
-        "Winner": false
+        "Publisher": "Hotta Studio",
+        "Winner": false,
+        "Genre": "Open-World Action RPG",
+        "Description": "A supernatural urban open-world RPG about an anomaly hunter investigating strange phenomena in the city of Hethereau.",
+        "Image": "/imgs/neverness_to_everness.jpg"
       },
       {
         "Nominee": "Pokémon Champions",
-        "Winner": false
+        "Publisher": "The Pokémon Works",
+        "Winner": false,
+        "Genre": "Competitive Battle",
+        "Description": "A battle-focused Pokémon game built around team-building, ranked competition and strategic turn-based battles.",
+        "Image": "/imgs/pokemon_champions.jpg"
       },
       {
         "Nominee": "Where Winds Meet",
-        "Winner": false
+        "Publisher": "Everstone Studio",
+        "Winner": false,
+        "Genre": "Open-World Action RPG",
+        "Description": "An open-world wuxia action RPG set in tenth-century China, combining martial-arts combat, exploration and a branching adventure.",
+        "Image": "/imgs/where_winds_meet.jpg"
       }
     ]
   },
@@ -490,23 +857,43 @@
     "nominees": [
       {
         "Nominee": "Forefront",
-        "Winner": false
+        "Publisher": "Triangle Factory",
+        "Winner": false,
+        "Genre": "VR Multiplayer Shooter",
+        "Description": "A large-scale virtual-reality shooter focused on team-based combat across expansive battlefields.",
+        "Image": "/imgs/forefront.jpg"
       },
       {
         "Nominee": "Into the Radius 2",
-        "Winner": false
+        "Publisher": "CM Immersive",
+        "Winner": false,
+        "Genre": "VR Survival Shooter",
+        "Description": "A virtual-reality survival shooter set in the Pechorsk Anomaly, where players explore surreal landscapes and face hostile entities.",
+        "Image": "/imgs/into_the_radius_2.jpg"
       },
       {
         "Nominee": "Little Nightmare VR: Altered Echoes",
-        "Winner": false
+        "Publisher": "ICONIK",
+        "Winner": false,
+        "Genre": "VR Horror Adventure",
+        "Description": "A first-person VR horror adventure starring Dark Six as she explores a disturbing world, solves puzzles and evades monstrous foes.",
+        "Image": "/imgs/little_nightmare_vr_altered_echoes.jpg"
       },
       {
         "Nominee": "Teenage Mutant Ninja Turtles: Empire City",
-        "Winner": false
+        "Publisher": "Cortopia Studios",
+        "Winner": false,
+        "Genre": "VR Action-Adventure",
+        "Description": "A cooperative VR action-adventure that lets players embody the four Turtles, fight the Foot Clan and explore the city.",
+        "Image": "/imgs/teenage_mutant_ninja_turtles_empire_city.jpg"
       },
       {
         "Nominee": "Thief VR: Legacy of Shadow",
-        "Winner": false
+        "Publisher": "Maze Theory",
+        "Winner": false,
+        "Genre": "VR Stealth Adventure",
+        "Description": "A VR stealth adventure in which a streetwise thief infiltrates a tyrant's city, stealing, evading guards and uncovering secrets.",
+        "Image": "/imgs/thief_vr_legacy_of_shadow.jpg"
       }
     ]
   },
@@ -516,23 +903,43 @@
     "nominees": [
       {
         "Nominee": "Arc Raiders",
-        "Winner": false
+        "Publisher": "Embark Studios",
+        "Winner": false,
+        "Genre": "Extraction Shooter",
+        "Description": "A multiplayer extraction adventure where Raiders scavenge a dangerous world while contending with hostile machines and rival players.",
+        "Image": "/imgs/arc_raiders.jpg"
       },
       {
         "Nominee": "Final Fantasy 14",
-        "Winner": false
+        "Publisher": "Square Enix",
+        "Winner": false,
+        "Genre": "MMORPG",
+        "Description": "A long-running online role-playing game set in Eorzea, with story campaigns, dungeons, raids and a persistent player community.",
+        "Image": "/imgs/final_fantasy_14.jpg"
       },
       {
         "Nominee": "Fortnite",
-        "Winner": false
+        "Publisher": "Epic Games",
+        "Winner": false,
+        "Genre": "Battle Royale / Sandbox",
+        "Description": "A live-service game spanning battle royale, creative experiences and a broad ecosystem of player-made content.",
+        "Image": "/imgs/fortnite.jpg"
       },
       {
         "Nominee": "No Man's Sky",
-        "Winner": false
+        "Publisher": "Hello Games",
+        "Winner": false,
+        "Genre": "Space Exploration / Survival",
+        "Description": "A procedural space exploration and survival game about discovering planets, gathering resources and travelling across a vast galaxy.",
+        "Image": "/imgs/nomanssky.jpg"
       },
       {
         "Nominee": "The Witcher 3: Wild Hunt",
-        "Winner": false
+        "Publisher": "CD Projekt Red",
+        "Winner": false,
+        "Genre": "Open-World RPG",
+        "Description": "An open-world fantasy RPG following monster hunter Geralt of Rivia through a war-torn world in search of Ciri.",
+        "Image": "/imgs/the_witcher_3_wild_hunt.jpg"
       }
     ]
   },
@@ -542,23 +949,43 @@
     "nominees": [
       {
         "Nominee": "Crimson Desert",
-        "Winner": false
+        "Publisher": "Pearl Abyss",
+        "Winner": false,
+        "Genre": "Open-World Action-Adventure",
+        "Description": "An open-world action-adventure following Kliff as he reunites the Greymanes across the continent of Pywel.",
+        "Image": "/imgs/crimson_desert.jpg"
       },
       {
         "Nominee": "Helldivers 2",
-        "Winner": false
+        "Publisher": "Arrowhead Game Studios",
+        "Winner": false,
+        "Genre": "Co-op Third-Person Shooter",
+        "Description": "A cooperative third-person shooter in which squads of Helldivers fight hostile alien forces for Super Earth.",
+        "Image": "/imgs/helldivers_2.jpg"
       },
       {
         "Nominee": "No Man’s Sky",
-        "Winner": false
+        "Publisher": "Hello Games",
+        "Winner": false,
+        "Genre": "Space Exploration / Survival",
+        "Description": "A procedural space exploration and survival game about discovering planets, gathering resources and travelling across a vast galaxy.",
+        "Image": "/imgs/no_man_s_sky.jpg"
       },
       {
         "Nominee": "The Witcher 3 Wild Hunt",
-        "Winner": false
+        "Publisher": "CD Projekt Red",
+        "Winner": false,
+        "Genre": "Open-World RPG",
+        "Description": "An open-world fantasy RPG following monster hunter Geralt of Rivia through a war-torn world in search of Ciri.",
+        "Image": "/imgs/the_witcher_3_wild_hunt.jpg"
       },
       {
         "Nominee": "Warframe",
-        "Winner": false
+        "Publisher": "Digital Extremes",
+        "Winner": false,
+        "Genre": "Action RPG / Looter Shooter",
+        "Description": "A cooperative online action game where players control biomechanical warriors across a science-fiction universe.",
+        "Image": "/imgs/warframe.jpg"
       }
     ]
   },
@@ -568,23 +995,43 @@
     "nominees": [
       {
         "Nominee": "A Dream of Silence: Revamped",
-        "Winner": false
+        "Publisher": "Lizardpunk",
+        "Winner": false,
+        "Genre": "Baldur's Gate 3 Mod",
+        "Description": "A community-made Baldur's Gate III mod, credited to Lizardpunk, that revises and expands the Dream of Silence experience.",
+        "Image": "/imgs/a_dream_of_silence_revamped.jpg"
       },
       {
         "Nominee": "Create Aeruonautics",
-        "Winner": false
+        "Publisher": "Simulated Team",
+        "Winner": false,
+        "Genre": "Minecraft Creation",
+        "Description": "A community-built aeronautics creation for Minecraft, credited to the Simulated Team.",
+        "Image": "/imgs/create_aeronautics.jpg"
       },
       {
         "Nominee": "Nopixel 5",
-        "Winner": false
+        "Publisher": "NoPixel Studios",
+        "Winner": false,
+        "Genre": "GTA Online Roleplay",
+        "Description": "A major community role-play experience built around the NoPixel server and Grand Theft Auto Online.",
+        "Image": "/imgs/nopixel_v.jpg"
       },
       {
         "Nominee": "Star Wars: Droid Tycoon",
-        "Winner": false
+        "Publisher": "FOAD",
+        "Winner": false,
+        "Genre": "Fortnite Creative",
+        "Description": "A Star Wars-themed user-created tycoon experience built within Fortnite Creative.",
+        "Image": "/imgs/star_wars_droid_tycoon.jpg"
       },
       {
         "Nominee": "TTK Testing",
-        "Winner": false
+        "Publisher": "Sable Digital",
+        "Winner": false,
+        "Genre": "Roblox Experience",
+        "Description": "A community-created Roblox experience credited to Sable Digital.",
+        "Image": "/imgs/ttk_testing.jpg"
       }
     ]
   },
@@ -594,23 +1041,43 @@
     "nominees": [
       {
         "Nominee": "Assassins Creed Black Flag Resynced",
-        "Winner": false
+        "Publisher": "Ubisoft Singapore",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A rebuilt version of Assassin's Creed IV: Black Flag, following pirate captain Edward Kenway through the Caribbean.",
+        "Image": "/imgs/assassins_creed_black_flag_resynced.jpg"
       },
       {
         "Nominee": "Forza Horizon 6",
-        "Winner": false
+        "Publisher": "Playground Games",
+        "Winner": false,
+        "Genre": "Open-World Racing",
+        "Description": "An open-world racing game set in Japan, featuring a large map, hundreds of cars and the Horizon Festival.",
+        "Image": "/imgs/forza_horizon_6.jpg"
       },
       {
         "Nominee": "Gears of War: E-Day",
-        "Winner": false
+        "Publisher": "The Coalition",
+        "Winner": false,
+        "Genre": "Third-Person Shooter",
+        "Description": "A third-person shooter returning to the beginning of Emergence Day and the first devastating Locust attacks.",
+        "Image": "/imgs/gears_of_war_e_day.jpg"
       },
       {
         "Nominee": "Marvel's Wolverine",
-        "Winner": false
+        "Publisher": "Insomniac Games",
+        "Winner": false,
+        "Genre": "Action",
+        "Description": "A single-player action game starring Wolverine, featuring brutal close-quarters combat and a story set in the Marvel universe.",
+        "Image": "/imgs/wolverine.jpg"
       },
       {
         "Nominee": "Rhythm Heaven Groove",
-        "Winner": false
+        "Publisher": "Nintendo",
+        "Winner": false,
+        "Genre": "Rhythm",
+        "Description": "A rhythm-action game built around musical timing, quirky challenges and a collection of short interactive performances.",
+        "Image": "/imgs/rhythm_heaven_groove.jpg"
       }
     ]
   },
@@ -620,27 +1087,51 @@
     "nominees": [
       {
         "Nominee": "Big Walk",
-        "Winner": false
+        "Publisher": "House House",
+        "Winner": false,
+        "Genre": "Co-op Adventure",
+        "Description": "A cooperative online adventure about friends exploring a wide-open world, solving puzzles and communicating to overcome challenges.",
+        "Image": "/imgs/big_walk.jpg"
       },
       {
         "Nominee": "Cairn",
-        "Winner": false
+        "Publisher": "The Game Bakers",
+        "Winner": false,
+        "Genre": "Climbing Adventure",
+        "Description": "A realistic climbing adventure in which a mountaineer plans routes, manages resources and attempts to reach an unforgiving summit.",
+        "Image": "/imgs/cairn.jpg"
       },
       {
         "Nominee": "Forever Ago",
-        "Winner": false
+        "Publisher": "Third Shift",
+        "Winner": false,
+        "Genre": "Narrative Adventure",
+        "Description": "A single-player road-trip adventure in which Alfred travels north, photographs memories and searches for redemption after a personal tragedy.",
+        "Image": "/imgs/forever_ago.jpg"
       },
       {
         "Nominee": "Life is Strange Reunion",
-        "Winner": false
+        "Publisher": "Deck Nine Games",
+        "Winner": false,
+        "Genre": "Narrative Adventure",
+        "Description": "A narrative adventure bringing Max and Chloe together again as they investigate a mystery and try to prevent a devastating fire.",
+        "Image": "/imgs/life_is_strange_reunion.jpg"
       },
       {
         "Nominee": "Lily’s World XD",
-        "Winner": false
+        "Publisher": "SonderinEmily / Kwalee",
+        "Winner": false,
+        "Genre": "Narrative Adventure",
+        "Description": "An independent narrative game recognised for its personal story and expressive creative approach.",
+        "Image": "/imgs/lilys_world_xd.jpg"
       },
       {
         "Nominee": "Mixtape",
-        "Winner": false
+        "Publisher": "Beethoven & Dinosaur",
+        "Winner": false,
+        "Genre": "Narrative Adventure",
+        "Description": "A coming-of-age narrative adventure following three friends through a final night together, shaped by music and memories.",
+        "Image": "/imgs/mixtape.jpg"
       }
     ]
   },
@@ -650,23 +1141,43 @@
     "nominees": [
       {
         "Nominee": "Cyberpunk Edgerunners season 2",
-        "Winner": false
+        "Publisher": "Studio Trigger / CD Projekt Red",
+        "Winner": false,
+        "Genre": "Anime Series",
+        "Description": "A new animated story set in the world of Cyberpunk, returning to Night City with a standalone cast and story.",
+        "Image": "/imgs/cyberpunk_edgerunners_season_2.jpg"
       },
       {
         "Nominee": "Fallout season 2",
-        "Winner": false
+        "Publisher": "Kilter Films / Amazon MGM Studios",
+        "Winner": false,
+        "Genre": "Television Series",
+        "Description": "The second season of the post-apocalyptic television adaptation, continuing the stories of survivors in the Fallout wasteland.",
+        "Image": "/imgs/fallout_season_2.jpg"
       },
       {
         "Nominee": "Mortal Kombat 2",
-        "Winner": false
+        "Publisher": "New Line Cinema / Warner Bros. Pictures",
+        "Winner": false,
+        "Genre": "Film",
+        "Description": "A martial-arts fantasy film sequel in which Earthrealm's champions face a new tournament and the threat of Shao Kahn.",
+        "Image": "/imgs/mortal_kombat_2.jpg"
       },
       {
         "Nominee": "Resident Evil",
-        "Winner": false
+        "Publisher": "Sony Pictures / Constantin Film",
+        "Winner": false,
+        "Genre": "Film",
+        "Description": "A survival-horror film reboot following a medical courier caught in a terrifying night of escalating chaos.",
+        "Image": "/imgs/resident_evil.jpg"
       },
       {
         "Nominee": "The Super Mario Galaxy Movie",
-        "Winner": false
+        "Publisher": "Illumination / Nintendo",
+        "Winner": false,
+        "Genre": "Animated Film",
+        "Description": "An animated adventure sending Mario and Luigi across the galaxy as they face Bowser Jr. and encounter Rosalina.",
+        "Image": "/imgs/the_super_mario_galaxy_movie.jpg"
       }
     ]
   },
@@ -676,23 +1187,43 @@
     "nominees": [
       {
         "Nominee": "Fable",
-        "Winner": false
+        "Publisher": "Playground Games",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "A new open-world fantasy RPG set in Albion, continuing the series' mix of choice, consequence, humour and adventure.",
+        "Image": "/imgs/fable.jpg"
       },
       {
         "Nominee": "Final Fantasy 7 Revelation",
-        "Winner": false
+        "Publisher": "Square Enix",
+        "Winner": false,
+        "Genre": "Action RPG",
+        "Description": "The third and final entry in the Final Fantasy VII Remake saga, continuing the party's journey in a vast reimagined world.",
+        "Image": "/imgs/final_fantasy_7_revelation.jpg"
       },
       {
         "Nominee": "God of War Laufey",
-        "Winner": false
+        "Publisher": "Santa Monica Studio",
+        "Winner": false,
+        "Genre": "Action-Adventure",
+        "Description": "A new God of War chapter starring Laufey, or Faye, as she awakens in the afterlife and fights to protect her family.",
+        "Image": "/imgs/god_of_war_laufey.jpg"
       },
       {
         "Nominee": "Resident Evil Veronica",
-        "Winner": false
+        "Publisher": "Capcom",
+        "Winner": false,
+        "Genre": "Survival Horror",
+        "Description": "A remake of Resident Evil Code: Veronica, reimagining the survival-horror story with updated presentation and technology.",
+        "Image": "/imgs/resident_evil_veronica.jpg"
       },
       {
         "Nominee": "The Witcher 4",
-        "Winner": false
+        "Publisher": "CD Projekt Red",
+        "Winner": false,
+        "Genre": "Open-World RPG",
+        "Description": "A new open-world role-playing chapter in The Witcher saga, continuing the dark fantasy series in a new direction.",
+        "Image": "/imgs/the_witcher_4.jpg"
       }
     ]
   },
@@ -702,23 +1233,43 @@
     "nominees": [
       {
         "Nominee": "Cdawg",
-        "Winner": false
+        "Publisher": "YouTube",
+        "Winner": false,
+        "Genre": "Creator",
+        "Description": "An online creator recognized for gaming and entertainment videos and livestreams.",
+        "Image": "/imgs/cdawg.jpg"
       },
       {
         "Nominee": "Cellbit",
-        "Winner": false
+        "Publisher": "Twitch",
+        "Winner": false,
+        "Genre": "Creator",
+        "Description": "Brazilian gaming creator and streamer known for role-play projects, community events and variety content.",
+        "Image": "/imgs/cellbit.jpg"
       },
       {
         "Nominee": "IShowSpeed",
-        "Winner": false
+        "Publisher": "YouTube",
+        "Winner": false,
+        "Genre": "Creator",
+        "Description": "Live-streaming entertainer known for high-energy gaming, sports and variety broadcasts.",
+        "Image": "/imgs/ishowspeed.jpg"
       },
       {
         "Nominee": "LilSimsie",
-        "Winner": false
+        "Publisher": "YouTube",
+        "Winner": false,
+        "Genre": "Creator",
+        "Description": "Gaming creator best known for The Sims videos, builds, challenges and community-focused content.",
+        "Image": "/imgs/lilsimsie.jpg"
       },
       {
         "Nominee": "OhnePixel",
-        "Winner": false
+        "Publisher": "Twitch",
+        "Winner": false,
+        "Genre": "Creator",
+        "Description": "Gaming streamer and creator best known for Counter-Strike content, item trading and esports commentary.",
+        "Image": "/imgs/ohnepixel.jpg"
       }
     ]
   },
@@ -728,23 +1279,43 @@
     "nominees": [
       {
         "Nominee": "Counter-Strike 2",
-        "Winner": false
+        "Publisher": "Valve",
+        "Winner": false,
+        "Genre": "Tactical Shooter",
+        "Description": "A competitive tactical first-person shooter built around objective-based rounds, precise gunplay and team strategy.",
+        "Image": "/imgs/counter_strike_2.jpg"
       },
       {
         "Nominee": "Dota 2",
-        "Winner": false
+        "Publisher": "Valve",
+        "Winner": false,
+        "Genre": "MOBA",
+        "Description": "A competitive multiplayer online battle arena in which two teams of heroes battle to destroy the opposing Ancient.",
+        "Image": "/imgs/dota_2.jpg"
       },
       {
         "Nominee": "League of Legends",
-        "Winner": false
+        "Publisher": "Riot Games",
+        "Winner": false,
+        "Genre": "MOBA",
+        "Description": "A team-based multiplayer online battle arena built around champion selection, lanes, objectives and coordinated team fights.",
+        "Image": "/imgs/league_of_legends.jpg"
       },
       {
         "Nominee": "Mobile Legends: Bang Bang",
-        "Winner": false
+        "Publisher": "Moonton",
+        "Winner": false,
+        "Genre": "MOBA",
+        "Description": "A mobile multiplayer online battle arena featuring short, team-based matches and hero-driven combat.",
+        "Image": "/imgs/mobile_legends.jpg"
       },
       {
         "Nominee": "Valorant",
-        "Winner": false
+        "Publisher": "Riot Games",
+        "Winner": false,
+        "Genre": "Tactical Shooter",
+        "Description": "A competitive 5v5 tactical shooter combining precise gunplay with agents who have distinctive abilities.",
+        "Image": "/imgs/valorant.jpg"
       }
     ]
   },
@@ -755,27 +1326,42 @@
       {
         "Nominee": "Chovy",
         "Publisher": "Gen.G",
-        "Winner": false
+        "Winner": false,
+        "Genre": "League of Legends",
+        "Description": "A professional League of Legends mid laner representing Gen.G in top-level international competition.",
+        "Image": "/imgs/chovy.jpg"
       },
       {
         "Nominee": "Donk",
         "Publisher": "Team Spirit",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Counter-Strike 2",
+        "Description": "A professional Counter-Strike 2 rifler representing Team Spirit.",
+        "Image": "/imgs/donk.jpg"
       },
       {
         "Nominee": "Erde",
         "Publisher": "LOUD",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Valorant",
+        "Description": "A professional Valorant player representing LOUD.",
+        "Image": "/imgs/erde.jpg"
       },
       {
         "Nominee": "Yatoro",
         "Publisher": "Team Spirit",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Dota 2",
+        "Description": "A professional Dota 2 carry player representing Team Spirit.",
+        "Image": "/imgs/yatoro.jpg"
       },
       {
         "Nominee": "Zywoo",
         "Publisher": "Team Vitality",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Counter-Strike 2",
+        "Description": "A professional Counter-Strike 2 player and AWPer representing Team Vitality.",
+        "Image": "/imgs/zywoo.jpg"
       }
     ]
   },
@@ -786,32 +1372,50 @@
       {
         "Nominee": "Gen.G",
         "Publisher": "League of Legends",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Team",
+        "Description": "An esports team competing in League of Legends at the highest level.",
+        "Image": "/imgs/gen-g.jpg"
       },
       {
         "Nominee": "LOUD",
         "Publisher": "Valorant",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Team",
+        "Description": "A Brazilian esports organization represented in the Valorant competition.",
+        "Image": "/imgs/loud.jpg"
       },
       {
         "Nominee": "Team Falcons (Counter-Strike 2)",
         "Publisher": "Counter-Strike 2",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Team",
+        "Description": "Team Falcons' Counter-Strike 2 roster, competing in the international professional scene.",
+        "Image": "/imgs/team_falcons_cs2.jpg"
       },
       {
         "Nominee": "Team Falcons (Rocket League)",
         "Publisher": "Rocket League",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Team",
+        "Description": "Team Falcons' Rocket League roster, competing in the international professional scene.",
+        "Image": "/imgs/team_falcons_rocket_league.jpg"
       },
       {
         "Nominee": "Team Spirit",
         "Publisher": "Dota 2",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Team",
+        "Description": "An esports organization with a prominent Dota 2 roster.",
+        "Image": "/imgs/team_spirit.jpg"
       },
       {
         "Nominee": "Team Vitality",
         "Publisher": "Counter-Strike 2",
-        "Winner": false
+        "Winner": false,
+        "Genre": "Team",
+        "Description": "A professional esports organization represented in Counter-Strike 2.",
+        "Image": "/imgs/teamvitalty.jpg"
       }
     ]
   }

@@ -68,3 +68,16 @@ model EventConfig {
   id        Int       @id @default(autoincrement())
   eventDate DateTime?
 }
+
+model GameArtwork {
+  id             Int      @id @default(autoincrement())
+  name           String   @unique
+  provider       String
+  providerGameId Int?
+  imageId        Int?
+  imageUrl       String
+  type           String   @default("grid")
+  width          Int?
+  height         Int?
+  updatedAt      DateTime @updatedAt
+}

@@ -166,6 +166,19 @@ exports.Prisma.EventConfigScalarFieldEnum = {
   eventDate: 'eventDate'
 };
 
+exports.Prisma.GameArtworkScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  provider: 'provider',
+  providerGameId: 'providerGameId',
+  imageId: 'imageId',
+  imageUrl: 'imageUrl',
+  type: 'type',
+  width: 'width',
+  height: 'height',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -188,7 +201,8 @@ exports.Prisma.ModelName = {
   Category: 'Category',
   Nominee: 'Nominee',
   Winner: 'Winner',
-  EventConfig: 'EventConfig'
+  EventConfig: 'EventConfig',
+  GameArtwork: 'GameArtwork'
 };
 
 /**
