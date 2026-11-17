@@ -77,10 +77,10 @@ export async function searchIgdbCovers(title) {
       providerGameId: g.id,
       gameName: g.name,
       imageId: null,
-      imageUrl: `https://images.igdb.com/igdb/image/upload/t_cover_big/${g.cover.image_id}.jpg`,
-      thumbUrl: `https://images.igdb.com/igdb/image/upload/t_cover_small/${g.cover.image_id}.jpg`,
+      imageUrl: `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${g.cover.image_id}.jpg`,
+      thumbUrl: `https://images.igdb.com/igdb/image/upload/t_cover_big/${g.cover.image_id}.jpg`,
       type: "grid",
-      width: g.cover.width ?? null,
-      height: g.cover.height ?? null,
+      width: g.cover.width ? g.cover.width * 2 : null,
+      height: g.cover.height ? g.cover.height * 2 : null,
     }));
 }
